@@ -1,0 +1,29 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "empero": {
+      "options": {
+        "apiKey": "free",
+        "baseURL": "https://free.empero.org/v1"
+      },
+      "models": {
+        "glm-5.3-flash": {
+          "id": "glm-5.3-flash",
+          "name": "GLM 5.3 Flash",
+          "family": "glm",
+          "tool_call": true,
+          "reasoning": false,
+          "temperature": true
+        },
+        "qwen3.8-flash": {
+          "id": "qwen3.8-flash",
+          "name": "Qwen3.8 Flash",
+          "family": "qwen",
+          "tool_call": true,
+          "reasoning": false,
+          "temperature": true
+        }
+      }
+    }
+  }
+}
