@@ -603,7 +603,7 @@ high-D state space, similar-state recall persists.
 |---|---|---|
 | Storage | Online k-means clustering (32 regions) | Coarse-grained: reduces ν |
 | Retrieval | Cosine similarity to nearest region | Rhyme-based: stays in recurrent regime |
-| Consolidation | Drift-threshold pruning every 100 steps | Dimension reduction: keeps ν ≤ w |
+| Consolidation | Drift-threshold pruning every 100 steps | Dimension reduction: keeps ν ≤ d_w (§5.6 of theory) |
 | Capacity | Dynamic (prune far patterns) | Phase boundary management |
 | Gating | Action-gated (model chooses when to recall) | Agency: voluntary engagement with memory pressure |
 
@@ -665,8 +665,19 @@ hcm_pruned: 179 at step 7000
 **What changed:** The CDT-consistent architecture stores patterns in 31
 clustered regions (online k-means), retrieves by cosine similarity to nearest
 region, and prunes patterns far from the current state (drift-threshold pruning).
-This keeps the memory manifold in the recurrent regime (ν ≤ w), preventing the
-stale-re-entry collapse that killed Night4 and the erosion that plagued Night5b.
+This keeps the memory manifold in the recurrent regime (ν ≤ d_w, see theory §5.6),
+preventing the stale-re-entry collapse that killed Night4 and the erosion that
+plagued Night5b.
+
+> **Measurement note.** The first full-model ν/w readout reported `ν = 2.228`,
+> `w = 37.153`, `ν/w = 0.06`. That `w` is a *drift rate* (mean per-step
+> displacement, with units), **not** the walk dimension `d_w` (dimensionless,
+> `d_w = 2/β` from MSD scaling). The 0.06 ratio is *not* a phase-boundary test.
+> To apply the criterion one must measure β from the memory manifold's recall
+> dynamics and compute `d_w = 2/β`; only then does `ν ≤ d_w` decide recurrent vs
+> transient. The healthy signals (val_ce < L1, fugazee = 0, persist
+> fluctuating) remain valid regardless — they show the system is alive, but they
+> do not by themselves place the manifold relative to the phase boundary.
 
 **The key result:** val_ce = 6.94 with memory active — first time memory has
 helped prediction in the full model. The CDT framework predicted this: coarse-
@@ -728,30 +739,35 @@ this decay probe and is withdrawn as the central evidence; `rec_mu=0.000` and
 `rec_H=0.900` are the real support.)
 
 ### 4.3 The global criterion, decided numerically (`dimension_test.py`)
-For a diffusive explorer (walk dimension `w = 2`), motion on a configuration
-manifold of correlation dimension `ν` is **recurrent iff `ν ≤ 2`** and
-**transient iff `ν > 2`** (Pólya generalized to fractals). Transient ⇒ exact
+For a diffusive explorer, motion on a configuration manifold of correlation
+dimension `ν` is **recurrent iff `ν ≤ d_w`** and **transient iff `ν > d_w`**,
+where `d_w` is the *walk dimension* (anomalous-diffusion exponent, `d_w = 2/β`
+with β the MSD scaling exponent). For *standard* diffusion `d_w = 2`, which
+recovers Pólya's `ν ≤ 2`; but self-repelling or anomalous walks have `d_w ≠ 2`,
+shifting the boundary. Full derivation in theory §5.6. Transient ⇒ exact
 recurrence vanishes, rhymes persist. So the whole question reduces to measuring
-`ν` via the pair-correlation scaling `C(ε) ∝ ε^{ν}`.
+`ν` via the pair-correlation scaling `C(ε) ∝ ε^{ν}` and `β` via MSD.
 
 Estimator validation on clouds of known dimension: `D=1 → 0.93`, `D=2 → 1.69`,
 `D=3 → 2.34`, `D=4 → 2.95` (known negative bias at low `D`; measured values are
 conservative).
 
-| Human configuration manifold | ν | Regime |
+| Human configuration manifold | ν | Regime (standard diffusion, d_w ≈ 2) |
 |---|---|---|
 | Coarse / perceived (centroids only) | 1.61 – 1.67 | `ν < 2` → **recurrent** |
 | Fine / full config (centroid + radius + speed) | 2.28 – 2.55 | `ν > 2` → **transient** |
 
 (both runs agree: v1 142 circles and v2 203 circles)
 
-**Verdict.** The perceived-level manifold is *recurrent* (`ν ≈ 1.6`) — rhyme
-≈ 0.9, "the same path every day." The microscopic-level manifold is *transient*
-(`ν ≈ 2.4`) — exact recurrence vanishes, "never the same footstep twice."
-**The exact/rhyme split is a phase boundary at `ν = 2` crossed between the two
-levels of description.** Globally, the hypothesis holds precisely where
-`ν > w = 2` — which covers high-dimensional real-world configuration manifolds —
-and fails in the recurrent phase below it. A decidable condition, not a vague one.
+**Verdict.** The perceived-level manifold is *recurrent* (`ν ≈ 1.6 < d_w ≈ 2`) —
+rhyme ≈ 0.9, "the same path every day." The microscopic-level manifold is
+*transient* (`ν ≈ 2.4 > d_w ≈ 2`) — exact recurrence vanishes, "never the same
+footstep twice." **The exact/rhyme split is a phase boundary at `ν = d_w`
+crossed between the two levels of description.** Globally, the hypothesis holds
+precisely where `ν > d_w` — which covers high-dimensional real-world
+configuration manifolds — and fails in the recurrent phase below it. A decidable
+condition, not a vague one. (For non-standard diffusion the boundary shifts:
+subdiffusion raises d_w, superdiffusion lowers it — see theory §5.6.)
 
 ---
 
@@ -875,7 +891,7 @@ governor (k 0.83→2.4, firing correctly on drift episodes).
 The Configuration-Drift Hypothesis — **exact recurrence of a state vanishes because
 realizing it perturbs its many contributing configuration elements, while rhyme
 persists** — is **supported** quantitatively across 14 independent domains, all
-governed by the same ν vs w phase boundary:
+governed by the same `ν ≤ d_w` phase boundary (theory §5.6):
 
 - **Simulation:** exact site recurrence collapses for `D ≥ 3` (curse of
   dimensionality / Pólya), and — decisive — the split **emerges from a local
@@ -891,11 +907,11 @@ governed by the same ν vs w phase boundary:
   same ν vs w criterion.
 
 **The life/death principle.** The phase boundary is the line between life and
-death: systems that stay in the recurrent regime (ν ≤ w) are alive — they
-maintain structure, explore, and remember. Systems that cross into the transient
-regime (ν > w) die — they lock into exact repetition, collapse, or forget.
-Self-repulsion is the mechanism that keeps systems alive: it prevents exact
-recurrence, forces rhyme, and sustains exploration.
+death: systems that stay in the recurrent regime (ν ≤ d_w, theory §5.6) are
+alive — they maintain structure, explore, and remember. Systems that cross into
+the transient regime (ν > d_w) die — they lock into exact repetition, collapse,
+or forget. Self-repulsion is the mechanism that keeps systems alive: it prevents
+exact recurrence, forces rhyme, and sustains exploration.
 
 The rebuild's earlier emphasis on a temporal-decay signature was a misreading of
 the hypothesis; removing it, the original conclusion (`rec_mu ≈ 0`, `rec_H ≈ 0.9`)

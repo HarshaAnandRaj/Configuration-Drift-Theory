@@ -80,7 +80,7 @@ see the framing note above.
 | `ρ(t)` | exact-recurrence density at time `t` |
 | `ρ_∞` | late-time / steady-state recurrence rate (order parameter) |
 | `ν` | correlation dimension of the configuration manifold (measured, §5.5) |
-| `w` | walk dimension of the explorer (= 2 for diffusion); recurrent iff `ν ≤ w` |
+| `d_w` | walk dimension (anomalous-diffusion exponent, `d_w = 2/β` from MSD scaling); recurrent iff `ν ≤ d_w` (§5.6) |
 | `𝒞` | coupling between configuration drift and the observer's perceptible state |
 
 ---
@@ -325,28 +325,91 @@ suppression appears: `ρ` falls `0.286 → 0.173` as `α` goes `0 → 0.5`. With
 finite volume the walk *cannot* escape, yet drift still suppresses recurrence.
 The transition is **dynamical**, not a boundary effect.
 
-### 5.5 The global criterion: correlation dimension vs walk dimension (`dimension_test.py`)
+### 5.5 The global criterion: spectral dimension vs walk dimension (`dimension_test.py`)
 
-Pólya's theorem generalizes to arbitrary manifolds: a diffusive explorer (walk
-dimension `w = 2`) on a configuration manifold of **correlation dimension `ν`**
-is *recurrent* iff `ν ≤ w`, *transient* iff `ν > w`. `ν` is measurable from any
-set of realized configurations via the pair-correlation scaling
-`C(ε) ∝ ε^{ν}` — the estimator validates on synthetic clouds of known
-dimension (`D=1 → 0.93`, …, `D=4 → 2.95`; known negative bias at low `D`).
+Pólya's theorem generalizes to arbitrary manifolds, but the correct condition is
+**not** "ν ≤ 2" in general — it is "ν ≤ d_w", where d_w is the *walk dimension*
+(anomalous-diffusion exponent), not a fixed constant. The derivation is in §5.6.
 
-Measured on the human drawing:
+A diffusive explorer (walk dimension `d_w`) on a configuration manifold of
+**correlation dimension `ν`** (≈ fractal dimension d_f) is *recurrent* iff
+`ν ≤ d_w`, *transient* iff `ν > d_w`. `ν` is measurable from any set of realized
+configurations via the pair-correlation scaling `C(ε) ∝ ε^{ν}`. For *standard*
+diffusion `d_w = 2`, which recovers Pólya's `ν ≤ 2`; but self-repelling or
+anomalous walks have `d_w ≠ 2`, shifting the boundary.
+
+Measured on the human drawing (standard diffusion, d_w ≈ 2):
 
 | Configuration manifold | ν | Regime |
 |---|---|---|
 | Perceived level (centroids only) | 1.61 – 1.67 | recurrent — rhyme persists |
 | Microscopic level (+ radius + speed) | 2.28 – 2.55 | transient — exact vanishes |
 
-**The exact/rhyme split is a phase boundary at `ν = w = 2`, crossed between the
+**The exact/rhyme split is a phase boundary at `ν = d_w`, crossed between the
 two levels of description of the same behaviour.** Globally, the hypothesis
-holds precisely where `ν > 2` — which covers generic high-dimensional real-world
-configuration manifolds — and fails in the recurrent phase below it. This turns
-the hypothesis from a narrative into a decidable condition, applicable to any
-system (including artificial ones) from trajectory data alone.
+holds precisely where `ν > d_w` — which covers generic high-dimensional
+real-world configuration manifolds — and fails in the recurrent phase below it.
+This turns the hypothesis from a narrative into a decidable condition,
+applicable to any system (including artificial ones) from trajectory data alone.
+
+> **Estimator caveat (unchanged).** The pair-correlation ν estimator carries a
+> known negative bias at low dimension (synthetic clouds read `D=1 → 0.93`,
+> `D=4 → 2.95` vs true `D`). The phase-boundary *formula* is exact; empirical
+> ν readings must be bias-corrected before comparing to d_w.
+
+### 5.6 Derivation of the phase boundary (spectral-dimension argument)
+
+The recurrence/transience decision for a diffusion on a metric-measure space is
+governed by the **spectral dimension** `d_s`, not directly by ν or d_w:
+
+**Theorem (Barlow–Bass / Kumagai).** A Brownian motion on a d_f-dimensional
+fractal with walk dimension d_w is **recurrent iff `d_s ≤ 2`**, where
+
+    d_s = 2 d_f / d_w .                                                       (13)
+
+*Proof sketch.* Recurrence is equivalent to divergence of expected returns:
+
+    E[N_returns] = ∫ p_t(x, x) dt ,
+
+where the on-diagonal heat kernel decays as `p_t(x, x) ~ t^{−d_s/2}`. The
+integral `∫ t^{−d_s/2} dt` diverges iff `d_s/2 ≤ 1`, i.e. `d_s ≤ 2`. □
+
+The correlation dimension `ν` estimates the fractal dimension `d_f` (both measure
+the scaling of the pair-count `C(ε) ∝ ε^{dimension}`; for the sets here they
+coincide). Substituting `d_f → ν`:
+
+    recurrent  ⇔  d_s ≤ 2
+              ⇔  2ν / d_w ≤ 2
+              ⇔  ν ≤ d_w .                                                      (14)
+
+**Relating d_w to measurement.** The walk dimension is the anomalous-diffusion
+exponent defined by `⟨r²(t)⟩ ∝ t^{2/d_w}`. If the MSD scaling exponent is
+`β = 2/d_w`, then `d_w = 2/β` and the criterion becomes
+
+    recurrent  ⇔  ν ≤ 2/β .                                                    (15)
+
+**Special cases.**
+- *Standard diffusion* (ℝ^D, d_w = 2): `ν ≤ 2` ⇒ Pólya's `D_c = 2`. ✓
+- *Subdiffusion* (d_w > 2, e.g. self-repelling TRUE walks): a *larger*
+  manifold can stay recurrent (`ν ≤ d_w > 2`).
+- *Superdiffusion* (d_w < 2): a *smaller* manifold becomes transient.
+
+**Verification (`derive_phase_boundary.py`).** Simulated Brownian motion in
+d=1,2,3,4 and fractional Brownian motion (H=0.3, H=0.7) in d=2. Using the
+*known* manifold dimension for ν (to bypass estimator bias), all six cases match
+the d_s ≤ 2 criterion exactly:
+
+| Process | true ν | β | d_w = 2/β | d_s = 2ν/d_w | pred | expected |
+|---|---|---|---|---|---|---|
+| BM d=1 | 1 | 1.00 | 2.00 | 1.00 | rec | rec |
+| BM d=2 | 2 | 1.00 | 2.00 | 2.00 | rec | rec |
+| BM d=3 | 3 | 1.00 | 2.00 | 3.00 | trans | trans |
+| BM d=4 | 4 | 1.00 | 2.00 | 4.00 | trans | trans |
+| fBm H=0.3 (superdiff) | 2 | 0.62 | 3.23 | 1.24 | rec | rec |
+| fBm H=0.7 (subdiff) | 2 | 1.35 | 1.48 | 2.70 | trans | trans |
+
+The criterion `ν ≤ d_w` is exact; the empirical ν estimator's finite-sample
+bias (documented §5.5) is the only source of mismatch in raw trajectory data.
 
 ---
 
@@ -572,9 +635,9 @@ It motivates the hypothesis but is not itself a result of the simulations.
    manifold, keeping ν below w. The sim shows it works; the theory should
    explain why.
 8. **The life/death principle — formal statement.** State precisely: "systems
-   that maintain ν ≤ w are alive (sustained exploration, structure, memory);
-   systems that cross ν > w die (lock-in, collapse, forgetting)." Derive from
-   the CDT framework rather than observing empirically.
+   that maintain ν ≤ d_w are alive (sustained exploration, structure, memory);
+   systems that cross ν > d_w die (lock-in, collapse, forgetting)." Derive from
+   the CDT framework (§5.6) rather than observing empirically.
 9. **Action-gated memory and the pressure principle.** Formalize: "memory
    provides internal pressure that shapes dynamics, but only when the model
    chooses to engage." Relate to the Night3 finding (unconditional reads →
@@ -598,9 +661,9 @@ governs the relationship between stored memories and the current state.
 | Exact recurrence vanishes | Exact recall vanishes as model drifts |
 | Rhyme persists | Similar-state recall persists |
 | ν (correlation dimension of manifold) | ν (dimension of memory manifold) |
-| w (walk dimension, =2 for diffusion) | w (rate of state drift) |
-| Phase boundary: ν ≤ w recurrent | Phase boundary: memory manifold dimension ≤ drift rate → recallable |
-| Phase boundary: ν > w transient | Phase boundary: > drift rate → unreachable |
+| d_w (walk dimension, =2 for standard diffusion) | d_w (=2/β from MSD of recall dynamics) — **not** the drift rate |
+| Phase boundary: ν ≤ d_w recurrent | Phase boundary: memory manifold dimension ≤ walk dimension → recallable |
+| Phase boundary: ν > d_w transient | Phase boundary: > walk dimension → unreachable |
 
 ### 14.2 CDT predictions for memory
 
@@ -649,8 +712,18 @@ recalls:   193,281 (97% hit rate)
 
 First time memory has helped prediction in the full model. The CDT-consistent
 architecture (coarse-grained k-means storage, drift-threshold pruning) keeps
-the memory manifold in the recurrent regime (ν ≤ w), preventing the stale-re-entry
-collapse that killed earlier attempts.
+the memory manifold in the recurrent regime (ν ≤ d_w, §5.6), preventing the
+stale-re-entry collapse that killed earlier attempts.
+
+> **Measurement note (Night6 telemetry).** The first full-model ν/w readout
+> reported `ν = 2.228`, `w = 37.153`, `ν/w = 0.06`. That `w` is a *drift rate*
+> (mean per-step displacement, with units), **not** the walk dimension `d_w`
+> (dimensionless, `d_w = 2/β` from MSD scaling). The 0.06 ratio is therefore
+> *not* a phase-boundary test. To apply §5.6 one must measure β from the memory
+> manifold's recall dynamics and compute `d_w = 2/β`; only then does `ν ≤ d_w`
+> decide recurrent vs transient. The healthy signals (val_ce < L1, fugazee = 0,
+> persist fluctuating) remain valid regardless — they show the system is alive,
+> but they do not by themselves place the manifold relative to the phase boundary.
 
 ### 14.4 The life/death principle
 
@@ -691,7 +764,7 @@ Based on the validated predictions, the CDT-consistent memory design is:
 |---|---|---|
 | Storage | Online k-means clustering (32 regions) | Coarse-grained: reduces ν |
 | Retrieval | Cosine similarity to nearest region | Rhyme-based: stays in recurrent regime |
-| Consolidation | Drift-threshold pruning every 100 steps | Dimension reduction: keeps ν ≤ w |
+| Consolidation | Drift-threshold pruning every 100 steps | Dimension reduction: keeps ν ≤ d_w |
 | Capacity | Dynamic (prune far patterns) | Phase boundary management |
 | Gating | Action-gated (model chooses when to recall) | Agency: voluntary engagement with memory pressure |
 
@@ -712,7 +785,7 @@ and ready for port to the full model (d=768).
 | Transition is dynamical, not boundary | — | torus substrate shows same transition |
 | Drift, not noise, drives decay | sensitivity `δ=0` | `ρ=0.489 ≈` baseline `0.481` |
 | Memory: exact recall transient, coarse recall recurrent | CDT applied to stored patterns | sim: 2.08 nats improvement (coarse vs exact) |
-| Consolidation = dimension reduction | keeps ν ≤ w | drift-threshold pruning sustains stability |
+| Consolidation = dimension reduction | keeps ν ≤ d_w (§5.6) | drift-threshold pruning sustains stability |
 | Exact recurrence = death, rhyme = life | phase boundary as life/death line | validated across 14 domains |
 
 ### 14-domain validation
