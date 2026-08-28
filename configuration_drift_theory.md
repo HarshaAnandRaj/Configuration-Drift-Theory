@@ -1,5 +1,7 @@
 # Configuration-Drift Hypothesis — Theory (Exhaustive)
 
+**Author:** Harsha Anand Raj Pammi
+
 > Companion to `configuration_drift_full_report.md`. This document develops the
 > **theory** in full: the conceptual hypothesis (exact recurrence of a state
 > vanishes because realizing it perturbs its many contributing configuration

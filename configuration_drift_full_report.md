@@ -1,5 +1,7 @@
 # Configuration-Drift Hypothesis — Report (corrected framing)
 
+**Author:** Harsha Anand Raj Pammi
+
 > **Provenance.** The original experiment's artifacts (14 scripts, `drawing_data.csv`,
 > and its numbers `rec_mu=0.000`, `rec_H=0.900`, `p=0.032`) were **lost/deleted**
 > (the project folder had been renamed to "New folder" containing only `.git` +
