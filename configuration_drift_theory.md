@@ -621,12 +621,12 @@ of stored patterns, the memory manifold dimension exceeds the drift rate and
 exact recall becomes impossible. The bank should have a *natural* capacity limit
 — not a fixed slot count, but a dynamic limit based on the drift rate.
 
-### 14.3 Validated in simulation
+### 14.3 Validated in simulation and full model
 
-The CDT-consistent memory architecture was tested in a simplified simulation
-(d=64) comparing exact recall (storing and retrieving precise state snapshots)
-against coarse-grained recall (online k-means clustering, region-based storage,
-drift-threshold pruning):
+The CDT-consistent memory architecture was tested first in a simplified
+simulation (d=64) and then deployed on the full Zeus ESNPN model (d=768):
+
+**Sim (d=64):**
 
 ```
 exact_dynamic:    CE 7.30 → 8.30 (+1.00 nats)   DEGRADING
@@ -634,8 +634,21 @@ coarse_dynamic:   CE 7.32 → 6.22 (−1.10 nats)   IMPROVING
 ```
 
 Coarse-grained recall outperforms exact recall by 2.08 nats and sustains
-stability. This confirms CDT's core prediction: exact recall is transient in
-high-D state space, similar-state recall persists.
+stability.
+
+**Full model (d=768) — Night6, step 7,000:**
+
+```
+val_ce:    6.94 (BELOW L1 floor of 7.10)
+persist:   -0.75 to -1.11 (fluctuating, not eroding)
+hcm_n:     333 patterns across 31 regions
+recalls:   193,281 (97% hit rate)
+```
+
+First time memory has helped prediction in the full model. The CDT-consistent
+architecture (coarse-grained k-means storage, drift-threshold pruning) keeps
+the memory manifold in the recurrent regime (ν ≤ w), preventing the stale-re-entry
+collapse that killed earlier attempts.
 
 ### 14.4 The life/death principle
 
