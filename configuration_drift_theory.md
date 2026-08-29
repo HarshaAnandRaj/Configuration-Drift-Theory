@@ -535,7 +535,17 @@ engagement → structure.)
   the grid is perturbation-resistant — *death by lock-in*. This was confirmed by
   `absurd.py` (§3.13) and independently by a web simulation (random soup →
   churn → frozen period-2 oscillators, no perturbation revives it). Rare gliders
-  are the transient (alive-looking) exception, not the rule.
+  are the transient   (alive-looking) exception, not the rule. A controlled variant
+  (`conway_repelled.py`) added *intrinsic* self-repulsion (a decaying heat field
+  blocking both rebirth and continued residence at hot sites) — no external actor.
+  It froze **faster** than standard Life (lock-in by ~step 5, grid →
+  still-life/empty). This is not a counterexample: Life's configuration space is
+  `2^(L²)`, so its spectral dimension `d_s ≫ 2` — it fails the **outer** wall
+  already (transient base manifold ⇒ death by forgetting), and adding `γ > 0`
+  only accelerates the collapse. Life is *doubly dead* (`d_s ≫ 2` and `γ = 0`);
+  alive requires **both** walls. The clean inner-wall test (γ > 0 on a *recurrent*
+  base, `d_s ≤ 2`) is `emergent_walk.py`, where repulsion suppresses exact
+  recurrence while rhyme persists.
 
 **Connection to consolidation.** When the bare manifold has `d_s > 2`
 (high-dimensional configuration, e.g. the full model `d = 768`), life cannot be

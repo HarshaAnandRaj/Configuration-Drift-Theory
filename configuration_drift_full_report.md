@@ -422,7 +422,15 @@ Two deliberately disrespectable substrates.
    state and needs the actor *continuously*. The external actor is a crutch, not
    a mechanism: per theory §5.8 Corollary 2 (endogeneity), true life is
    *intrinsic* self-repulsion (`γ_intrinsic > 0`); exogenous forcing cannot
-   substitute. Rare gliders are the transient (alive-looking) exception.
+    substitute. Rare gliders are the transient (alive-looking) exception.
+    A controlled variant (`conway_repelled.py`) added *intrinsic* self-repulsion
+    (a decaying heat field blocking rebirth and continued residence at hot sites);
+    it froze **faster** than standard Life (lock-in ~step 5). This is not a
+    counterexample: Life's configuration space is `2^(L²)`, so its spectral
+    dimension `d_s ≫ 2` — it fails the **outer** wall already (transient manifold
+    ⇒ death by forgetting), and `γ > 0` only accelerates collapse. Life is
+    *doubly dead* (`d_s ≫ 2` and `γ = 0`); alive needs **both** walls. The clean
+    inner-wall test is `emergent_walk.py`.
 
 **Digits of π vs 1/7 vs true RNG** — determinism with no dynamics:
 | source | w=2 | w=3 | w=4 | ν (6-D windows) |
@@ -966,4 +974,5 @@ data/fig:    phase_scan.csv  synthetic_drifting.npy  synthetic_iid.npy
 derivation:  derive_phase_boundary.py       (spectral-dimension proof, 6/6 cases)
             verify_spectral_dimension.py    (direct heat-kernel d_s test, 6/6 cases)
             debias_nu.py                     (bias-corrected nu estimator; recovers true dim <0.3)
+            conway_repelled.py               (intrinsic self-repulsion on Life; freezes faster -> d_s>>2)
 ```
