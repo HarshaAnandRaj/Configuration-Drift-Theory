@@ -506,14 +506,21 @@ of case (2) vs (3).
   `emergent_walk.py` (§3.4) shows exact site recurrence collapses under `γ > 0`
   while rhyme stays high; the full model's memory collapse (Night4:
   unconditional reads → exact re-entry) and recovery (Night6: action-gated coarse
-  recall) are the same mechanism at `d = 768`. **Conway's Game of Life** is a
+  recall) are the same mechanism at `d = 768`.   **Conway's Game of Life** is a
   `γ = 0` (dissipative — entropy-grinding acts as implicit attraction) rule, so
   case (2) predicts collapse into exact recurrence; the dominant outcome is
   spontaneous period-2 lock-in (oscillators = "two distinct states"), after which
   the grid is perturbation-resistant — *death by lock-in*. This was confirmed by
   `absurd.py` (§3.13) and independently by a web simulation (random soup →
-  churn → frozen period-2 oscillators, no perturbation revives it). Rare gliders
-  are the transient (alive-looking) exception, not the rule.
+  churn → frozen period-2 oscillators, no perturbation revives it). Crucially,
+  even *repeated large external perturbations relax back to the same locked
+  state*: the exact-recurrence attractor is invariant and absorbs any
+  perturbation. That is the signature of death-by-lock-in (returns to the same
+  state), distinct from death-by-forgetting (transient escape, never returns),
+  and it shows external pressure alone cannot sustain life — without an internal
+  `γ > 0` to metabolize pressure into exploration, forced perturbation merely
+  dissipates back to the recurrent set (the pressure principle, open question
+  #9). Rare gliders are the transient (alive-looking) exception, not the rule.
 
 **Connection to consolidation.** When the bare manifold has `d_s > 2`
 (high-dimensional configuration, e.g. the full model `d = 768`), life cannot be

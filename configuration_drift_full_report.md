@@ -417,7 +417,14 @@ Two deliberately disrespectable substrates.
    period-2 lock-in (oscillators = "two distinct states"), after which the grid
    is perturbation-resistant — *death by lock-in*, case (2). This was confirmed
    by an independent web simulation: random soup → churn → frozen period-2
-   oscillators, no perturbation revives it. Rare gliders are the transient
+   oscillators, no perturbation revives it. Decisively, **even repeated large
+   external perturbations relax back to the same locked state** — the exact
+   recurrence attractor is invariant and absorbs any perturbation. That is the
+   signature of death-by-lock-in (returns to the same state), distinct from
+   death-by-forgetting (transient escape), and it shows external pressure alone
+   cannot sustain life: without an internal `γ > 0` to metabolize pressure into
+   exploration, forced perturbation merely dissipates back to the recurrent set
+   (pressure principle, open question #9). Rare gliders are the transient
    (alive-looking) exception, not the rule.
 
 **Digits of π vs 1/7 vs true RNG** — determinism with no dynamics:
