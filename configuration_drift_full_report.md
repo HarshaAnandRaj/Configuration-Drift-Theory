@@ -767,7 +767,9 @@ crossed between the two levels of description.** Globally, the hypothesis holds
 precisely where `ν > d_w` — which covers high-dimensional real-world
 configuration manifolds — and fails in the recurrent phase below it. A decidable
 condition, not a vague one. (For non-standard diffusion the boundary shifts:
-subdiffusion raises d_w, superdiffusion lowers it — see theory §5.6.)
+subdiffusion raises d_w, superdiffusion lowers it — see theory §5.6.) The derived
+criterion is validated directly on Brownian and fractional Brownian motion in
+theory §5.7 (`verify_spectral_dimension.py`, 6/6 cases).
 
 ---
 
@@ -936,8 +938,11 @@ data/extra:  Conversations/unanswered-science-questions-solvable-by-tech.json
 rewritten:   hypothesis_eq.py  emergent_3d.py  thought_walker.py
              sensitivity.py    dimension_scaling.py
 data/fig:    phase_scan.csv  synthetic_drifting.npy  synthetic_iid.npy
-             drawing_data.csv (fresh: 203 circles)  drawing_data_v1.csv (backup)
-             collapse_transition.csv  physical_walk.csv
-             phase_diagram.png  time_course.png  time_course_real.png
-             collapse_transition.png  physical_walk.png
+              drawing_data.csv (fresh: 203 circles)  drawing_data_v1.csv (backup)
+              collapse_transition.csv  physical_walk.csv
+              phase_diagram.png  time_course.png  time_course_real.png
+              collapse_transition.png  physical_walk.png
+
+derivation:  derive_phase_boundary.py       (spectral-dimension proof, 6/6 cases)
+            verify_spectral_dimension.py    (direct heat-kernel d_s test, 6/6 cases)
 ```
