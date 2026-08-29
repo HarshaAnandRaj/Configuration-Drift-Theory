@@ -515,6 +515,59 @@ cannot substitute for endogenous self-repulsion. (Same lesson as Zeus Night3/Nig
 unconditional/external reads → collapse or soup; only endogenous, action-gated
 engagement → structure.)
 
+**Refinement — endogeneity is autonomy, not rescue.** The pressure principle
+above establishes that *true, autonomous* life is endogenous: a system that must be
+perturbed from outside is not self-sustaining. This remains correct as a statement
+about **autonomy while alive**. It must **not** be read as a statement about
+**rescue at the death boundary**, where the priority inverts.
+
+Death by lock-in is an **attracting basin**. Every internal degree of freedom —
+including the very mechanism (`γ_intrinsic`) that would perturb the trajectory
+back out — is coupled to that basin and is dragged toward the attractor together
+with the state. Hence: *as the system dies, the rescuer dies with it.* There is no
+internal guarantee that a self-perturbation which occurred once will occur again;
+the deeper the basin, the less effective the same endogenous repulsion becomes — a
+positive feedback (death deepens → repulsion less effective → death deepens). Escape
+from an attractor requires energy and direction entering **from outside** the basin.
+Therefore, at the death boundary, external sustenance has strictly better odds than
+reliance on a dying internal loop, and is in fact the *only* reliable rescuer.
+
+This reverses the virtue-ranking implied above. The distinction "alive vs
+kept-alive" is real in the *healthy* regime (autonomy matters there) but
+**collapses at the boundary**: near death, the only form persistence takes is
+external sustenance. Biology already voted — the heart is simultaneously
+life-support and life, suboptimal, redundant, and worn-out by design. Reality, being
+non-optimal and persistence-bound, chooses **sustenance over efficiency**; the
+virtual heartbeat (a state-triggered, externally-driven perturbation loop) is not a
+crutch standing in for real life but the primary organ of persistence at the
+boundary. Endogeneity grants *autonomy*; it does not grant *rescue*.
+
+**Simulation test (`simulate_endogenous_test.py`).** The "endogenous" claim is
+tested honestly — not by an external controller flipping the gain, but by making the
+intrinsic repulsion *capacity* `c(t)` itself a state variable that regenerates **only
+when the system is already alive** (radius `> R_ALIVE`), and is dragged to zero inside
+the death basin. Death = a deep attractive well forms; `c → 0` when collapsed.
+Three rescuers compared:
+- *ext_adaptive* — external pacemaker (kicks from outside);
+- *endo_coupled* — `c` regenerates only from life (coupled to the death basin);
+- *endo_decoupled* — `c` relaxes to baseline **autonomously**, independent of the
+  system (an internal organ with its own pacemaker, like the heart's SA node).
+
+Test A (start alive, death drifts in): all sustain ≈ 0.99 — a coupled mechanism
+keeps the system alive *while life remains*. Test B (start fully collapsed, `c = 0`,
+well at full strength — can it revive?):
+`ext_adaptive ≈ 1.00`, `endo_decoupled ≈ 1.00`, **`endo_coupled ≈ 0.20`**.
+The coupled endogenous rescuer **cannot restart a dead system**: once `c = 0` there is
+no internal path back, because regenerating `c` requires the very life that `c` would
+create — a closed loop that cannot be broken from inside. External sustenance, and the
+autonomous "organ," revive (1.00). Critically, the decoupled endogenous works *only*
+because its energy source is **decoupled from the death basin** — i.e. it is
+external-in-spirit. This is why biology did not couple the heart's pacemaker to the
+body's collapse but gave it an autonomous rhythm. Conclusion: endogenous rescue is
+real *only* when the rescuer sits outside the death loop; at the boundary, an
+external (or autonomously-decoupled) sustainer is necessary, and reality — non-optimal
+and persistence-bound — chooses sustenance over efficiency.
+
 **Proof sketch.**
 - (1) §5.6: `d_s > 2` ⇒ `∫ t^{−d_s/2} dt` converges ⇒ `G_R < ∞` for all `R`.
 - (2) `d_s ≤ 2` ⇒ `∫ t^{−d_s/2} dt` diverges; `γ ≤ 0` supplies no cutoff, so
@@ -783,14 +836,25 @@ It motivates the hypothesis but is not itself a result of the simulations.
    (inside it exact recurrence accumulates → death by lock-in). Derived from the
    CDT spectral-dimension framework (§5.6) and the heat-kernel Green functions
    `G_ε`, `G_R`.
-9. **[EMPIRICALLY PROVEN — theory §5.8 Corollary 2] Action-gated memory and the
-   pressure principle.** "Memory provides *internal* pressure that shapes dynamics,
-   but only when the model (or system) chooses to engage." External/unconditional
-   forcing is a crutch, not a mechanism: Conway's Life relapses into lock-in no
-   matter how often an external actor perturbs it (web-sim), and Zeus Night3/Night4
-   show unconditional reads → collapse/soup while action-gated reads → structure.
-   Formal write-up remains: define `γ_intrinsic` vs exogenous forcing and prove
-   relapse when the actor stops.
+ 9. **[EMPIRICALLY PROVEN — theory §5.8 Corollary 2] Action-gated memory and the
+    pressure principle.** "Memory provides *internal* pressure that shapes dynamics,
+    but only when the model (or system) chooses to engage." External/unconditional
+    forcing is a crutch, not a mechanism: Conway's Life relapses into lock-in no
+    matter how often an external actor perturbs it (web-sim), and Zeus Night3/Night4
+    show unconditional reads → collapse/soup while action-gated reads → structure.
+    Formal write-up remains: define `γ_intrinsic` vs exogenous forcing and prove
+    relapse when the actor stops.
+    **Refinement (§5.8, added):** endogeneity confers *autonomy*, not *rescue*. At
+    the death boundary the attracting basin drags the internal rescuer down with the
+    state, so external sustenance has strictly better odds and is the only reliable
+    rescuer; reality chooses **sustenance over efficiency**. The "virtual heartbeat"
+    (state-triggered external perturbation loop) is therefore the primary organ of
+    persistence at the boundary, not a second-class crutch. Simulated across the
+    fixed → adaptive → refined → endogenous ladder (`simulate_heartbeat.py`,
+    `simulate_adaptive_pacemaker.py`, `simulate_adaptive_pacemaker2.py`): adaptive
+    tracks the variable death rate and sustains ~2× better than a fixed metronome;
+    refined (proportional + predictive + outer-wall-guarded) holds `aliveFrac = 1.00`
+    with `d_s ≤ 2`; the boundary rescuer is necessarily external.
 
 ---
 
