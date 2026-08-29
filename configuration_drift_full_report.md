@@ -411,6 +411,14 @@ Two deliberately disrespectable substrates.
 3. **Rescue caveat discovered:** the mutation dose *sustains* large worlds but
    *sterilizes* small ones — perturbation can destroy the last surviving
    dynamic structures. Rescue protocols must be size-aware.
+4. **Life/Death theorem anchor (theory §5.8):** Life's rule carries no
+   self-repulsion (`γ = 0`; dissipation = implicit attraction, `γ < 0`), so the
+   theorem predicts collapse into exact recurrence. The dominant outcome is
+   period-2 lock-in (oscillators = "two distinct states"), after which the grid
+   is perturbation-resistant — *death by lock-in*, case (2). This was confirmed
+   by an independent web simulation: random soup → churn → frozen period-2
+   oscillators, no perturbation revives it. Rare gliders are the transient
+   (alive-looking) exception, not the rule.
 
 **Digits of π vs 1/7 vs true RNG** — determinism with no dynamics:
 | source | w=2 | w=3 | w=4 | ν (6-D windows) |
@@ -628,7 +636,7 @@ maintains continuity while exploring). Evidence across every domain:
 | Civilizations | Perfect repetition → stagnation | Cultural rhyme → sustained structure |
 | Drawing | Microscopic tracing (copying) | Perceived-level rhythm (rhyming) |
 | Zeus | Unconditional HCM reads → collapse | Action-gated memory → structure |
-| Conway's Life | Spontaneous period-2 lock-in | Mutation sustains dynamics |
+| Conway's Life | γ=0 (no repulsion) → death by lock-in: period-2 oscillators (§5.8) | Mutation adds repulsion → sustains dynamics |
 
 **Verdict:** CDT's prediction for memory is validated in sim. The architecture
 is ready for port to the full model (d=768), where ν and w can be computed from

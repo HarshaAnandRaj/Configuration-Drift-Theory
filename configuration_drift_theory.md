@@ -506,7 +506,14 @@ of case (2) vs (3).
   `emergent_walk.py` (§3.4) shows exact site recurrence collapses under `γ > 0`
   while rhyme stays high; the full model's memory collapse (Night4:
   unconditional reads → exact re-entry) and recovery (Night6: action-gated coarse
-  recall) are the same mechanism at `d = 768`.
+  recall) are the same mechanism at `d = 768`. **Conway's Game of Life** is a
+  `γ = 0` (dissipative — entropy-grinding acts as implicit attraction) rule, so
+  case (2) predicts collapse into exact recurrence; the dominant outcome is
+  spontaneous period-2 lock-in (oscillators = "two distinct states"), after which
+  the grid is perturbation-resistant — *death by lock-in*. This was confirmed by
+  `absurd.py` (§3.13) and independently by a web simulation (random soup →
+  churn → frozen period-2 oscillators, no perturbation revives it). Rare gliders
+  are the transient (alive-looking) exception, not the rule.
 
 **Connection to consolidation.** When the bare manifold has `d_s > 2`
 (high-dimensional configuration, e.g. the full model `d = 768`), life cannot be
@@ -855,7 +862,7 @@ Evidence across every domain:
 | Civilizations | Perfect repetition → stagnation and death | Cultural rhyme → sustained structure |
 | Drawing | Microscopic tracing (copying) | Perceived-level rhythm (rhyming) |
 | Zeus (Night3) | Unconditional HCM reads → collapse (132.55) | Action-gated memory → structure |
-| Conway's Life | Spontaneous period-2 lock-in → frozen | Mutation sustains dynamic structures |
+| Conway's Life | γ=0 (no repulsion) → death by lock-in: period-2 oscillators (§5.8) | Mutation adds repulsion → sustains dynamic structures |
 
 Self-repulsion — the walk that avoids revisiting itself — is the **mechanism
 that keeps systems alive.** It prevents exact recurrence. It forces rhyme. It
@@ -906,7 +913,7 @@ governed by the same ν vs w phase boundary:
 5. **English prose** — structure vs content separation
 6. **SGD** — optimization trajectory drift
 7. **Celestial mechanics** — ν classifies regular vs chaotic orbits
-8. **Conway's Life** — spontaneous lock-in (gliders = self-sustaining transience)
+8. **Conway's Life** — spontaneous period-2 lock-in: a γ=0 (dissipative) rule, so per the Life/Death theorem (§5.8) it must die by lock-in; gliders are the rare transient (alive-looking) phase. Independent web-sim observation matches.
 9. **π** — maximally transient (confirmed)
 10. **Conversation transcripts** — self-referential test passed
 11. **Civilizational drift** — G·ε > δ condition validated
