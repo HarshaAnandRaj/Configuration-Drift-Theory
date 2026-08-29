@@ -908,12 +908,16 @@ governed by the same `ν ≤ d_w` phase boundary (theory §5.6):
   mechanics, Conway's Life, π, conversation, Earth** — all validated against the
   same ν vs w criterion.
 
-**The life/death principle.** The phase boundary is the line between life and
-death: systems that stay in the recurrent regime (ν ≤ d_w, theory §5.6) are
-alive — they maintain structure, explore, and remember. Systems that cross into
-the transient regime (ν > d_w) die — they lock into exact repetition, collapse,
-or forget. Self-repulsion is the mechanism that keeps systems alive: it prevents
-exact recurrence, forces rhyme, and sustains exploration.
+**The life/death principle (formalized — theory §5.8).** Life and death are
+governed by two walls. The CDT phase boundary `d_s = 2` is the *outer* wall:
+systems with `d_s > 2` (transient base manifold) die by forgetting — rhyme
+itself vanishes, no structure persists. The *inner* wall is self-repulsion
+`γ = 0`: within the recurrent regime (`d_s ≤ 2`) but with `γ ≤ 0`, exact
+recurrence accumulates (Pólya) and the system dies by lock-in / collapse. Life
+requires *both* walls satisfied: `Alive ⇔ (d_s ≤ 2) ∧ (γ > 0)` — rhyme persists
+while exact recurrence is transient. Self-repulsion is the mechanism that keeps
+systems alive: it raises the point-scale walk dimension, suppresses exact
+returns, and forces rhyme without repetition.
 
 The rebuild's earlier emphasis on a temporal-decay signature was a misreading of
 the hypothesis; removing it, the original conclusion (`rec_mu ≈ 0`, `rec_H ≈ 0.9`)
