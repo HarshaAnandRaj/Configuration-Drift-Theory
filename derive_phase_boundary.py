@@ -1,22 +1,25 @@
-"""Verify the CDT phase boundary: recurrent iff spectral dimension d_s <= 2.
+"""Demonstrate the spectral boundary and a trajectory-dimension failure mode.
 
 Theory (Barlow-Bass / Kumagai): a diffusion on a d_f-dimensional fractal with
 walk dimension d_w has spectral dimension d_s = 2 d_f / d_w. The process is
 recurrent iff d_s <= 2.
 
-Since the correlation dimension nu approximates the fractal dimension d_f, and
-the MSD scaling <r^2(t)> ~ t^{2/d_w} defines d_w, the criterion becomes:
+When the substrate volume dimension d_f is independently identified and the
+required heat-kernel assumptions hold, the criterion becomes:
 
-    recurrent  <=>  nu <= d_w   <=>   nu <= 2/beta   (beta = MSD exponent)
+    recurrent  <=>  d_f <= d_w   <=>   d_f <= 2/beta
 
-This script verifies the criterion on:
+The first block deliberately estimates a correlation slope from the visited
+trajectory cloud. That quantity need not equal d_f and in this script it
+misclassifies BM d=3, BM d=4, and fBm H=0.7. It is a negative control, not a
+verification. The second block inserts the known substrate dimension and checks
+the analytic criterion on:
   1. Standard Brownian motion in d=1,2,3,4  (d_w = 2, expects recurrent iff d<=2)
   2. Fractional Brownian motion (anomalous) in d=2 with H=0.3 and H=0.7
-     - H=0.3 -> superdiffusive, d_w = 1/H = 3.33 -> d=2 manifold RECURRENT
-     - H=0.7 -> subdiffusive,  d_w = 1/H = 1.43 -> d=2 manifold TRANSIENT
+     - H=0.3 -> subdiffusive,   d_w = 1/H = 3.33 -> d=2 manifold RECURRENT
+     - H=0.7 -> superdiffusive, d_w = 1/H = 1.43 -> d=2 manifold TRANSIENT
 
-It also reports nu (correlation dimension) and beta (MSD exponent) so the
-criterion can be checked numerically, not just asserted.
+See configuration_drift_theorem.md Sections 4 and 11.
 """
 
 import numpy as np
@@ -115,27 +118,26 @@ def evaluate(name, traj, expected):
     d_w = 2.0 / beta if beta > 0 else np.nan
     d_s = 2 * nu / d_w if d_w and beta > 0 else np.nan
     recurrent_pred = (d_s <= 2.0) if not np.isnan(d_s) else None
-    print(f"  {name:22s} nu={nu:5.2f}  beta={beta:4.2f}  d_w={d_w:5.2f}  "
-          f"d_s={d_s:5.2f}  pred_recurrent={recurrent_pred}  expected={expected}")
+    print(f"  {name:22s} cloud_nu={nu:5.2f}  beta={beta:4.2f}  d_w={d_w:5.2f}  "
+          f"plug-in d_s={d_s:5.2f}  raw_pred={recurrent_pred}  expected={expected}")
     return d_s, recurrent_pred, expected
 
 
-print("=== Standard Brownian motion (d_w = 2, recurrent iff d <= 2) ===")
+print("=== NEGATIVE CONTROL: trajectory-cloud nu is not substrate d_f ===")
 for d in [1, 2, 3, 4]:
     traj = simulate_bm(d, steps=20000, seed=42 + d)
     evaluate(f"BM d={d}", traj, d <= 2)
 
-print("\n=== Fractional Brownian motion in d=2 (anomalous diffusion) ===")
-# H=0.3 -> superdiffusive -> d_w = 1/0.3 = 3.33 -> d=2 RECURRENT
+print("\n=== NEGATIVE CONTROL: same plug-in on fractional Brownian paths ===")
+# H=0.3 -> subdiffusive -> d_w = 1/0.3 = 3.33 -> d=2 RECURRENT
 traj = simulate_fbm(2, H=0.3, steps=6000, seed=7)
 evaluate("fBm d=2 H=0.3", traj, True)
-# H=0.7 -> subdiffusive -> d_w = 1/0.7 = 1.43 -> d=2 TRANSIENT
+# H=0.7 -> superdiffusive -> d_w = 1/0.7 = 1.43 -> d=2 TRANSIENT
 traj = simulate_fbm(2, H=0.7, steps=6000, seed=9)
 evaluate("fBm d=2 H=0.7", traj, False)
 
-print("\n=== Ground-truth check (using KNOWN manifold dim nu=d, not the biased estimate) ===")
-print("This isolates the criterion from the correlation-dimension estimator's")
-print("finite-sample bias (documented in the CDT report).")
+print("\n=== VALID MODEL CHECK: use independently known substrate d_f=d ===")
+print("This checks the heat-kernel criterion without substituting path-cloud dimension.")
 def ground_truth(name, true_nu, beta, expected):
     d_w = 2.0 / beta
     d_s = 2 * true_nu / d_w
@@ -145,7 +147,8 @@ def ground_truth(name, true_nu, beta, expected):
 
 for d in [1, 2, 3, 4]:
     ground_truth(f"BM d={d} (nu={d})", d, 1.0, d <= 2)
-ground_truth("fBm d=2 H=0.3 (nu=2)", 2, 0.62, True)   # superdiffusive
-ground_truth("fBm d=2 H=0.7 (nu=2)", 2, 1.35, False)  # subdiffusive
+ground_truth("fBm d=2 H=0.3 (nu=2)", 2, 0.62, True)   # subdiffusive
+ground_truth("fBm d=2 H=0.7 (nu=2)", 2, 1.35, False)  # superdiffusive
 
-print("\nCriterion: recurrent iff d_s <= 2  (equiv. nu <= d_w = 2/beta)")
+print("\nConditional criterion: recurrent iff d_s <= 2, equivalently d_f <= d_w,")
+print("under the two-sided heat-kernel hypotheses in configuration_drift_theorem.md.")

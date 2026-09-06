@@ -67,6 +67,39 @@ def nu_local(X, c_band=(0.02, 0.45)):
     return float(np.median(slope[mask]))
 
 
+def nu_local_ci(X, B=12, seed=0):
+    """Half-sample bootstrap CI for the local-slope estimator.
+
+    Subsamples N/2 points without replacement B times (no duplication, so the
+    correlation sum stays unbiased), recomputes nu_local, returns
+    (est, lo, hi) with lo/hi the 5th/95th percentiles. Wide CI => the
+    exact/rhyme verdict at this N is not to be trusted.
+    """
+    rng = np.random.default_rng(seed)
+    X = np.asarray(X)
+    N = len(X)
+    est = nu_local(X)
+    boots = []
+    for _ in range(B):
+        sub = rng.choice(N, N // 2, replace=False)
+        try:
+            boots.append(nu_local(X[sub]))
+        except Exception:
+            continue
+    if not boots:
+        return est, est, est
+    return est, float(np.quantile(boots, 0.05)), float(np.quantile(boots, 0.95))
+
+
+def n_floor(nu_hat):
+    """Minimum N for a trustworthy nu estimate: ~100 * 10**(nu/2).
+
+    Calibrated to the finite-N table below (d=4 needs ~10k, d=2 needs ~1k).
+    Below the floor the CDT classification is UNDECIDABLE, not transient.
+    """
+    return int(100 * 10 ** (float(nu_hat) / 2))
+
+
 def _cloud(d, N, seed):
     return np.random.default_rng(seed).standard_normal((N, d))
 
@@ -82,7 +115,8 @@ def report(d, N=6000):
 
 if __name__ == "__main__":
     print("=== Bias-corrected correlation-dimension estimator (N=6000 i.i.d. Gauss) ===")
-    print("True dimension d; nu estimated two ways. Recurrent iff nu <= 2.\n")
+    print("True dimension d; nu estimated two ways. Recurrent iff nu <= d_w = 2")
+    print("(Brownian explorer; measure d_w = 2/beta for non-Brownian processes).\n")
     for d in [1, 2, 3, 4, 5]:
         report(d)
 
@@ -92,6 +126,21 @@ if __name__ == "__main__":
         X = _cloud(4, N, seed=99)
         print(f"  {N:<7} {nu_naive(X):5.2f}  {nu_local(X):5.2f}")
 
+    print("\n=== Uncertainty + sample-size floors (d=4, true=4.0) ===")
+    X = _cloud(4, 6000, seed=99)
+    est, lo, hi = nu_local_ci(X)
+    fl = n_floor(hi)  # conservative: floor evaluated at upper CI bound
+    print(f"  N=6000: local={est:.2f}  CI=[{lo:.2f},{hi:.2f}]  floor={fl}  "
+          f"-> {'OK' if 6000 >= fl else 'UNDECIDABLE'}")
+    for N in [1500, 3000]:
+        X = _cloud(4, N, seed=99)
+        e = nu_local(X)
+        fl = n_floor(e)
+        print(f"  N={N:<5}: local={e:.2f}  floor={fl:<6} "
+              f"-> {'OK' if N >= fl else 'UNDECIDABLE (below floor)'}")
+
     print("\nThe report's 2.95 (d=4) was the N~1500 regime. With a proper band and")
     print("moderate N, nu is recovered to <0.3, so CDT classification needs no")
     print("known manifold dimension -- only a point cloud and the scaling band.")
+    print("Rule: N >= 100*10**(nu/2) evaluated at the UPPER CI bound, else the")
+    print("verdict is UNDECIDABLE (report the CI, do not classify).")

@@ -1,16 +1,17 @@
 """
-Direct validation of the CDT recurrence criterion via the SPECTRAL DIMENSION.
+Model check of the conditional spectral-dimension recurrence criterion.
 
-Theorem (theory sec 5.6): a diffusion on a d_f-dimensional fractal with walk
-dimension d_w is recurrent iff the spectral dimension
+Under the two-sided heat-kernel assumptions in configuration_drift_theorem.md,
+a symmetric irreducible diffusion with volume dimension d_f and walk dimension
+d_w is recurrent iff the spectral dimension
 
         d_s = 2 d_f / d_w <= 2
 
 i.e. the integral int p_t(x,x) dt of the on-diagonal heat kernel diverges iff
 d_s <= 2. Equivalently p_t(x,x) ~ t^{-d_s/2}.
 
-This script estimates d_s DIRECTLY from simulated return probabilities, without
-the intermediate (bias-prone) correlation-dimension estimator. We measure the
+For Brownian motion this script estimates d_s directly from simulated return
+probabilities, without a trajectory-cloud dimension substitution. We measure the
 fraction of independent walks that return within a small radius eps of the
 origin at time t; for fixed eps this scales as t^{-d_s/2}, so
 
@@ -18,11 +19,13 @@ origin at time t; for fixed eps this scales as t^{-d_s/2}, so
 
 Cases (true d_s known analytically):
   BM  d=1,2,3,4        d_s = d             (standard diffusion, d_w = 2)
-  fBm d=2 H=0.3        d_s = 2 d H = 1.2   (superdiffusive -> recurrent)
-  fBm d=2 H=0.7        d_s = 2 d H = 2.8   (subdiffusive  -> transient)
+  fBm d=2 H=0.3        d_s = 2 d H = 1.2   (subdiffusive   -> recurrent)
+  fBm d=2 H=0.7        d_s = 2 d H = 2.8   (superdiffusive -> transient)
 
-Recurrence flips exactly at d_s = 2. This is the cleanest empirical test of
-the derived phase boundary.
+For fractional Brownian motion the script instead plugs an MSD estimate into
+the known model formula; that block is not a direct heat-kernel estimate and
+fBm is non-Markov for H != 1/2. These checks validate implementations for known
+model families, not a universal inference rule for arbitrary trajectories.
 """
 
 import numpy as np
@@ -87,8 +90,8 @@ if __name__ == "__main__":
     N_WALKS = 60000
     STEPS = 80
 
-    print(f"=== Direct spectral-dimension test (N={N_WALKS} walks, steps={STEPS}) ===")
-    print("Criterion: recurrent iff d_s <= 2  (measured straight from heat-kernel scaling)\n")
+    print(f"=== Conditional spectral-dimension model check (N={N_WALKS}, steps={STEPS}) ===")
+    print("Use only under the assumptions in configuration_drift_theorem.md.\n")
 
     print("[ Brownian motion: d_s = d ]")
     for d in [1, 2, 3, 4]:
@@ -114,4 +117,4 @@ if __name__ == "__main__":
         print(f"  {ok}fBm d=2 H={H:<3} beta={beta:.3f} d_w={d_w:.2f} "
               f"d_s(meas)={d_s:4.2f}  pred={pred}  expected={expected}")
 
-    print("\nRecurrence boundary crossed at d_s = 2 in every case.")
+    print("\nKnown model answers match the conditional d_s boundary in every case.")

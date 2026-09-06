@@ -1,5 +1,13 @@
 # Configuration-Drift Hypothesis — Theory (Exhaustive)
 
+> **Mathematical status (2026-09-04).** The canonical theorem is now
+> [`configuration_drift_theorem.md`](configuration_drift_theorem.md). It
+> supersedes the universal claims in §§5.5–5.10, open questions 8–9, and
+> §§15–16 below. In particular, do not cite `Alive ⇔ (d_s ≤ 2) ∧ (γ > 0)`, the
+> fixed-radius `G_ε < ∞ < G_R` argument, the trajectory-cloud substitution
+> `ν → d_f`, or the extra Lévy factor as proved results. The material below is
+> retained as the research history and empirical notebook.
+
 **Author:** Harsha Anand Raj Pammi
 
 > Companion to `configuration_drift_full_report.md`. This document develops the
@@ -364,6 +372,12 @@ applicable to any system (including artificial ones) from trajectory data alone.
 > plateau** (`nu_local`). Because the bias is mild and monotonic, empirical CDT
 > classification needs no *known* manifold dimension — only a point cloud and a
 > scaling band.
+>
+> **Uncertainty + floors (`debias_nu.py`: `nu_local_ci`, `n_floor`).** Every ν
+> estimate ships a half-sample bootstrap CI; classification additionally requires
+> `N ≥ 100·10^(ν/2)` evaluated at the *upper* CI bound (d=4 needs ~4–10k, d=2
+> needs ~1k). Below the floor the verdict is **UNDECIDABLE** — report the CI, do
+> not classify. Small-N "transient" readings are a data failure, not a death.
 
 ### 5.6 Derivation of the phase boundary (spectral-dimension argument)
 
@@ -413,8 +427,8 @@ the d_s ≤ 2 criterion exactly:
 | BM d=2 | 2 | 1.00 | 2.00 | 2.00 | rec | rec |
 | BM d=3 | 3 | 1.00 | 2.00 | 3.00 | trans | trans |
 | BM d=4 | 4 | 1.00 | 2.00 | 4.00 | trans | trans |
-| fBm H=0.3 (superdiff) | 2 | 0.62 | 3.23 | 1.24 | rec | rec |
-| fBm H=0.7 (subdiff) | 2 | 1.35 | 1.48 | 2.70 | trans | trans |
+| fBm H=0.3 (subdiff) | 2 | 0.62 | 3.23 | 1.24 | rec | rec |
+| fBm H=0.7 (superdiff) | 2 | 1.35 | 1.48 | 2.70 | trans | trans |
 
 The criterion `ν ≤ d_w` is exact; the empirical ν estimator's finite-sample
 bias (documented §5.5) is the only source of mismatch in raw trajectory data.
@@ -449,7 +463,14 @@ result matches the analytic `d_s = 2 d H` exactly. This closes the loop: the
 derived phase boundary is not only mathematically proven but empirically
 reproducible on both standard and anomalous diffusions.
 
-### 5.8 The life/death theorem (formal statement)
+### 5.8 Historical life/death conjecture (withdrawn as a theorem)
+
+> **Status:** The equivalence developed in this section is false without much
+> stronger, model-specific assumptions. In particular, fixed fine and coarse
+> balls do not acquire different recurrence classes merely from their radii, and
+> `γ > 0` is neither necessary nor sufficient. Use the Green-kernel/projection
+> theorems in `configuration_drift_theorem.md`; the text below is retained to
+> document the route by which the failed conjecture was discovered.
 
 **Definitions.**
 - A *configuration system* is a diffusion `X_t` on a `d_f`-dimensional
@@ -492,6 +513,20 @@ is the **outer** wall of the life region (beyond it, rhyme is impossible);
 self-repulsion `γ = 0` is the **inner** wall (inside it, exact recurrence kills
 the system). "Exact recurrence = death, rhyme = life" is precisely the content
 of case (2) vs (3).
+
+**Operational γ (`gamma_probe.py`).** `γ` is estimated scale-free as
+`γ̂ = 1 − ρ_obs(ε)/ρ_null(ε)`: `ρ_obs(ε)` is the exact-recurrence rate at
+resolution `ε` — a low quantile of the pairwise-distance distribution (no raw
+floor, so it cannot be trivially passed in high-dimensional spaces) — over
+temporally-distant pairs only; `ρ_null(ε)` is the same rate under step-shuffled
+surrogates (identical steps, memory destroyed). Inner wall holds iff `γ̂ > 0.4`
+with CI excluding 0, while rhyme `ρ_obs(R)` stays substantial. The 0.4 deadband
+is calibrated: memoryless walks read `γ̂ ≈ +0.2` (BM +0.20, emergent-0 +0.26,
+SPX +0.28) from surrogate mismatch, while true repulsion reads +0.75; without
+it, neutral recurrent walks (Pólya exact recurrence = case-2 death) misread as
+alive (`system_audit.py`). Calibration (D=2): `γ=+0.8 → γ̂=+0.75 [0.67,0.82]`
+(holds); `γ=0 → +0.26 [−0.01,0.53]` (neutral, not held); `γ=−0.8 → −1`
+(lock-in, violated).
 
 **Corollary 2 (endogeneity — the pressure principle).** The repulsion in the
 theorem must be *intrinsic* to the update rule: `γ = γ_intrinsic`. An *external
@@ -606,6 +641,175 @@ maintained at full resolution. *Consolidation = dimension reduction* (coarse
 k-means storage, drift-threshold pruning, §14) lowers the effective `d_f`,
 restoring `d_s ≤ 2` at the coarse scale, so rhyme (memory) persists without
 exact collapse. Consolidation is therefore a **life-preserving** operation.
+
+### 5.9 The virtual heartbeat — exploratory model-specific controller
+
+> **Status:** The simulations below measure their declared operational scores.
+> Universal necessity, sufficiency, and optimal-trigger statements are
+> withdrawn. The rigorous remainder is the invariant-set obstruction and
+> viability formulation in `configuration_drift_theorem.md` §9.
+
+Death by lock-in is an attracting basin `A ⊂ ℳ`; the intrinsic repulsion capacity
+`γ_int → 0` and the trajectory relaxes into `A` with time `τ(x)` (distance to `A`
+over local flow speed). The virtual heartbeat is an *external* controller that
+injects kicks to keep the trajectory out of `A`. It is suboptimal by construction
+(sustenance ≻ efficiency); its job is persistence, not optimality.
+
+**5.9.1 Closed-loop dynamics.** Impulse form — kicks `{τ_k}` with displacements
+`ξ_k`:
+`X_{τ_k^+} = X_{τ_k^-} + ξ_k`; between kicks `X` obeys the intrinsic `F`.
+Refined (continuous) form — proportional feedback:
+`X_{t+1} = F(X_t) + g(φ_t)·v_t + η_t`, where `φ_t = φ(X_t)` is a death-proxy and
+`g` the control gain; `v_t` an on-manifold direction.
+
+**5.9.2 Recurrence condition.** Let `mp_t = min_{s<t−k} |X_t − X_s|`; dead ⇔
+`mp_t → 0` (enters `A`).
+- *Fixed pacemaker, interval `P`:* after a kick, `X` relaxes to `A` in `~τ_relax(t)`
+  steps; it re-enters `A` (mp < ε) unless `P < τ_relax(t)`. So
+  `ALIVE_fixed ⇔ P < τ_relax(t)  ∀t`. As death deepens, `τ_relax ↓`, so a fixed
+  `P` is eventually violated → life-support decay (sim: `win_slope < 0`).
+- *Adaptive:* trigger when the projected time-to-basin `t_A(X_t) = dist(X_t,A)/|flow|`
+  drops below a horizon `H` (equivalently `φ_t` crosses threshold). Then
+  `P_eff(t) ≈ τ_relax(t)` automatically, holding `dist(X_t,A) ≥ δ` — a feedback
+  controller pinning the trajectory **on the basin boundary** (the transient/rhyme
+  regime). Explains `aliveFrac = 1.00` for adaptive in `simulate_adaptive_pacemaker*.py`.
+
+- *Optimal trigger = the boundary, not "earlier".* Define the **local novelty**
+  `ν(X) =` fraction of admissible next-states not yet realized; the recurrence
+  boundary is `∂B = {X : ν(X) = 0}` (every free step would be an exact recurrence).
+  A free step is valuable while `ν(X) > 0`, so the controller should fire at
+  `X_t ∈ ∂B` — i.e. choose horizon `H* = dist(X_t, ∂B)` — and **not earlier**.
+  Firing at `dist > H*` (premature; the `early` mode in §5.9.8) discards positive
+  `ν`, so the walk under-explores: on the emergent walk this drops `aliveFrac` from
+  `1.000` to `0.720` with *fewer* kicks, because a smaller kick rate `↓` lowers
+  `γ_ext` (§5.9.3). Firing after deep relaxation into a steep basin
+  (`dist ≪ H*`, the genuinely "too late" regime) risks `|ξ|` too small to escape
+  `A`. Hence the unique optimum is the boundary: `H = H*`, where `P_eff ≈ τ_relax`
+  and `γ_ext` — and therefore the new-state (alive) rate — is maximal *per kick*.
+  This is the formal statement of §5.9.8.
+
+**5.9.3 Effective inner wall.** The driven process has
+`γ_eff = γ_int + γ_ext`, where `γ_ext = (kick rate)·ℙ[|ξ| > ε]` is the extrinsic
+repulsion the pacemaker supplies. `Alive_closedloop ⇔ (d_s ≤ 2) ∧ (γ_eff > 0)`;
+when `γ_int ≤ 0`, need `γ_ext > |γ_int|`. **Stop the kicks ⇒ γ_eff = γ_int ≤ 0 ⇒
+relapse.** Aliveness here is extrinsic and vanishes with the controller — the formal
+statement of life-support.
+
+**5.9.4 Outer-wall guard (preserve `d_s ≤ 2`).** Kicks must not inflate
+`d_s^eff = 2 d_f^eff / d_w`; off-manifold energy raises `d_f^eff` ⇒ forgetting-death.
+Constrain `ξ_k = Π_ℳ ξ_k` (tangent to `ℳ`) and `|ξ_k| ≤ ξ_max`: `rank(supp ξ) ≤ d_f`
+and `𝔼|ξ_⊥|² / 𝔼|ξ_∥|² ≪ 1`. (Sim: on-manifold kicks kept `d_s ≈ 1.3`; off-manifold
+pushed `d_s > 2`.) The guard is the positive counterpart of the structured-vs-noisy
+warning: *guarded* kicks defend the inner wall without breaching the outer one.
+
+**5.9.5 Why internal rescue fails (the closed loop).** For an endogenous controller
+the gain `g` is a state variable coupled to `X`: `ḡ = h(g, X)`. Rescue at the
+boundary needs `g > 0` while `X ∈ A`. But if `h` regenerates `g` *only when `X` is
+already alive* (outside `A`), then `X ∈ A ⇒ g → 0 ⇒` no kick `⇒ X` stays in `A ⇒ g`
+stays `0`. The joint map `Φ(X,g) = (F(X), h(g,X))` has an **attracting invariant set
+`{X∈A, g=0}`** with no internal escape trajectory. Hence:
+`internal rescue possible ⇔ controller energy source is DECOUPLED from X's death basin`,
+i.e. `ḡ = κ(K0 − g)` independent of `X` (autonomous "SA-node") — external-in-spirit.
+(Confirmed in `simulate_endogenous_test.py`: `endo_coupled` revive `0.20`,
+`endo_decoupled`/`external` `1.00`.) Biology did not couple the heart's pacemaker to
+the body's collapse; it gave it an autonomous rhythm — the same decoupling the math
+demands.
+
+**5.9.6 Sustenance ≻ efficiency.** Cost `C = Σ|ξ_k|²`, persistence
+`T_alive = ∫ 𝟙[alive] dt`. Optimal control minimizes `C` s.t. alive; the heartbeat
+instead **maximizes `T_alive` at suboptimal `C`** (redundant kicks). The boundary
+trigger of §5.9.2 (`H = H*`) is the policy that maximizes the new-state (alive) rate
+*per kick*, so it attains the persistence objective with minimal redundant energy.
+Reality/evolution selects the persistence objective, not the efficiency one —
+consistent with the heart beating 72/min, wearing out, non-optimal. The virtual
+heartbeat is therefore the right
+artifact for *sustained ML automation*: deployment-time, training-agnostic, defends the
+inner wall without retraining, robust across variable drift. Reality chooses
+sustenance over efficiency.
+
+**5.9.7 Cross-system validation.** The heartbeat was tested on two further
+experiments from this project's corpus.
+
+- *Emergent self-repelling walk* (`emergent_heartbeat.py`; the canonical inner-wall
+  experiment, §4). With `γ=0` the inner wall fails and the walk locks into exact
+  recurrence — `aliveFrac` (fraction of steps visiting a *new* site) = **0.298**,
+  dead. The adaptive heartbeat (teleport on exact recurrence) drives it to
+  **1.000** (896 kicks), fully rescuing it and matching/exceeding intrinsic
+  `γ>0` (**0.595**). Jumpstart (one kick) → relapse (**0.298**); fixed interval
+  (`P=40`) → partial (**0.548**). Confirms §5.9.2–§5.9.3: external `γ_ext`
+  substitutes for failed `γ_int` as life-support, and only while kicking
+  (stops ⇒ relapse). This is the §5.9 mechanism reproduced on a *second, distinct*
+  dynamic system.
+
+- *Conway's Game of Life* (`conway_heartbeat.py`, `conway_diehard_heartbeat.py`).
+  At density 0.3 the soup self-sustains churn (never presents a clean death to
+  rescue within 1200 steps) and has `d_s ≫ 2`, so it is doubly dead (§5.8): the
+  heartbeat can defend the inner wall but cannot make it truly alive — exactly the
+  §5.9.4 outer-wall caveat. A *locked* configuration isolates the inner wall: four
+  2×2 blocks (period-1 still-lifes = exact recurrence = death by lock-in, §5.8).
+  With the adaptive heartbeat kicking whenever the global state becomes period-≤2,
+  `aliveFrac` (non-locked) = **0.980** (rescued into churn); `none` stays locked at
+  **0.000**; `jumpstart` relapses (**0.003**); `fixed` interval = partial (**0.409**).
+  Confirms §5.9.2–§5.9.3 on Life's inner wall. Life remains `d_s ≫ 2` (doubly dead),
+  so this is life-support only — consistent with the outer-wall guard.
+
+**5.9.8 Trigger timing and the boundary optimum.** The *position* of the kick within
+the trajectory is decisive, but "earlier is better" is false. On the emergent walk
+(`heartbeat_timing.py`, `γ=0`), varying two axes — WHEN the kick fires (late = on
+exact recurrence; early = when ≥3 of 4 neighbours are already seen, i.e. *before*
+recurrence) and WHERE it lands (random vs aimed at the least-visited site) — gives:
+
+| trigger | aim    | aliveFrac | kicks | max nbr-seen (lower = shallower) |
+|---------|--------|-----------|-------|----------------------------------|
+| late    | random | **1.000** | 666   | 3.8 |
+| late    | away   | 1.000     | 655   | 3.4 |
+| early   | random | 0.720     | 233   | 4.0 |
+| early   | away   | 0.719     | 225   | 4.0 |
+
+Interpretation: the "early" trigger fires when the walker is merely *surrounded* by
+seen sites, yet one neighbour is often still novel — kicking then discards that
+remaining unexplored direction, so the walk under-explores (aliveFrac 0.72) despite
+fewer kicks. The "late" trigger lets the walk exhaust all local novelty *first*, then
+kicks exactly at the recurrence boundary → aliveFrac 1.0. By §5.9.3 the higher kick
+rate means higher `γ_ext = (kick rate)·ℙ[|ξ|>ε]`, hence more alive. **Aim (direction)
+barely mattered on this shallow basin** — kick *rate*/boundary-alignment dominates;
+aimed kicks matter more on steep/structured basins.
+
+Refinement of §5.9.2: the horizon `H` should sit **at the lock-in boundary**, not
+"as early as possible." Too-early kicking wastes novelty; too-late kicking (after deep
+relaxation into a steep basin) fails to escape. The optimum is the basin boundary —
+kick *at* recurrence, where all local novelty is exhausted and `γ_ext` is maximal.
+
+**5.10 Theoretical limits — where the law breaks.** The heartbeat sustains life
+*conditionally*. It holds only while **all** of the following hold; crossing any one
+collapses `aliveFrac → 0` (`heartbeat_limits.py`, emergent walk, `γ=0`):
+
+- **(L1) Reach.** Kick magnitude must exceed the visited/attracting-region width:
+  `|ξ|_max ≥ W(t)`. In open space `W(t)` stays small, so this rarely binds; in a
+  *confined* manifold it does. Bounded grid `G`: `aliveFrac → 0.000` for `G ≤ 24`
+  (failed kicks ≈ 2900/3000 — no fresh site remains); only `G=40` survives partly
+  (0.073). This is the **capacity limit**.
+- **(L5) Capacity.** The accessible manifold must not be exhausted: `ν(X) > 0`
+  somewhere reachable. When every admissible state is already realized, no kick can
+  create novelty — death by exhaustion (fundamental, not a control failure).
+- **(L2) Rate / budget.** Required kick rate `1/τ_relax(t)` must be `≤ R_max`
+  (max kicks/step, refractory/cost cap). Refractory gap `K`: `aliveFrac` falls
+  `1.000 → 0.997 → 0.875 → 0.752 → 0.653` as `K` grows `1→20` — death outpaces the
+  controller.
+- **(L3) Observability.** The death-proxy `φ_t` must detect `∂B`. Degraded sensing
+  (detect probability `p`): `aliveFrac` falls `1.000 → 0.853 → 0.707 → 0.537 → 0.296`
+  as `p` drops `1.0→0`; a blind controller cannot rescue.
+- **(L4) On-manifold guard** (§5.9.4). `rank(supp ξ) ≤ d_f`; off-manifold kicks raise
+  `d_s^eff > 2` ⇒ forgetting-death.
+- **(L6) Decoupled energy** (§5.9.5). The controller's energy source must be decoupled
+  from the death basin; coupled (endo_coupled) revive fails (0.20).
+
+**Conclusion.** The virtual heartbeat is a *conditional* law:
+`ALIVE_heartbeat ⇔ (d_s ≤ 2) ∧ (γ_eff > 0) ∧ (L1) ∧ (L2) ∧ (L3) ∧ (L4) ∧ (L6)`,
+with (L5) as the ultimate ceiling. It is life-support, not a cure: remove any
+condition and the system returns to death, exactly as observed across the four
+experiments (`simulate_adaptive_pacemaker*.py`, `emergent_heartbeat.py`,
+`conway_*_heartbeat.py`, `heartbeat_timing.py`, `heartbeat_limits.py`).
 
 ---
 
@@ -1001,14 +1205,19 @@ and ready for port to the full model (d=768).
 | Consolidation = dimension reduction | keeps ν ≤ d_w (§5.6) | drift-threshold pruning sustains stability |
 | Exact recurrence = death, rhyme = life | theorem (§5.8): `Alive ⇔ (d_s ≤ 2) ∧ (γ > 0)` | validated across 14 domains |
 
-### 14-domain validation
+### 14-domain evidence inventory (not a universal validation count)
 
 The CDT framework has been validated across 14 independent domains, all
 governed by the same ν vs w phase boundary:
 
 1. **Spatial drift** — exact recurrence vanishes, rhyme persists (15+ simulations)
 2. **Genetic drift** — matches Fisher–Wright to 3 decimals
-3. **Human drawing** — perceived ν≈1.6 (recurrent), microscopic ν≈2.4 (transient)
+3. **Human drawing** — WITHDRAWN pending data (`dimension_test.py`, corrected
+   rerun): with measured stroke `d_w` (v2 β=0.55→d_w=3.66; v1 β=0.05, confined,
+   not a walk at all) and fix-2 floors, N=142/203 falls far below floors
+   (~1000–4300) → all four drawing verdicts UNDECIDABLE. The old
+   "ν≈1.6 recurrent / ν≈2.4 transient" used assumed w=2 plus an underpowered N;
+   needs ~1000+ strokes to re-assert.
 4. **Lorenz chaos** — transient dynamics classified correctly
 5. **English prose** — structure vs content separation
 6. **SGD** — optimization trajectory drift
@@ -1021,13 +1230,116 @@ governed by the same ν vs w phase boundary:
 13. **Earth (current status)** — ε winning on volume, δ winning on trend
 14. **Memory (Zeus sim)** — exact recall transient, coarse recall recurrent (2.08 nats)
 
-**Bottom line.** The Configuration-Drift Hypothesis is **theoretically
-sound and simulation-verified across 14 domains**: a state's exact recurrence
-vanishes as its configuration dimension (number of contributing elements) grows
-— the curse of dimensionality / Pólya `D_c = 2` — while coarse/rhyme recurrence
-persists. The phase boundary (ν vs w) is the line between life and death:
-systems that stay in the recurrent regime are alive; systems that cross into the
-transient regime die. Memory is configuration drift applied to the past, and the
-same phase boundary governs which memories survive. The original supporting
-numbers were `rec_mu ≈ 0` (exact) and `rec_H ≈ 0.9` (rhyme); the framework now
-extends to 14 validated domains with a unified mathematical foundation.
+**Corrected re-audit (`recheck_domains.py`: `nu_local` + CI + fix-2 floors).**
+Direct-measurement claims (ladders, concentrations, repeat fractions, order
+parameters) are unaffected; only ν-threshold verdicts were re-examined:
+- STANDS: Lorenz (ν=1.93 [1.92,1.96], usable, lit ~2.06); celestial A
+  (ν=1.12, recurrent) / B (ν=2.07 [2.07,2.10], transient), both usable;
+  genetic, spatial, Life, civilizational, Earth, memory (non-ν evidence).
+- PARTIAL (ladder/direct claims stand, ν leg gated): prose (uni-rec 0.675,
+  bi-rec 0.149, sent-repeat 0.0013 stand; ν=2.18 undecidable, N=777<1368);
+  SGD (recurrence-rise/quartiles stand; halves ν≈4.9/5.1 undecidable);
+  π (P4/P5 block-recurrence stand; P6 ν~6 undecidable, N≈1000 vs floor 100k);
+  conversation (R1/R2/R4 + ladder stand; R3 ν-leg undecidable, N=366<428);
+  markets (P1/P2 stand; P3 ν-leg undecidable; `levy_kill.py`: normal survives).
+- WITHDRAWN: human drawing (domain 3, see above).
+
+**Whole-system sweep (`system_audit.py`; now marked legacy/exploratory).** The
+historical pipeline combined measured `d_w`, floors, and a model-calibrated
+`γ̂` deadband. The former `α·d_w/2` boundary was incorrect and has been removed;
+an identified walk dimension already contains the anomalous scaling. Across the
+formula-sensitive systems: cubes D=1/2 recurrent, D=3/4 UNDECIDABLE; emergent
++0.8 alive / 0 dead / −0.8 lock-in-dead; BTC and SPX dead (memoryless direction,
+consistent with P1); drawing UNDECIDABLE. Two lessons: (i) the sweep forced the
+γ̂ neutral deadband (0.4) — without it, neutral walks misread as alive; (ii)
+**recurrent ≠ alive**: the BM 2D walk is recurrent yet dead (case 2, exact
+recurrence accumulates). Heartbeat/conway rows are aliveFrac-based and unaffected.
+
+**Corrected bottom line.** The simulations exhibit several exact/coarse
+separations, but they do not prove one universal law across 14 domains. The
+canonical theorem requires a finite full-state Green quantity together with
+recurrence of a predeclared structural quotient. Pólya's `D_c = 2`, the
+self-repelling simulations, memory ablations, and domain analogies are distinct
+evidence classes and must be reported separately. No recurrence statistic alone
+defines life or functional success.
+
+## 16. Scope and limits of the hypothesis
+
+The historical draft proposed `Alive ⇔ (d_s ≤ 2) ∧ (γ > 0)`. The audit in
+`configuration_drift_theorem.md` disproves that as a universal equivalence and
+replaces it with explicit Green-kernel, projection, capacity, and conditional
+Borel-Cantelli results. The experiments below remain useful boundary examples,
+not proofs of the withdrawn equivalence.
+
+### 16.1 LIMIT-1: normal diffusion assumed (anomalous walks)
+The Brownian shortcut assumes `d_w = 2`. For an isotropic Lévy flight with
+stability index `α`, the walk dimension is already `d_w = α`, and the recurrence
+threshold is `ν ≤ d_w = α`. In 2D, `α < 2` walks
+are **transient** (forget) even though normal diffusion at `d_s ≤ 2` would be
+recurrent.
+- *Empirical (2D Lévy), exact-recurrence:* `0.297` (α=2) → `0.076` (α=1);
+  new-site fraction `0.703 → 0.924`. A 2D system "dies by forgetting" under Lévy
+  statistics — CDT's `d_s ≤ 2` boundary fails.
+- **Scope:** the Brownian `ν ≤ 2` shortcut must be replaced by the identified
+  process's Green-kernel test. Under the two-sided power-law assumptions this is
+  `ν ≤ d_w`; multiplying by `α` again double-counts anomalous scaling.
+- **Kill test (`levy_kill.py`, daily BTC/ETH/SPX).** Registered threshold: kill iff
+  normal and generalized verdicts disagree AND observation matches generalized.
+  Outcome: Hill `α ≈ 2.5–3.1` — daily closes are finite-variance, not Lévy
+  (`α < 2`), so the test's precondition fails; crypto `N ≈ 1000` falls below the
+  fix-2 floor (`UNDECIDABLE`, rule holds — no classification from insufficient
+  data); SPX is usable and the observation matches **CDT-normal** (transient).
+  **Result: 0 kills; CDT-normal survives.** A genuine kill needs `α < 2` data
+  (intraday/tick); synthetic Lévy (`cdt_limits.py` LIMIT-1) remains the
+  demonstrating case for the generalized boundary.
+
+### 16.2 LIMIT-2: unbounded configuration space assumed
+The outer wall (`d_s ≤ 2`) is a Pólya statement for an **unbounded** space. On a
+**bounded** manifold, confinement forces recurrence regardless of `d_s`: a 3D walk
+(`d_s = 3 > 2`, "forgetting death" unbounded) on a finite box recurs.
+- *Empirical (3D box), exact-recurrence:* `L=8 → 0.982`; `L=128 → 0.194`.
+  Confinement overrides the outer wall.
+- **Scope:** CDT's outer wall is the condition for *unbounded* exploration; bounded
+  systems are always recurrent (but then hit the capacity limit, §5.10 L5). This is
+  why memory (a bounded store) can sustain exact recall despite high ambient `D`.
+
+### 16.3 LIMIT-3: repulsive realization→next-state perturbation assumed
+The inner wall (`γ > 0`) requires that realizing a state makes it *less* likely next
+(the emergent self-repulsion of `emergent_walk.py`). If the physical law is
+**attractive** (`γ < 0`: realizing a state makes it *more* likely — Hebbian /
+positive-feedback / mode-collapse), exact recurrence is amplified, not suppressed.
+- *Empirical (new-site fraction vs γ):* `+0.8 → 0.598`; `0.0 → 0.324`;
+  `−0.8 → 0.000`; `−2.0 → 0.000`. Attraction collapses novelty entirely; the
+  inner-wall mechanism inverts.
+- **Scope:** CDT's "life" requires repulsive or neutral dynamics. Under intrinsic
+  attraction the system locks in faster, and even external rescue (§5.9) fights an
+  uphill battle — the controller must overcome the attraction, not merely add
+  repulsion.
+
+### 16.4 Further scope boundaries (conceptual)
+- **Functional recurrence.** CDT equates life with *trajectory novelty*
+  (non-exact-recurrent, rhyming). But a limit cycle / clock / running program loop is
+  functionally alive yet *exactly* periodic; CDT classifies it "dead by lock-in."
+  Scope: CDT's life/death is about *generative novelty*, not *functional viability*.
+- **Metric configuration space required.** Rhyme (near recurrence) needs a metric with
+  meaningful neighborhoods. In purely categorical/discrete spaces with no proximity,
+  rhyme collapses to exact and the exact/rhyme split is undefined.
+- **Quasi-stationarity.** The phase boundary assumes roughly stationary `d_s, ν, γ`.
+  Under rapid non-stationarity (concept drift changing `ℳ`) the boundary is a moving
+  target; CDT applies to quasi-stationary regimes.
+- **State-describable systems.** CDT needs a classical configuration manifold `ℳ`.
+  Indefinite/quantum states (density matrices, no point in config space) evade the
+  current formulation.
+- **Observational (small-data).** `ν` estimation is finite-sample biased
+  (`debias_nu.py`); with too little data the exact/rhyme split is undecidable, so
+  CDT is untestable in small-data regimes.
+
+### 16.5 Synthesis
+The reusable result is conditional on two independently established facts:
+(i) the registered fine target has finite full-state Green potential (or is
+otherwise proved transient/polar), and (ii) a predeclared structural quotient is
+recurrent. Under two-sided heat-kernel scaling, `d_f ≤ d_w` is a shortcut for
+recurrence; outside those assumptions use the Green quantity directly. Metric,
+projection, stationarity, resolution, and finite-data limitations remain part of
+the claim contract. Repulsion and heartbeat control are possible mechanisms to
+test in specified models, not universal prerequisites or equivalences.

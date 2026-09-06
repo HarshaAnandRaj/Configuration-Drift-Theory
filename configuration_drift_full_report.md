@@ -1,5 +1,14 @@
 # Configuration-Drift Hypothesis — Report (corrected framing)
 
+> **Mathematical status (2026-09-04).** This is an empirical/research-history
+> report. Its theorem-level interpretations are superseded by
+> [`configuration_drift_theorem.md`](configuration_drift_theorem.md). In
+> particular, the report's universal life/death equivalence, same-space
+> exact/rhyme Green-kernel split, trajectory-cloud dimension substitution, and
+> self-repulsion sufficiency claims are not established theorems. Preserve the
+> reported simulations as model evidence, using the canonical file for what may
+> be concluded from them.
+
 **Author:** Harsha Anand Raj Pammi
 
 > **Provenance.** The original experiment's artifacts (14 scripts, `drawing_data.csv`,
@@ -914,10 +923,11 @@ governor (k 0.83→2.4, firing correctly on drift episodes).
 
 ## 6. Conclusion
 
-The Configuration-Drift Hypothesis — **exact recurrence of a state vanishes because
-realizing it perturbs its many contributing configuration elements, while rhyme
-persists** — is **supported** quantitatively across 14 independent domains, all
-governed by the same `ν ≤ d_w` phase boundary (theory §5.6):
+The Configuration-Drift Hypothesis — **fine configurations can cease recurring
+while a declared coarse structure continues recurring** — was explored across
+14 domains. The evidence is heterogeneous: specified random-walk results,
+finite simulations, empirical associations, underpowered tests, and analogies
+must not be combined into one universal validation count.
 
 - **Simulation:** exact site recurrence collapses for `D ≥ 3` (curse of
   dimensionality / Pólya), and — decisive — the split **emerges from a local
@@ -929,24 +939,21 @@ governed by the same `ν ≤ d_w` phase boundary (theory §5.6):
   2.08 nats improvement in sim (`memory_cdt.py`, §3.20). Memory is configuration
   drift applied to the past.
 - **Genetics, markets, civilizations, chaos, language, optimization, celestial
-  mechanics, Conway's Life, π, conversation, Earth** — all validated against the
-  same ν vs w criterion.
+  mechanics, Conway's Life, π, conversation, Earth** — model-specific results
+  and analogies whose theorem status must be assessed individually.
 
-**The life/death principle (formalized — theory §5.8).** Life and death are
-governed by two walls. The CDT phase boundary `d_s = 2` is the *outer* wall:
-systems with `d_s > 2` (transient base manifold) die by forgetting — rhyme
-itself vanishes, no structure persists. The *inner* wall is self-repulsion
-`γ = 0`: within the recurrent regime (`d_s ≤ 2`) but with `γ ≤ 0`, exact
-recurrence accumulates (Pólya) and the system dies by lock-in / collapse. Life
-requires *both* walls satisfied: `Alive ⇔ (d_s ≤ 2) ∧ (γ > 0)` — rhyme persists
-while exact recurrence is transient. Self-repulsion is the mechanism that keeps
-systems alive: it raises the point-scale walk dimension, suppresses exact
-returns, and forces rhyme without repetition.
+**Corrected theorem status.** The former life/death equivalence is withdrawn.
+The proved CDT condition is finite Green potential for a registered fine target
+together with recurrence of a predeclared structural quotient. Under verified
+two-sided power-law heat kernels, `d_s(π(X)) ≤ 2 < d_s(X)` is a convenient
+sufficient condition. Self-repulsion and heartbeat control are model-specific
+mechanisms; recurrence statistics do not by themselves establish life,
+function, or controller optimality. See `configuration_drift_theorem.md`.
 
 The rebuild's earlier emphasis on a temporal-decay signature was a misreading of
 the hypothesis; removing it, the original conclusion (`rec_mu ≈ 0`, `rec_H ≈ 0.9`)
-stands as the genuine validation — now extended to 14 domains with a unified
-mathematical foundation.
+remains historical evidence for the original observation, not a recovered or
+cross-domain theorem proof.
 
 ---
 

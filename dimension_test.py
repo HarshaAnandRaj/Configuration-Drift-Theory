@@ -1,22 +1,26 @@
 """dimension_test.py
 Decide the Configuration-Drift Hypothesis quantitatively.
 
-Mathematical criterion: a diffusive explorer (walk dimension w = 2) on a
-configuration manifold of correlation dimension nu is RECURRENT (exact repeats
-persist) iff nu <= w, TRANSIENT (exact recurrence vanishes, rhymes persist)
-iff nu > w. This generalizes Polya (nu = D, threshold 2) to arbitrary manifolds.
+CORRECTED (see theory Sec 5.5 caveat, Sec 16.1): the old version hardcoded the
+explorer walk dimension w = 2 and used a saturation-including band. This version
+(i) MEASURES beta from the process trajectory -> d_w = 2/beta (no assumed w),
+(ii) uses the bias-reduced nu_local estimator with bootstrap CI, and (iii) gates
+every verdict by the fix-2 floor N >= 100*10**(nu/2): below floor the verdict is
+UNDECIDABLE, not transient.
 
-We measure nu via the pair-correlation integral C(eps) = fraction of
-configuration pairs within distance eps; C(eps) ~ eps^nu in the scaling region.
+Mathematical criterion: recurrent iff nu <= d_w, transient iff nu > d_w.
+For static clouds the explorer is taken as Brownian (d_w = 2).
 
 Pipeline:
   1. Validate the estimator on synthetic point clouds of KNOWN dimension.
   2. Measure nu for the human drawing (2-D centroids and full 4-D config),
-     for both the fresh run and the v1 backup.
+     for both the fresh run and the v1 backup, with measured d_w.
 """
 
 import csv
 import numpy as np
+
+from debias_nu import nu_local_ci, n_floor
 
 
 def load_configs(path):
@@ -65,34 +69,55 @@ def fit_nu(eps, C, lo=0.02, hi=0.90):
     return float(slope), int(m.sum())
 
 
-def measure_cloud(P, label):
-    d = pair_distances(P)
-    eps, C = corr_integral(d)
-    nu, k = fit_nu(eps, C)
-    print(f"{label:<38} n={len(P):<5} nu = {nu:.3f}   ({k} scaling pts)")
-    return nu
+def msd_beta_traj(P, taus=(1, 2, 3, 4, 6, 8, 12, 16)):
+    """MSD exponent beta of a trajectory (stroke-ordered centroids). d_w = 2/beta."""
+    P = np.asarray(P, dtype=float)
+    n = len(P)
+    taus = [t for t in taus if t < max(2, n // 2)]
+    ms = []
+    for t in taus:
+        d = P[t:] - P[:-t]
+        ms.append(float(np.mean((d ** 2).sum(1))))
+    ms = np.array(ms)
+    m = ms > 0
+    if m.sum() < 3:
+        return float("nan")
+    slope, _ = np.polyfit(np.log(np.array(taus)[m]), np.log(ms[m]), 1)
+    return float(slope)
+
+
+def classify(E, label, dw=2.0):
+    E = np.asarray(E, dtype=float)
+    est, lo, hi = nu_local_ci(E, B=12, seed=11)
+    fl = n_floor(hi)
+    ok = len(E) >= fl
+    v = "recurrent" if est <= dw else "transient"
+    tag = v if ok else "UNDECIDABLE (below floor)"
+    print(f"{label:<38} n={len(E):<5} nu={est:5.2f} CI=[{lo:5.2f},{hi:5.2f}] "
+          f"floor={fl:<5} d_w={dw:4.2f} -> {tag}")
+    return est, tag
 
 
 if __name__ == "__main__":
     rng = np.random.default_rng(0)
 
-    print("=== 1. Estimator validation (known-D synthetic clouds) ===")
+    print("=== 1. Estimator validation (known-D synthetic clouds, d_w=2 Brownian explorer) ===")
     for D in [1, 2, 3, 4]:
         P = rng.random((1500, D))
-        measure_cloud(P, f"uniform cube D={D}")
+        classify(P, f"uniform cube D={D} (expect {'rec' if D <= 2 else 'trans'})")
     P = rng.random((800, 1))
     P4 = np.hstack([P, rng.random((800, 1)) * 0.05,
                     rng.random((800, 1)) * 0.05, rng.random((800, 1)) * 0.05])
-    measure_cloud(P4, "thin sheet (true D=2) in 4-D embed")
+    classify(P4, "thin sheet (true D=2) in 4-D embed (expect rec)")
 
-    print("\n=== 2. Human configuration manifolds ===")
-    F2 = load_configs("drawing_data.csv")[:, :2]
-    F4 = load_configs("drawing_data.csv")
-    measure_cloud(F2, "human v2 (203 circles), centroids 2-D")
-    measure_cloud(F4, "human v2, full 4-D config")
-    F1b = load_configs("drawing_data_v1.csv")
-    measure_cloud(F1b[:, :2], "human v1 (142 circles), centroids 2-D")
-    measure_cloud(F1b, "human v1, full 4-D config")
+    print("\n=== 2. Human configuration manifolds (d_w MEASURED from stroke MSD) ===")
+    for path, tag in [("drawing_data.csv", "human v2"), ("drawing_data_v1.csv", "human v1")]:
+        F = load_configs(path)
+        beta = msd_beta_traj(F[:, :2])
+        dw = 2.0 / beta if beta and beta > 0 else float("nan")
+        print(f"-- {tag}: stroke beta={beta:.2f} -> d_w={dw:.2f}")
+        classify(F[:, :2], f"{tag}, centroids 2-D", dw=dw)
+        classify(F, f"{tag}, full 4-D config", dw=dw)
 
-    print("\nCriterion: nu > w = 2  ->  transient -> exact vanishes, rhyme persists")
-    print("            nu <= 2     ->  recurrent -> exact repeats persist")
+    print("\nCriterion: nu <= d_w (measured) -> recurrent; nu > d_w -> transient;")
+    print("below fix-2 floor -> UNDECIDABLE (no verdict from insufficient data).")

@@ -1,6 +1,11 @@
 """
 Conway's Life with intrinsic self-repulsion (CDT test of the inner wall, gamma=0).
 
+MATHEMATICAL STATUS: exploratory legacy interpretation. Configuration-space
+cardinality 2^(L^2) does not determine a spectral dimension, and the universal
+Alive equivalence below is superseded by configuration_drift_theorem.md. This
+script measures cycle avoidance for one cellular-automaton intervention only.
+
 The Life/Death theorem (theory 5.8) requires BOTH walls for life:
     Alive  <=>  (d_s <= 2)  AND  (gamma > 0)
   - outer wall: d_s = 2 (spectral dimension of the configuration manifold)
