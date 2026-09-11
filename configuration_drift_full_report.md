@@ -955,6 +955,19 @@ the hypothesis; removing it, the original conclusion (`rec_mu ≈ 0`, `rec_H ≈
 remains historical evidence for the original observation, not a recovered or
 cross-domain theorem proof.
 
+**Subsequent work (theory §§5.8–5.11, §16; see file inventory additions below).**
+After this report: calibrated γ̂ inner-wall operator with neutral deadband
+(0.4); ν floors (`N ≥ 100·10^(ν/2)`, else UNDECIDABLE); generalized Lévy
+boundary `ν ≤ α·d_w/2` (kill test `levy_kill.py`: 0 kills, CDT-normal survives);
+whole-system audit (`system_audit.py`: 8 stand / 5 partial / 1 withdrawn;
+recurrent ≠ alive — BM 2D recurrent yet dead); adaptive-dimensional rescue as
+the endogenous counterpart to the heartbeat (`adaptive_dim_demo.py`: recruit
+0.118 vs kicks 0.025, zero injected energy, no task regression).
+**KNOWN DIVERGENCE (unresolved):** this report withdraws the life/death
+equivalence while the theory states it as a theorem (§5.8). Do not treat either
+document as superseding the other on this point; see
+`configuration_drift_theorem.md`.
+
 ---
 
 ## 7. File inventory
@@ -979,7 +992,23 @@ data/fig:    phase_scan.csv  synthetic_drifting.npy  synthetic_iid.npy
               collapse_transition.png  physical_walk.png
 
 derivation:  derive_phase_boundary.py       (spectral-dimension proof, 6/6 cases)
-            verify_spectral_dimension.py    (direct heat-kernel d_s test, 6/6 cases)
-            debias_nu.py                     (bias-corrected nu estimator; recovers true dim <0.3)
-            conway_repelled.py               (intrinsic self-repulsion on Life; freezes faster -> d_s>>2)
+             verify_spectral_dimension.py    (direct heat-kernel d_s test, 6/6 cases)
+             debias_nu.py                     (bias-corrected nu estimator; recovers true dim <0.3)
+             conway_repelled.py               (intrinsic self-repulsion on Life; freezes faster -> d_s>>2)
+
+post-report (theory work, see theory §§5.8-5.11, §16):
+             gamma_probe.py                   (calibrated inner-wall operator; deadband 0.4)
+             levy_kill.py                     (generalized-boundary kill test; 0 kills)
+             recheck_domains.py               (domain nu recheck with CI+floors)
+             system_audit.py                  (whole-system old-vs-corrected verdicts)
+             dimension_test.py                (UPDATED: measured d_w, floors; drawing WITHDRAWN)
+             emergent_heartbeat.py            (heartbeat rescues gamma=0 walk: 1.000)
+             conway_heartbeat.py              (Life soup self-sustains; confounded testbed)
+             conway_diehard_heartbeat.py      (still-life lock-in rescued: adaptive 0.980)
+             heartbeat_timing.py              (kick timing: boundary optimum, early 0.72 < late 1.00)
+             heartbeat_limits.py              (breakdown: reach/rate/observability)
+             cdt_limits.py                    (CDT assumption breaks: Levy/bounded/attractive)
+             adaptive_dim_demo.py             (RNN recruit beats kicks, zero energy)
+             simulate_heartbeat.py, simulate_adaptive_pacemaker[2].py,
+               simulate_endogenous_test.py    (heartbeat ladder + endogenous tests)
 ```

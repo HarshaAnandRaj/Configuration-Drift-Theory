@@ -40,9 +40,15 @@ When a person draws circles by hand, two facts hold:
 2. **"Rhyming" configurations recur.** Structurally similar configurations —
    same relative placement, same gestural shape — appear again and again.
 
-Naïvely this looks like a curiosity about drawing. The hypothesis elevates it
-to a general principle about **states realized in time** — physical, thought,
-or dream alike.
+Naïvely this looks like a curiosity about drawing. Its primary application is
+**trajectory stability in recurrent dynamical systems, especially learned hidden
+states**: an RNN's hidden trajectory falls into dead fixed points, unstable
+chaotic loops, or stable high-dimensional rhyme regimes — exactly the lock-in /
+forgetting / alive trichotomy of §5.8, with endogenous rescue by
+adaptive-dimensional control (§5.11). The hypothesis generalizes this to
+**states realized in time** wherever a configuration space, a dynamics, and a
+recurrence measure exist; domains beyond recurrent systems are illustrative
+analogies (appendix), not validations.
 
 ### 1.2 The hypothesis (formal)
 
@@ -811,6 +817,36 @@ condition and the system returns to death, exactly as observed across the four
 experiments (`simulate_adaptive_pacemaker*.py`, `emergent_heartbeat.py`,
 `conway_*_heartbeat.py`, `heartbeat_timing.py`, `heartbeat_limits.py`).
 
+**5.11 Adaptive-dimensional rescue (the endogenous mechanism).** The heartbeat
+(§5.9) is exogenous and intrusive: it injects energy from outside. The endogenous
+counterpart restructures the model's own geometry instead — no external
+pacemaker, no injected noise, hence no closed-loop death problem (§5.9.5). The
+control variable is the effective dimension `d_f(t)` itself (e.g. participation
+ratio of hidden-state covariance, or active-unit count):
+- **Expand on lock-in.** Detector: `γ̂ ≤ 0.4` (or exact-recurrence rate rising).
+  Action: recruit dimensions (unmask dormant units / lift the rank cap). Effect:
+  raises the point-scale `d_s^{(ε)}` above 2, so exact recurrence goes transient
+  — §5.8 case 3 achieved *by geometry rather than repulsion*.
+- **Contract on chaos.** Detector: outer-wall approach (`d_s → 2` from below,
+  rhyme going transient). Action: prune (the existing consolidation machinery:
+  coarse storage, drift-threshold pruning, §14). Lowers `d_f`, keeps `d_s ≤ 2`.
+Both moves preserve coarse `d_s ≤ 2`, so rhyme survives in both directions:
+expansion kills exact recurrence, contraction kills forgetting. Together with
+§5.9 this gives the full picture — heartbeat as exogenous life-support
+(validated baseline), adaptive dimensionality as autonomy (endogenous
+counterpart). Measured in `adaptive_dim_demo.py` (Elman RNN, hybrid rollout):
+lock-in regime — recruit reaches aliveFrac 0.118 vs kicks 0.025 (none 0.007),
+zero injected energy (kicks 216), task MSE 0.29 vs 0.31 (no regression): FULL
+PASS. Chaos regime — prune moves novelty 0.957 → 0.913 toward rhyme range with
+MSE 0.350 → 0.329 (no regression): PARTIAL; full task recovery needs relearning,
+not just contraction. Two refinements the demo forced: expansion must recruit
+*excitable* dimensions (bare unmasking under global contraction is dead
+capacity), and contraction must target *expansive* directions plus gain cooling
+(random masking cannot quench distributed chaos). ML reading: recruit dormant
+units when hidden states freeze into fixed points; gate/prune when they explode
+into chaos. Less intrusive than perturbation because it moves the attractor's
+resolution, not the state.
+
 ---
 
 ## 6. The temporal-decay probe (secondary; NOT the falsifiable core)
@@ -987,7 +1023,13 @@ hypothesis. The original lost numbers `rec_mu = 0.000` (exact) and
 
 ---
 
-## 12. Relation to fundamentality (interpretive)
+## 12. Speculative appendix: fundamentality, civilizations, and present-day verdicts
+
+> **Scope notice.** This section (and the civilizational/Earth rows of §15) is
+> **speculative analogy, not validation**: toy order-parameters, no corrected-rules
+> verification (no floors, no measured `d_w`). It is kept as an appendix for
+> its motivational value. The validated core is trajectory stability in
+> recurrent dynamical systems (§§3–5, §16); nothing there depends on this section.
 
 A speculative but motivationally central reading:
 
@@ -1203,12 +1245,13 @@ and ready for port to the full model (d=768).
 | Drift, not noise, drives decay | sensitivity `δ=0` | `ρ=0.489 ≈` baseline `0.481` |
 | Memory: exact recall transient, coarse recall recurrent | CDT applied to stored patterns | sim: 2.08 nats improvement (coarse vs exact) |
 | Consolidation = dimension reduction | keeps ν ≤ d_w (§5.6) | drift-threshold pruning sustains stability |
-| Exact recurrence = death, rhyme = life | theorem (§5.8): `Alive ⇔ (d_s ≤ 2) ∧ (γ > 0)` | validated across 14 domains |
+| Exact recurrence = death, rhyme = life | theorem (§5.8): `Alive ⇔ (d_s ≤ 2) ∧ (γ > 0)` | 8 stand / 5 partial / 1 withdrawn (§15 audit) |
 
 ### 14-domain evidence inventory (not a universal validation count)
 
-The CDT framework has been validated across 14 independent domains, all
-governed by the same ν vs w phase boundary:
+Audited standing across 14 examined domains (corrected rules): **8 stand, 5
+partial (direct claims hold, ν legs gated), 1 withdrawn**. Only recurrent-systems
+domains count as validations; cosmic rows are speculative analogy (§12):
 
 1. **Spatial drift** — exact recurrence vanishes, rhyme persists (15+ simulations)
 2. **Genetic drift** — matches Fisher–Wright to 3 decimals
@@ -1225,9 +1268,9 @@ governed by the same ν vs w phase boundary:
 8. **Conway's Life** — spontaneous period-2 lock-in: a γ=0 (dissipative) rule, so per the Life/Death theorem (§5.8) it must die by lock-in; gliders are the rare transient (alive-looking) phase. Independent web-sim observation matches.
 9. **π** — maximally transient (confirmed)
 10. **Conversation transcripts** — self-referential test passed
-11. **Civilizational drift** — G·ε > δ condition validated
+11. **Civilizational drift** — G·ε > δ condition in a toy model (speculative analogy, §12)
 12. **Live markets** — fear rhymes, copy masquerades
-13. **Earth (current status)** — ε winning on volume, δ winning on trend
+13. **Earth (current status)** — ε winning on volume, δ winning on trend (speculative analogy, §12)
 14. **Memory (Zeus sim)** — exact recall transient, coarse recall recurrent (2.08 nats)
 
 **Corrected re-audit (`recheck_domains.py`: `nu_local` + CI + fix-2 floors).**
