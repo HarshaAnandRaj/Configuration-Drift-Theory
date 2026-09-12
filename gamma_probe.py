@@ -5,6 +5,12 @@ threshold is not transferable without recalibration. Step shuffling changes more
 than memory in many processes. See configuration_drift_theorem.md, Sections 5,
 8, and 12, before using this exploratory diagnostic.
 
+2026-09-12: phase-v2 preserves the original relative Fourier phases. Earlier
+phase-null Zeus scores used a defective multivariate surrogate and are archived,
+not validated wall verdicts. Historical interpretation text below is superseded
+by this notice; neither null licenses an alive/dead classification. The segment
+interval is exploratory and its coverage has not been established.
+
 Replaces raw mp-floor checks (e.g. "mp > 0.125"), which are trivially passed in
 high-dimensional raw spaces where any two points are far apart. This operator is
 scale-free and significance-tested:
@@ -13,8 +19,14 @@ scale-free and significance-tested:
 
 where rho_obs(eps) = fraction of temporally-DISTANT pairs (|i-j| > tau) with
 ||X_i - X_j|| < eps, eps = low quantile of the pairwise distance distribution
-(scale-free, no raw floor), and rho_null(eps) = the same rate under K random
-time-permutations (same point cloud, temporal recurrence structure destroyed).
+(scale-free, no raw floor), and rho_null(eps) = the same rate under K
+surrogates. NULL SELECTION (load-bearing): null="steps" (step-shuffled,
+same steps no memory) for EXPLORING trajectories; null="phase"
+(phase-randomized, spectrum/autocorrelation preserved) for STABILIZED or
+confined trajectories (clamped, walled, mean-reverting). Step-shuffling a
+stabilized system breaks its stabilizing correlations, so surrogates spread
+wider and healthy mean-reversion reads as lock-in (Zeus rolls: steps-null
+-3.38, phase-null +0.80 — the former is the confound, the latter the verdict).
 
   gamma_hat > 0.4 AND CI excludes 0 -> repulsion suppresses exact recurrence
                                     below chance: INNER WALL HOLDS (alive)
@@ -97,8 +109,30 @@ def _surrogate_rate(inc, x0, eps, tau, rng):
     return _distant_rate(Y, eps, tau)
 
 
+def phase_surrogate(Y, rng):
+    """Preserve means and the complete multivariate circular cross-spectrum.
+
+    Common phase *increments* retain original relative phases. This does not
+    guarantee removal of periodic returns, stationarity or a calibrated null.
+    """
+    n, d = Y.shape
+    F = np.fft.rfft(Y, axis=0)
+    nf = F.shape[0]
+    ph = rng.uniform(0, 2 * np.pi, size=nf)
+    ph[0] = 0.0
+    if n % 2 == 0:
+        ph[-1] = 0.0  # Nyquist stays real
+    return np.fft.irfft(F * np.exp(1j * ph)[:, None], n=n, axis=0)
+
+
+def _phase_surr_rate(Y, eps, tau, rng):
+    return _distant_rate(phase_surrogate(Y, rng), eps, tau)
+
+
 def gamma_hat(X, tau=8, q_eps=0.01, q_R=0.10, M=1000, K=15, B=25,
-              nblocks=10, seed=0):
+              nblocks=10, seed=0, null="steps"):
+    if null not in ('steps', 'phase'):
+        raise ValueError('null must be steps or phase')
     rng = np.random.default_rng(seed)
     X = np.asarray(X, dtype=float)
     N = len(X)
@@ -112,7 +146,11 @@ def gamma_hat(X, tau=8, q_eps=0.01, q_R=0.10, M=1000, K=15, B=25,
     rho_obs = _distant_rate(Y, eps, tau)
     rhyme = _distant_rate(Y, R, tau)
     inc = Y[1:] - Y[:-1]
-    nulls = np.array([_surrogate_rate(inc, Y[0], eps, tau, rng) for _ in range(K)])
+    if null == "phase":
+        nulls = np.array([_phase_surr_rate(Y, eps, tau, rng) for _ in range(K)])
+    else:
+        nulls = np.array([_surrogate_rate(inc, Y[0], eps, tau, rng)
+                          for _ in range(K)])
     rho_null = float(np.mean(nulls))
     if rho_null <= 0:
         return dict(est=-1.0, lo=-1.0, hi=-1.0, rho_obs=rho_obs,
@@ -128,18 +166,24 @@ def gamma_hat(X, tau=8, q_eps=0.01, q_R=0.10, M=1000, K=15, B=25,
             continue
         rb = _distant_rate(Yb, eps, tau)
         ib = Yb[1:] - Yb[:-1]
-        nb = float(np.mean([_surrogate_rate(ib, Yb[0], eps, tau, rng)
-                            for _ in range(10)]))
+        if null == "phase":
+            nb = float(np.mean([_phase_surr_rate(Yb, eps, tau, rng)
+                                for _ in range(10)]))
+        else:
+            nb = float(np.mean([_surrogate_rate(ib, Yb[0], eps, tau, rng)
+                                for _ in range(10)]))
         if nb > 0:
             segs.append(1.0 - rb / nb)
     if len(segs) >= 5:
         se = float(np.std(segs, ddof=1) / np.sqrt(len(segs)))
         lo, hi = est - 1.96 * se, est + 1.96 * se
-        note = "ok"
+        note = "exploratory segment-SE interval; coverage not calibrated"
     else:
         lo, hi, note = est, est, "CI unavailable (too few informative segments)"
     return dict(est=est, lo=lo, hi=hi, rho_obs=rho_obs, rho_null=rho_null,
-                rhyme=rhyme, note=note)
+                rhyme=rhyme, note=note, null=null,
+                null_version='relative-phase-v2' if null == 'phase' else 'steps-v1',
+                calibrated_wall_verdict=False)
 
 
 if __name__ == "__main__":

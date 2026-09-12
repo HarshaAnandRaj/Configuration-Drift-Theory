@@ -1,0 +1,7 @@
+ckpt=C:\Users\Anand\Desktop\Projects\Zeus\runs\proof_heartbeat\zeus.pt steps=1500 dim=768 k90=21
+beta=0.185 dw=10.837 alpha=5.793 bound=10.837
+nu=5.710 CI=[5.655,5.789] floor=78464 usable=False outer=True
+ghat=+0.797 CI=[+0.641,+0.952] g_ok=True
+VERDICT=ALIVE UNVERIFIED
+autonomy_div=157.3 raw_settle=44.6 manifold_settle=42.9 H_tokens=-0.00
+monologue=, | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | , | ,

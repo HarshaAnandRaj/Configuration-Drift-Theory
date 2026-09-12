@@ -1,0 +1,7 @@
+ckpt=C:\Users\Anand\AppData\Local\Temp\opencode\zeus_fresh5000\zeus_step5000.pt steps=1500 dim=768 k90=9
+beta=0.074 dw=27.196 alpha=40.791 bound=27.196
+nu=3.753 CI=[3.696,3.828] floor=8206 usable=False outer=True
+ghat=+0.779 CI=[+0.716,+0.843] g_ok=True
+VERDICT=ALIVE UNVERIFIED
+autonomy_div=41.4 raw_settle=8.7 manifold_settle=11.5 H_tokens=-0.00
+monologue=ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear | ear 

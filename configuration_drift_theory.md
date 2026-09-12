@@ -10,6 +10,17 @@
 
 **Author:** Harsha Anand Raj Pammi
 
+> **Instrument correction (2026-09-12).** See
+> [measurement_repair_20260912.md](measurement_repair_20260912.md).
+> Phase-null results in this notebook predate a correction preserving relative
+> Fourier phases and cannot presently support their reported wall verdicts.
+> The untrained zero-state capacity probe did not identify a capacity floor.
+> Toy novelty-reward numerical prescriptions predate gate-gradient and Adam
+> counter repairs and require fresh validation. The historical results remain
+> recorded below; they are not silently replaced by new outcomes. Adaptive
+> dimensionality's intended target is learned functional recovery without an
+> external perturbation/rescue controller, not externally driven PCA expansion.
+
 > Companion to `configuration_drift_full_report.md`. This document develops the
 > **theory** in full: the conceptual hypothesis (exact recurrence of a state
 > vanishes because realizing it perturbs its many contributing configuration
@@ -525,7 +536,11 @@ of case (2) vs (3).
 resolution `ε` — a low quantile of the pairwise-distance distribution (no raw
 floor, so it cannot be trivially passed in high-dimensional spaces) — over
 temporally-distant pairs only; `ρ_null(ε)` is the same rate under step-shuffled
-surrogates (identical steps, memory destroyed). Inner wall holds iff `γ̂ > 0.4`
+surrogates. Null selection is load-bearing: step-shuffled null for exploring
+trajectories, phase-randomized null (spectrum preserved) for stabilized or
+confined ones — step-shuffling a stabilized system fabricates a lock-in reading
+(Zeus rolls: steps-null `γ̂=-3.38`, phase-null `γ̂=+0.80`; the latter is the
+verdict). Inner wall holds iff `γ̂ > 0.4`
 with CI excluding 0, while rhyme `ρ_obs(R)` stays substantial. The 0.4 deadband
 is calibrated: memoryless walks read `γ̂ ≈ +0.2` (BM +0.20, emergent-0 +0.26,
 SPX +0.28) from surrogate mismatch, while true repulsion reads +0.75; without
@@ -846,6 +861,113 @@ capacity), and contraction must target *expansive* directions plus gain cooling
 units when hidden states freeze into fixed points; gate/prune when they explode
 into chaos. Less intrusive than perturbation because it moves the attractor's
 resolution, not the state.
+
+**Intrinsic aliveness reward (`alive_reward_demo.py`).** The rescue can also be
+*learned*: Elman RNN with learned dimension gates, loss = teacher-MSE −
+`λ·Novelty(free-run)` + sparsity price. Measured: `λ=0` → dead (probe 0.008),
+task best; `λ=0.01` → alive (0.129) at 2.4× task cost — the sweet spot;
+`λ=0.05` → alive (0.143), gates open widest-useful (10.7/16); `λ≥0.2` →
+degrading; `λ=0.5` → collapse (0.027) with the MOST dims open (11.3/16):
+wide-but-dead. Three lessons: (i) the bonus must sit on the autonomous branch —
+on the driven branch the model games it via input-driven variety (gates shut,
+stimulus-slave novelty); (ii) open dimensionality is necessary, not sufficient;
+(iii) over-incentivized novelty collapses rather than explodes here (freeze,
+not outer-wall breach) — reward hacking wears a different mask per substrate.
+
+**Improved bonus: capped spread (`alive_reward_demo.py`).** Paying mean
+`min(d, R)` — separation only up to rhyme range, no chaos-direction pay, no
+close-range violence — beats raw spread: `(cap, 0.01)` reaches alive 0.090 at
+*zero* task cost (0.0007 = baseline; raw paid 2.4×); `(cap, 0.05)` reaches 0.139
+above raw's best at moderate cost. A fancier alternative failed first and is
+kept as a negative record: the rhyme-*shell* bonus pays perfectly for small
+periodic cycles (a chant, not a life) and its violent close-range repulsion
+teaches gate-shutdown evasion. Lesson: reward bounded separation, never
+exactness-shaped targets.
+
+**Punishment loses to reward (`alive_reward_demo.py`).** Adding a soft lock-in
+penalty `κ·mean-RBF-kernel` (lag-masked, free branch): wide kernel (σ=0.10)
+lifts punishment-only to 0.048 (vs reward-only 0.129) but degrades every
+combined arm and squeezes gates shut (3.7/2.7 open — evasion, not aliveness);
+narrow kernel (σ=0.02) does nothing (exact hits too sparse to learn from).
+Task cost is worse in all punishment arms. Mechanism: reward shapes a
+*direction* (explore); punishment only forbids a *measure-zero set* (exact
+repeats), and wide versions destroy the rhyme neighbors the task needs.
+Prescription: reward autonomous novelty, price dimensions — do not punish
+dead states.
+
+**Sweet spot for a large model (Zeus, 768-dim).** What transfers is not the
+constant but the normalized rule: divide bonus and task loss by their running
+scales, and `λ* ≈ 0.01` (aliveness at zero task cost) to `0.05` (max aliveness,
+moderate cost) carries over — because the live manifold is ~9–22 dims, which
+brackets the toy's H=16, and normalization absorbs the rest. Concretely:
+free-roll window (input `None`, as in the probe) every ~25 steps; capped-spread
+bonus `mean min(d, R)` on the window states with `R ∝ √H_eff`; loss contribution
+`−λ·bonus/σ_bonus` with `λ ∈ [0.01, 0.05]`; backprop through the free branch
+(standard second backward). Monitor three numbers: task CE regressing beyond
+~2–5× (λ too high or task-dominance → raise λ 3–5× if the bonus is ignored),
+probe aliveFrac rising (else below floor — not the case at 768 units), and k90
+opening (recruitment response). Zeus-specific risks: the CE gradient over 8192
+tokens is strong (task-dominance is the likely edge — start at 0.01, escalate
+only on no response); capacity floor is a non-issue (767 dormant dims).
+Readout collapse is orthogonal — reward fixes hidden-state aliveness, not the
+mouth. **Falsifiers (registered):** (i) λ∈[0.01,0.05] moves neither aliveFrac
+nor γ̂ vs λ=0 → transfer fails; (ii) the aliveness peak sits an order of
+magnitude away (≤0.001 or ≥0.5) → the numeric prediction fails; (iii) CE
+regresses >5× already at λ=0.01 → the zero-cost claim fails; (iv) k90 opens
+with no change in any behavioral measure → the recruitment response is
+vacuous. Any one of these falsifies the prescription as stated.
+
+**Without heart? Yes — within reserve.** A `both` arm (recruit + kicks) reaches
+0.203, so the heart adds synergy on top — but the recruit-only arm (zero kicks,
+zero injected energy) already rescues 0.007 → 0.118 with no task regression.
+Adaptive dimensionality saves the trajectory by itself. Why this is consistent
+with §5.9.5 rather than contradicting it: dormant capacity never participated
+in the collapse, so it is *decoupled* from the death basin — the exact condition
+that let `endo_decoupled` (1.00) succeed where `endo_coupled` (0.20) failed.
+The limit is finite reserve (capacity, §5.10 L5): once all units are recruited
+and gain is up, if the system is still locked, no further endogenous move
+exists — then only retraining (new capacity) or exogenous kicks remain.
+
+**5.12 Scaling with dimension.** The framework is scale-free *by construction*
+in its operators, but not in its costs:
+- **Invariant core.** `β, α, d_w, d_s` are dimensionless exponents. `γ̂` uses
+  quantile `ε` (no absolute floor) and its 0.4 deadband validates across
+  ambient dimension (`scale_gamma.py`: D=2/3/4 all read HOLDS/neutral/VIOLATED
+  for γ=+0.8/0/−0.8). Kicks scale as `‖S‖` fractions, detectors as PR
+  fractions, `mp` normalized by trajectory scale — all dimensionless.
+- **Sample floors are exponential in ν** (`N ≥ 100·10^(ν/2)`): the curse of
+  dimensionality priced explicitly. This is fundamental, not a bug — high-ν
+  verdicts cost exponentially many samples, which is why the cheap path runs
+  through `γ̂`, not `ν`-thresholds.
+- **Reward/sparsity scales do NOT transfer.** The `λ*=0.01` sweet spot at H=16
+  does not rescale as `1/√H`: at H=8 every arm is dead, at H=32 gates shut
+  everywhere (only H=16 shows the effect). `H` is structural, not a rescaling —
+  `λ*` and `μ` need per-scale tuning. What does transfer by construction is
+  measurement-side: probe cells `∝√H`, cap radius `∝√H` (pairwise distances
+  grow as `√H`).
+Lesson: dimensionless *operators* travel across scales; *costs and control
+gains* do not — recalibrate per scale, reuse the gauges.
+
+**Formulating the reward scale (`alive_reward_demo.py`, `scale_capacity.py`).**
+The bonus scale is derivable: mean pairwise distance grows as `√H`, so the
+centering rule `λ*(H) ≈ λ*(H₀)·√(H₀/H)` holds the bonus/task-loss ratio fixed —
+a principled search center, not a blind guess. But it is valid only inside a
+window, and both edges are now measured: (i) below capacity floor (H=8: dead at
+every λ, gates open or shut — too few dims to split between task and novelty;
+the μ=0 control proves sparsity price is not the cause); (ii) above
+task-dominance onset (H=32: gates shut even at μ=0 with scaled λ — abundant
+capacity lets the net solve the task feedforward and ignore the bonus).
+Between them (H=16) the sweet spot exists. So: center by `1/√H`, then verify
+both failure modes are absent — no closed form without them, and the μ=0
+control is the diagnostic that tells which edge you hit.
+
+**On a real 768-dim model (`zeus_adaptive_dim.py`, fresh-5000 checkpoint,
+9/768 dims live).** Dormant-PC recruitment (gain ×2, norm-clamped, E = 0)
+broadens richness 9 → 12 dims with the inner wall held (γ̂ +0.89, phase null);
+heartbeat kicks never fire — correctly idle, since no lock-in is present by
+either measure. Task axis void (readout collapsed). Caveat logged: coarse-cell
+aliveFrac saturates near 0.99 on micro-jitter here, so the inner-wall verdict
+rests on γ̂, not cell counts.
 
 ---
 

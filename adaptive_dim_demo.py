@@ -81,11 +81,11 @@ def rollout(W_h, W_x, b, Wy, xs, arm, rng, n_active0):
             pr = float(lam_.sum() ** 2 / (lam_ ** 2).sum()) if lam_.sum() > 0 else 0.0
             locked = rec > 0.15
             chaotic = pr > 0.30 * max(1, int(m.sum()))
-            if arm == "kicks" and locked:
+            if arm in ("kicks", "both") and locked:
                 h = h + rng.standard_normal(H) * KICK_SIG
                 energy += float(KICK_SIG ** 2 * H)
                 n_int += 1
-            elif arm == "recruit" and locked and m.sum() < H:
+            if arm in ("recruit", "both") and locked and m.sum() < H:
                 off = np.where(m == 0)[0][:4]
                 m[off] = 1.0
                 # recruit EXCITABLE dimensions: expansion alone is dead
@@ -99,7 +99,7 @@ def rollout(W_h, W_x, b, Wy, xs, arm, rng, n_active0):
                 if k > H:
                     Wy[:] = fit_readout(np.array(Hs_f[-k:]), np.array(xs_f[-k:]))
                 n_int += 1
-            elif arm == "prune" and chaotic and m.sum() > 6:
+            elif arm in ("prune", "both") and chaotic and m.sum() > 6:
                 # prune EXPANSIVE directions: mask highest outgoing-gain rows
                 # AND cool global gain (masking alone can't quench distributed
                 # chaos; weight scaling injects no state-energy).
@@ -127,7 +127,7 @@ def run_regime(radius, seed0):
     print(f"--- regime spectral-radius={radius} "
           f"({'LOCK-IN' if radius < 1 else 'CHAOS'}) ---")
     print(f"{'arm':8s} | aliveFrac(free) | task MSE(forced) | injected E | int")
-    for arm in ("none", "kicks", "recruit", "prune"):
+    for arm in ("none", "kicks", "recruit", "prune", "both"):
         af, mse, en, ni = [], [], [], []
         for i in range(TRIALS):
             W_h, rng = reservoir(radius, seed0 + i)
