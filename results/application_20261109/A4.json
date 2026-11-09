@@ -1,0 +1,647 @@
+{
+  "suite": "A4",
+  "smoke_only": false,
+  "elapsed_seconds": 0.13114171000006536,
+  "records": [
+    {
+      "replicate": 0,
+      "seed": 20301110,
+      "primary_effect": 0.849609375,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.150390625,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.584253944055121,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.935546875,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.17335981222072128,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.12890625,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 3.998014279061189,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 1,
+      "seed": 20301111,
+      "primary_effect": 0.810546875,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.189453125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.477617165683,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.935546875,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.16964571906277803,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.11328125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.037388141174587,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 2,
+      "seed": 20301112,
+      "primary_effect": 0.79296875,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.20703125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.637068694135722,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.919921875,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.16094899066023186,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.138671875,
+          "positive_acceptance": 0.001953125,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.1526460330586,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 3,
+      "seed": 20301113,
+      "primary_effect": 0.826171875,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.173828125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.524995348305291,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.96484375,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.17239652096311553,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.2109375,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.145086546822098,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 4,
+      "seed": 20301114,
+      "primary_effect": 0.841796875,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.158203125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.637359776037455,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.94921875,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.17136071150171295,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.12890625,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.178581429788456,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 5,
+      "seed": 20301115,
+      "primary_effect": 0.87890625,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.12109375,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.672069757145525,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.95703125,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.16902325058709108,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.12109375,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.065061701736042,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 6,
+      "seed": 20301116,
+      "primary_effect": 0.87109375,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.12890625,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.53691647547585,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.90625,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.15941910511724816,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.128416390090471,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 7,
+      "seed": 20301117,
+      "primary_effect": 0.873046875,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.126953125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.4244186383550215,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.931640625,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.16799887128586652,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 3.9113651048880502,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 8,
+      "seed": 20301118,
+      "primary_effect": 0.86328125,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.13671875,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.609646736006539,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.935546875,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.16690074193330812,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.0887361053053315,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 9,
+      "seed": 20301119,
+      "primary_effect": 0.8515625,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.1484375,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.474602407595494,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.9609375,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.17294380260855086,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.1484375,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.239412747290519,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 10,
+      "seed": 20301120,
+      "primary_effect": 0.830078125,
+      "functional_pass": false,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.169921875,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.451025889646831,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.884765625,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.1589481004235765,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.134765625,
+          "positive_acceptance": 0.001953125,
+          "negative_false_acceptance": 0.005859375,
+          "calibrated_distance_threshold": 4.237064552965681,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 11,
+      "seed": 20301121,
+      "primary_effect": 0.8359375,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.1640625,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.448746191978918,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.951171875,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.16674189720745697,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.1328125,
+          "positive_acceptance": 0.1015625,
+          "negative_false_acceptance": 0.08984375,
+          "calibrated_distance_threshold": 4.198112344397192,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 12,
+      "seed": 20301122,
+      "primary_effect": 0.830078125,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.169921875,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.542233184550302,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.92578125,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.1664122561844551,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.203125,
+          "positive_acceptance": 0.02734375,
+          "negative_false_acceptance": 0.0078125,
+          "calibrated_distance_threshold": 4.052694148255565,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 13,
+      "seed": 20301123,
+      "primary_effect": 0.87109375,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.12890625,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.503953064428727,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.951171875,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.1694949310891113,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.125,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.128680223241872,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 14,
+      "seed": 20301124,
+      "primary_effect": 0.853515625,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.146484375,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.641667504533083,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.9609375,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.17479213750106304,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.14453125,
+          "positive_acceptance": 0.009765625,
+          "negative_false_acceptance": 0.005859375,
+          "calibrated_distance_threshold": 4.254886929289289,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    },
+    {
+      "replicate": 15,
+      "seed": 20301125,
+      "primary_effect": 0.8515625,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.1484375,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 5.583253112497061,
+          "stored_dimensions": 16
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "positive_acceptance": 0.9453125,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 0.16860983348979888,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "random8",
+          "accuracy": 0.130859375,
+          "positive_acceptance": 0.0,
+          "negative_false_acceptance": 0.0,
+          "calibrated_distance_threshold": 4.040042735653284,
+          "stored_dimensions": 8
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.125,
+          "positive_acceptance": 1.0,
+          "negative_false_acceptance": 1.0,
+          "calibrated_distance_threshold": 0.0,
+          "stored_dimensions": 1
+        }
+      ]
+    }
+  ]
+}

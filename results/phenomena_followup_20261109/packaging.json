@@ -1,0 +1,8 @@
+{
+  "operation": "lossless gzip; scientific data and original local file unchanged",
+  "original_file": "long_tail_raw.json",
+  "original_sha256": "2d0bd3a7daa0e401aefc285643df1061c69d984af7187b86ca442a7272aa0b12",
+  "archive": "long_tail_raw.json.gz",
+  "archive_sha256": "3a77d84cbd1ca71e9b5a07a7387cc8217d1c1a6b3ec53c665baf4e6fa211e3e9",
+  "packager_sha256": "48c0f8d7f287a26bbceaaec777d08485620dda75aacc30c1f0dbfc36960399fe"
+}

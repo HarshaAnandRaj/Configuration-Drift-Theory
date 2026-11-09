@@ -1,0 +1,1479 @@
+{
+  "suite": "A6",
+  "smoke_only": false,
+  "elapsed_seconds": 0.04171838300044328,
+  "records": [
+    {
+      "replicate": 0,
+      "seed": 20321110,
+      "primary_effect": 1.6647147612126212,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.009740906031324341,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.6825809563738998,
+          "sign_accuracy": 0.8203125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.806754243236447,
+          "sign_accuracy": 0.490234375
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.009772315380128052,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.6801038265608186,
+          "sign_accuracy": 0.81640625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.806754243236447,
+          "sign_accuracy": 0.509765625
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.009761456440381983,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.6744762176530033,
+          "sign_accuracy": 0.634765625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.806754243236447,
+          "sign_accuracy": 0.490234375
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.009793520538804019,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.6711754992965937,
+          "sign_accuracy": 0.638671875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.806754243236447,
+          "sign_accuracy": 0.509765625
+        }
+      ]
+    },
+    {
+      "replicate": 1,
+      "seed": 20321111,
+      "primary_effect": 1.646782958603035,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.009924496571165497,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.5178906919071711,
+          "sign_accuracy": 0.986328125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8169754698146439,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.009912337084018313,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.5173437990926416,
+          "sign_accuracy": 0.990234375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8169754698146439,
+          "sign_accuracy": 0.517578125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.009989375323683686,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.6567723339267186,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8169754698146439,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.009976744960191916,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.6488809690595527,
+          "sign_accuracy": 0.51953125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8169754698146439,
+          "sign_accuracy": 0.517578125
+        }
+      ]
+    },
+    {
+      "replicate": 2,
+      "seed": 20321112,
+      "primary_effect": 2.042489454547461,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.010179277142764285,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.5090827940983672,
+          "sign_accuracy": 0.91015625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.820804081686616,
+          "sign_accuracy": 0.478515625
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.010175099441748263,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.49243746045476766,
+          "sign_accuracy": 0.908203125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.820804081686616,
+          "sign_accuracy": 0.521484375
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010573521011698063,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 2.053062975559159,
+          "sign_accuracy": 0.521484375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.820804081686616,
+          "sign_accuracy": 0.478515625
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010570963103920469,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 2.0683991945240017,
+          "sign_accuracy": 0.478515625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.820804081686616,
+          "sign_accuracy": 0.521484375
+        }
+      ]
+    },
+    {
+      "replicate": 3,
+      "seed": 20321113,
+      "primary_effect": 1.7333741277382242,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.010196177957626791,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.6744183381999261,
+          "sign_accuracy": 0.73046875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8175783490613534,
+          "sign_accuracy": 0.5078125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.010185963924566548,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.6762862461256999,
+          "sign_accuracy": 0.720703125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8175783490613534,
+          "sign_accuracy": 0.4921875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010269327297745915,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.74364345503597,
+          "sign_accuracy": 0.4921875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8175783490613534,
+          "sign_accuracy": 0.5078125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010259697076195576,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.7295363800838928,
+          "sign_accuracy": 0.5078125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8175783490613534,
+          "sign_accuracy": 0.4921875
+        }
+      ]
+    },
+    {
+      "replicate": 4,
+      "seed": 20321114,
+      "primary_effect": 1.7888702970467607,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.009840964384434214,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.7377426887866917,
+          "sign_accuracy": 0.708984375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8129712964429022,
+          "sign_accuracy": 0.513671875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.009842677318828293,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.760368447133013,
+          "sign_accuracy": 0.70703125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8129712964429022,
+          "sign_accuracy": 0.486328125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010376034792423784,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.7992463318391845,
+          "sign_accuracy": 0.490234375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8129712964429022,
+          "sign_accuracy": 0.513671875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010378471658030769,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.790829099293902,
+          "sign_accuracy": 0.517578125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8129712964429022,
+          "sign_accuracy": 0.486328125
+        }
+      ]
+    },
+    {
+      "replicate": 5,
+      "seed": 20321115,
+      "primary_effect": 1.506145808835292,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.009926211680461578,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.7070157609510402,
+          "sign_accuracy": 0.669921875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8168458556678992,
+          "sign_accuracy": 0.560546875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.009945019157146528,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.707572661333377,
+          "sign_accuracy": 0.673828125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8168458556678992,
+          "sign_accuracy": 0.439453125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010441302886542273,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.5165871117218341,
+          "sign_accuracy": 0.44140625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8168458556678992,
+          "sign_accuracy": 0.560546875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010491643049587844,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.4919476966001115,
+          "sign_accuracy": 0.560546875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8168458556678992,
+          "sign_accuracy": 0.439453125
+        }
+      ]
+    },
+    {
+      "replicate": 6,
+      "seed": 20321116,
+      "primary_effect": 1.0585949954998346,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.009963524832779964,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.45075083451247383,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8151869360840164,
+          "sign_accuracy": 0.548828125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.009944481212392827,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.45409781376730896,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8151869360840164,
+          "sign_accuracy": 0.451171875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010183583669278793,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.0687785791691133,
+          "sign_accuracy": 0.9921875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8151869360840164,
+          "sign_accuracy": 0.548828125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010161602688610818,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.0549684578533247,
+          "sign_accuracy": 0.99609375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8151869360840164,
+          "sign_accuracy": 0.451171875
+        }
+      ]
+    },
+    {
+      "replicate": 7,
+      "seed": 20321117,
+      "primary_effect": 1.2643706354686155,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.009966132285607,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.5602758907959793,
+          "sign_accuracy": 0.951171875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8183845969953767,
+          "sign_accuracy": 0.51171875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.009935785177752569,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.5572266619240189,
+          "sign_accuracy": 0.966796875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8183845969953767,
+          "sign_accuracy": 0.48828125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010145419542263412,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.274516055010879,
+          "sign_accuracy": 0.537109375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8183845969953767,
+          "sign_accuracy": 0.51171875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010118530980028042,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.2735475893060204,
+          "sign_accuracy": 0.52734375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8183845969953767,
+          "sign_accuracy": 0.48828125
+        }
+      ]
+    },
+    {
+      "replicate": 8,
+      "seed": 20321118,
+      "primary_effect": 1.8386622324257613,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.010466667605958024,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.6077538508433546,
+          "sign_accuracy": 0.86328125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.814291075324656,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.010449706320709004,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.6250716905506398,
+          "sign_accuracy": 0.8359375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.814291075324656,
+          "sign_accuracy": 0.517578125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010467728825210628,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.849129961250972,
+          "sign_accuracy": 0.517578125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.814291075324656,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.01045104691459518,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.878948817514236,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.814291075324656,
+          "sign_accuracy": 0.517578125
+        }
+      ]
+    },
+    {
+      "replicate": 9,
+      "seed": 20321119,
+      "primary_effect": 1.7299766436492061,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.010034050108063568,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.4028348664148994,
+          "sign_accuracy": 0.96484375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8190513333733301,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.010020750822798607,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.4009291338983266,
+          "sign_accuracy": 0.970703125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8190513333733301,
+          "sign_accuracy": 0.517578125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010280824358616497,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.7402574680078227,
+          "sign_accuracy": 0.517578125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8190513333733301,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010265864535958503,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.7496312335402513,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8190513333733301,
+          "sign_accuracy": 0.517578125
+        }
+      ]
+    },
+    {
+      "replicate": 10,
+      "seed": 20321120,
+      "primary_effect": 1.1654300302056053,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.010159171874395728,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.6393217952432001,
+          "sign_accuracy": 0.779296875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8179413687671763,
+          "sign_accuracy": 0.4921875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.010217073377676956,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.624577393607971,
+          "sign_accuracy": 0.76953125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8179413687671763,
+          "sign_accuracy": 0.5078125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010239855391533518,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.1756698855971388,
+          "sign_accuracy": 0.57421875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8179413687671763,
+          "sign_accuracy": 0.4921875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010294750394692983,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.1566572017763725,
+          "sign_accuracy": 0.6015625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8179413687671763,
+          "sign_accuracy": 0.5078125
+        }
+      ]
+    },
+    {
+      "replicate": 11,
+      "seed": 20321121,
+      "primary_effect": 1.8274190238363595,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.010133079384026317,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.6999306126730718,
+          "sign_accuracy": 0.802734375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.818220112976656,
+          "sign_accuracy": 0.50390625
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.010177274582898627,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.7101561932659077,
+          "sign_accuracy": 0.78125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.818220112976656,
+          "sign_accuracy": 0.49609375
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010282965770340314,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.8377019896066997,
+          "sign_accuracy": 0.50390625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.818220112976656,
+          "sign_accuracy": 0.50390625
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010328057116920806,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.844862919339959,
+          "sign_accuracy": 0.49609375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.818220112976656,
+          "sign_accuracy": 0.49609375
+        }
+      ]
+    },
+    {
+      "replicate": 12,
+      "seed": 20321122,
+      "primary_effect": 1.6266794079070657,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.010520467877899632,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.6446851969391311,
+          "sign_accuracy": 0.818359375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8166986757015012,
+          "sign_accuracy": 0.47265625
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.010505409010412574,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.6498230871788288,
+          "sign_accuracy": 0.822265625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8166986757015012,
+          "sign_accuracy": 0.52734375
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010607927969304319,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.63728733587637,
+          "sign_accuracy": 0.47265625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8166986757015012,
+          "sign_accuracy": 0.47265625
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010594793271983002,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.5989430205667257,
+          "sign_accuracy": 0.52734375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8166986757015012,
+          "sign_accuracy": 0.52734375
+        }
+      ]
+    },
+    {
+      "replicate": 13,
+      "seed": 20321123,
+      "primary_effect": 0.858016974827182,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.010401646526515065,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.6676164172661552,
+          "sign_accuracy": 0.76171875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.825530579058393,
+          "sign_accuracy": 0.517578125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.010407098568414708,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.6441751564627624,
+          "sign_accuracy": 0.787109375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.825530579058393,
+          "sign_accuracy": 0.482421875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.010412061458604073,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.868429036285786,
+          "sign_accuracy": 0.490234375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.825530579058393,
+          "sign_accuracy": 0.517578125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.010416911657280559,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.826591416939904,
+          "sign_accuracy": 0.53125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.825530579058393,
+          "sign_accuracy": 0.482421875
+        }
+      ]
+    },
+    {
+      "replicate": 14,
+      "seed": 20321124,
+      "primary_effect": 1.9612581237633537,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.009874030472140909,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.546239613521041,
+          "sign_accuracy": 0.921875
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8177748201467067,
+          "sign_accuracy": 0.484375
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.009842960576344404,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.5654994393367898,
+          "sign_accuracy": 0.91015625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8177748201467067,
+          "sign_accuracy": 0.515625
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.009989885755934182,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.971248009519288,
+          "sign_accuracy": 0.5625
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8177748201467067,
+          "sign_accuracy": 0.484375
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.009958161805974013,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.983703965398581,
+          "sign_accuracy": 0.53125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8177748201467067,
+          "sign_accuracy": 0.515625
+        }
+      ]
+    },
+    {
+      "replicate": 15,
+      "seed": 20321125,
+      "primary_effect": 1.3556011010308369,
+      "functional_pass": true,
+      "arms": [
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.009956042844134793,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.39509603094673096,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": false,
+          "rmse": 0.8159821050863465,
+          "sign_accuracy": 0.5078125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.0099497244063361,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.3957342569296885,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 0,
+          "signal_changed": true,
+          "rmse": 0.8159821050863465,
+          "sign_accuracy": 0.4921875
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.009986270462673119,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 1.36558737149351,
+          "sign_accuracy": 0.646484375
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": false,
+          "rmse": 0.8159821050863465,
+          "sign_accuracy": 0.5078125
+        },
+        {
+          "arm": "full",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.00997983558487586,
+          "sign_accuracy": 1.0
+        },
+        {
+          "arm": "restricted",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 1.3659859563518235,
+          "sign_accuracy": 0.61328125
+        },
+        {
+          "arm": "constant",
+          "nuisance_shift": 4,
+          "signal_changed": true,
+          "rmse": 0.8159821050863465,
+          "sign_accuracy": 0.4921875
+        }
+      ]
+    }
+  ]
+}

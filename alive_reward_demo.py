@@ -103,7 +103,12 @@ def dcapspread(Hs, R=None):
     return np.einsum("ij,ijk->ik", G, V) / P
 
 
-def train(seed, lam, mode="raw"):
+def train(seed, lam, mode="raw", learn_gates=True):
+    """Train the toy; optionally hold sigmoid gates at their initial 0.5.
+
+    The default preserves the repaired legacy training rule. Fixed gates are
+    an explicit application-campaign control, not an adaptive mechanism.
+    """
     rng = np.random.default_rng(seed)
     W = rng.standard_normal((H, H))
     W_h = W * (0.4 / max(abs(np.linalg.eigvals(W))))
@@ -154,6 +159,8 @@ def train(seed, lam, mode="raw"):
             G["z"] += (dhg * (Hf[t - 1] if t > 0 else 0.0)) * g * (1.0 - g)
             dh_next = dhg * g
         G["z"] += MU / H * g * (1.0 - g)
+        if not learn_gates:
+            G["z"][:] = 0.0
         step += 1
         for k in P:
             G[k] = np.clip(G[k], -5, 5)

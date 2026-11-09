@@ -710,6 +710,18 @@ The [application guide](docs/use_cases_and_phenomena.md) gives definitions of
 observable phenomena, finite-horizon contracts, and proposed experiments.
 Those application hypotheses are not added to the registered evidence ledger.
 
+### Separately frozen application experiments
+
+The [completion ledger](docs/experiment_completion_20261109.md) records twelve
+model/application suites and two remaining-phenomena checks, with plans
+committed before their execution. The September ledger is unchanged. Positive
+model contrasts coexist with a memory-calibration failure, absent anchored
+structural matches in the supplied drawings, and task failures under favorable
+recurrence counts. The gate experiment measures driven identity reconstruction
+and free-run novelty, not autonomous functional recovery. These outcomes
+exercise the framework's distinctions without proving the self-repulsion
+mechanism or deployment benefit.
+
 The unresolved CDT problem is a model-specific proof that realization-dependent
 interaction causes fine avoidance while preserving meaningful structural
 recurrence. Classical constructions prove the split is possible. They do not

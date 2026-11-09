@@ -135,3 +135,19 @@ evidence.
 An independent scalar reconstruction also matched the vectorized example's
 counts, tail windows, longest miss runs, and last observed visits at horizons
 1, 2, 17, 256, and 257. The example records the NumPy version with its seed.
+
+## Recorded experiment campaign
+
+The subsequent [completion ledger](experiment_completion_20261109.md) records
+execution of the available application and phenomenon goals. A twelve-suite
+plan was committed before execution, followed by a separately frozen check of
+long return tails and clock-generated novelty. These add raw replicate/path
+records, paired analyses, functional failures, negative controls, figures,
+versions, hashes, and concrete external blockers. Original September evidence
+remains intact.
+
+The only legacy training change is an optional `learn_gates=False` control;
+default training behavior is preserved. Test discovery now explicitly skips
+the optional independent PyTorch check when that dependency is absent, rather
+than treating it as a passed check. No new result is promoted from finite
+model evidence to an asymptotic theorem or a real-world application claim.

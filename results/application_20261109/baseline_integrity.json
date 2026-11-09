@@ -1,0 +1,72 @@
+{
+  "baseline_commit": "14c9d020726d293f6f9fd19eb4f7d1c0b5f4b1d7",
+  "audit_source_sha256": "c321c3d3f06ef96f7bb345a1fce157bbb1a5f7ca3a155ee0667d2e6274a173ff",
+  "all_bytes_unchanged": true,
+  "note": "Two existing summary hashes use CRLF while committed files use LF. No old file or checksum was edited.",
+  "records": [
+    {
+      "file": "experiments/cdt_simulation_preregistration.md",
+      "recorded_sha256": "8c615fbf89ee038f3b18a76d6d9a1676c5f1a88b8561ff30e6234de9d2577f03",
+      "actual_sha256": "8c615fbf89ee038f3b18a76d6d9a1676c5f1a88b8561ff30e6234de9d2577f03",
+      "manifest_matches": true,
+      "bytes_identical_to_baseline": true,
+      "crlf_normalization_matches": false
+    },
+    {
+      "file": "experiments/cdt_simulation_campaign.py",
+      "recorded_sha256": "7d95f0578f88c90d683affda24f103487a666c9cceebc863e94be929b34a83a5",
+      "actual_sha256": "7d95f0578f88c90d683affda24f103487a666c9cceebc863e94be929b34a83a5",
+      "manifest_matches": true,
+      "bytes_identical_to_baseline": true,
+      "crlf_normalization_matches": false
+    },
+    {
+      "file": "experiments/cdt_followup_preregistration.md",
+      "recorded_sha256": "ff82804a19b4ea4b90e740333035e9af779e962f32ac38a38ba3255bda49fd30",
+      "actual_sha256": "ff82804a19b4ea4b90e740333035e9af779e962f32ac38a38ba3255bda49fd30",
+      "manifest_matches": true,
+      "bytes_identical_to_baseline": true,
+      "crlf_normalization_matches": false
+    },
+    {
+      "file": "experiments/cdt_followups.py",
+      "recorded_sha256": "9096b0cd44fa85b3eefb89619a3e1adaa0f469e09925e1af3889d734e646fcf7",
+      "actual_sha256": "9096b0cd44fa85b3eefb89619a3e1adaa0f469e09925e1af3889d734e646fcf7",
+      "manifest_matches": true,
+      "bytes_identical_to_baseline": true,
+      "crlf_normalization_matches": false
+    },
+    {
+      "file": "results/cdt_simulation_campaign.json",
+      "recorded_sha256": "4e2a00ffb8c328ca7919eddee054aae2883d9ec55d184a7c88a8ba9f011b2d02",
+      "actual_sha256": "bcc0c8433b8aef91adce5cd78500b4ee328c7d546b54c8ea22646d8d4e0e8561",
+      "manifest_matches": false,
+      "bytes_identical_to_baseline": true,
+      "crlf_normalization_matches": true
+    },
+    {
+      "file": "results/cdt_simulation_campaign_raw.json",
+      "recorded_sha256": "6b499f35311e2428b8f8141bcfea12b952f3b3db2a3886b09b2424548618e07a",
+      "actual_sha256": "6b499f35311e2428b8f8141bcfea12b952f3b3db2a3886b09b2424548618e07a",
+      "manifest_matches": true,
+      "bytes_identical_to_baseline": true,
+      "crlf_normalization_matches": true
+    },
+    {
+      "file": "results/cdt_followups.json",
+      "recorded_sha256": "2b59c0202bd906cf5ab38bd0fa885720f9ee5aef6b0f51613462157aae5c1281",
+      "actual_sha256": "04e82003122d4fa42d46c013f05af1390d8c9a7537374e7925330f0015fc084b",
+      "manifest_matches": false,
+      "bytes_identical_to_baseline": true,
+      "crlf_normalization_matches": true
+    },
+    {
+      "file": "results/cdt_followups_raw.json",
+      "recorded_sha256": "c21d3a0a53ab11ac076e52f8c777f0972b45270e2cff3bf160835587e9224402",
+      "actual_sha256": "c21d3a0a53ab11ac076e52f8c777f0972b45270e2cff3bf160835587e9224402",
+      "manifest_matches": true,
+      "bytes_identical_to_baseline": true,
+      "crlf_normalization_matches": true
+    }
+  ]
+}

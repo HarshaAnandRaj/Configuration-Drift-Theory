@@ -1,0 +1,1703 @@
+{
+  "suite": "A1",
+  "smoke_only": false,
+  "elapsed_seconds": 2.9902394669998102,
+  "records": [
+    {
+      "replicate": 0,
+      "seed": 20271110,
+      "primary_effect": 0.32105255126953125,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.1875,
+          "structural_visits_mean": 85.640625,
+          "structural_frequency_mean": 0.33453369140625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3270263671875,
+          "longest_structural_miss_run_mean": 33.234375,
+          "last_observed_fine_visit_mean": 5.46875
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.765625,
+          "structural_visits_mean": 18.703125,
+          "structural_frequency_mean": 0.07305908203125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.05126953125,
+          "longest_structural_miss_run_mean": 153.359375,
+          "last_observed_fine_visit_mean": 2.125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.515625,
+          "structural_visits_mean": 3.109375,
+          "structural_frequency_mean": 0.01214599609375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 248.859375,
+          "last_observed_fine_visit_mean": 1.171875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.1875,
+          "structural_visits_mean": 341.90625,
+          "structural_frequency_mean": 0.333892822265625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.332977294921875,
+          "longest_structural_miss_run_mean": 52.765625,
+          "last_observed_fine_visit_mean": 5.46875
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.765625,
+          "structural_visits_mean": 40.421875,
+          "structural_frequency_mean": 0.0394744873046875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.028564453125,
+          "longest_structural_miss_run_mean": 629.53125,
+          "last_observed_fine_visit_mean": 2.125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.515625,
+          "structural_visits_mean": 3.109375,
+          "structural_frequency_mean": 0.0030364990234375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1016.859375,
+          "last_observed_fine_visit_mean": 1.171875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.1875,
+          "structural_visits_mean": 1362.265625,
+          "structural_frequency_mean": 0.3325843811035156,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33158111572265625,
+          "longest_structural_miss_run_mean": 71.203125,
+          "last_observed_fine_visit_mean": 5.46875
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.765625,
+          "structural_visits_mean": 76.78125,
+          "structural_frequency_mean": 0.01874542236328125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.010528564453125,
+          "longest_structural_miss_run_mean": 2565.640625,
+          "last_observed_fine_visit_mean": 2.125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.515625,
+          "structural_visits_mean": 3.109375,
+          "structural_frequency_mean": 0.000759124755859375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4088.859375,
+          "last_observed_fine_visit_mean": 1.171875
+        }
+      ]
+    },
+    {
+      "replicate": 1,
+      "seed": 20271111,
+      "primary_effect": 0.32413482666015625,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.234375,
+          "structural_visits_mean": 90.109375,
+          "structural_frequency_mean": 0.35198974609375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.349365234375,
+          "longest_structural_miss_run_mean": 31.71875,
+          "last_observed_fine_visit_mean": 5.15625
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.609375,
+          "structural_visits_mean": 16.046875,
+          "structural_frequency_mean": 0.06268310546875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0338134765625,
+          "longest_structural_miss_run_mean": 164.96875,
+          "last_observed_fine_visit_mean": 2.5625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.375,
+          "structural_visits_mean": 2.453125,
+          "structural_frequency_mean": 0.00958251953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 249.671875,
+          "last_observed_fine_visit_mean": 0.90625
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.234375,
+          "structural_visits_mean": 344.375,
+          "structural_frequency_mean": 0.3363037109375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3271484375,
+          "longest_structural_miss_run_mean": 47.859375,
+          "last_observed_fine_visit_mean": 5.15625
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.609375,
+          "structural_visits_mean": 29.453125,
+          "structural_frequency_mean": 0.0287628173828125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0169677734375,
+          "longest_structural_miss_run_mean": 664.1875,
+          "last_observed_fine_visit_mean": 2.5625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.375,
+          "structural_visits_mean": 2.453125,
+          "structural_frequency_mean": 0.0023956298828125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1017.671875,
+          "last_observed_fine_visit_mean": 0.90625
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.234375,
+          "structural_visits_mean": 1370.625,
+          "structural_frequency_mean": 0.334625244140625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33591461181640625,
+          "longest_structural_miss_run_mean": 70.84375,
+          "last_observed_fine_visit_mean": 5.15625
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.609375,
+          "structural_visits_mean": 73.875,
+          "structural_frequency_mean": 0.018035888671875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.01177978515625,
+          "longest_structural_miss_run_mean": 2475.546875,
+          "last_observed_fine_visit_mean": 2.5625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.375,
+          "structural_visits_mean": 2.453125,
+          "structural_frequency_mean": 0.000598907470703125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4089.671875,
+          "last_observed_fine_visit_mean": 0.90625
+        }
+      ]
+    },
+    {
+      "replicate": 2,
+      "seed": 20271112,
+      "primary_effect": 0.3278656005859375,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.359375,
+          "structural_visits_mean": 86.90625,
+          "structural_frequency_mean": 0.3394775390625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.335693359375,
+          "longest_structural_miss_run_mean": 30.109375,
+          "last_observed_fine_visit_mean": 5.984375
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.75,
+          "structural_visits_mean": 16.75,
+          "structural_frequency_mean": 0.0654296875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.042236328125,
+          "longest_structural_miss_run_mean": 160.171875,
+          "last_observed_fine_visit_mean": 2.046875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.53125,
+          "structural_visits_mean": 2.703125,
+          "structural_frequency_mean": 0.01055908203125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 250.546875,
+          "last_observed_fine_visit_mean": 0.8125
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.359375,
+          "structural_visits_mean": 341.71875,
+          "structural_frequency_mean": 0.333709716796875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3289794921875,
+          "longest_structural_miss_run_mean": 48.5,
+          "last_observed_fine_visit_mean": 5.984375
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.75,
+          "structural_visits_mean": 35.0625,
+          "structural_frequency_mean": 0.03424072265625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.01873779296875,
+          "longest_structural_miss_run_mean": 625.96875,
+          "last_observed_fine_visit_mean": 2.046875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.53125,
+          "structural_visits_mean": 2.703125,
+          "structural_frequency_mean": 0.0026397705078125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1018.546875,
+          "last_observed_fine_visit_mean": 0.8125
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.359375,
+          "structural_visits_mean": 1367.328125,
+          "structural_frequency_mean": 0.3338203430175781,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33614349365234375,
+          "longest_structural_miss_run_mean": 69.4375,
+          "last_observed_fine_visit_mean": 5.984375
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.75,
+          "structural_visits_mean": 59.75,
+          "structural_frequency_mean": 0.01458740234375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.00827789306640625,
+          "longest_structural_miss_run_mean": 2859.609375,
+          "last_observed_fine_visit_mean": 2.046875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.53125,
+          "structural_visits_mean": 2.703125,
+          "structural_frequency_mean": 0.000659942626953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4090.546875,
+          "last_observed_fine_visit_mean": 0.8125
+        }
+      ]
+    },
+    {
+      "replicate": 3,
+      "seed": 20271113,
+      "primary_effect": 0.3226470947265625,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.171875,
+          "structural_visits_mean": 89.875,
+          "structural_frequency_mean": 0.35107421875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3419189453125,
+          "longest_structural_miss_run_mean": 30.453125,
+          "last_observed_fine_visit_mean": 3.984375
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.921875,
+          "structural_visits_mean": 16.234375,
+          "structural_frequency_mean": 0.06341552734375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0364990234375,
+          "longest_structural_miss_run_mean": 167.78125,
+          "last_observed_fine_visit_mean": 3.453125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 2.859375,
+          "structural_frequency_mean": 0.01116943359375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 250.578125,
+          "last_observed_fine_visit_mean": 2.015625
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.171875,
+          "structural_visits_mean": 349.078125,
+          "structural_frequency_mean": 0.3408966064453125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.334991455078125,
+          "longest_structural_miss_run_mean": 49.984375,
+          "last_observed_fine_visit_mean": 3.984375
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.921875,
+          "structural_visits_mean": 33.875,
+          "structural_frequency_mean": 0.0330810546875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.019775390625,
+          "longest_structural_miss_run_mean": 647.53125,
+          "last_observed_fine_visit_mean": 3.453125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 2.859375,
+          "structural_frequency_mean": 0.0027923583984375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1018.578125,
+          "last_observed_fine_visit_mean": 2.015625
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.171875,
+          "structural_visits_mean": 1359.8125,
+          "structural_frequency_mean": 0.3319854736328125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33153533935546875,
+          "longest_structural_miss_run_mean": 70.59375,
+          "last_observed_fine_visit_mean": 3.984375
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.921875,
+          "structural_visits_mean": 63.421875,
+          "structural_frequency_mean": 0.015483856201171875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.00888824462890625,
+          "longest_structural_miss_run_mean": 2774.75,
+          "last_observed_fine_visit_mean": 3.453125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 2.859375,
+          "structural_frequency_mean": 0.000698089599609375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4090.578125,
+          "last_observed_fine_visit_mean": 2.015625
+        }
+      ]
+    },
+    {
+      "replicate": 4,
+      "seed": 20271114,
+      "primary_effect": 0.32692718505859375,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 86.015625,
+          "structural_frequency_mean": 0.33599853515625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3323974609375,
+          "longest_structural_miss_run_mean": 32.15625,
+          "last_observed_fine_visit_mean": 4.0
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.625,
+          "structural_visits_mean": 17.3125,
+          "structural_frequency_mean": 0.067626953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.040283203125,
+          "longest_structural_miss_run_mean": 158.609375,
+          "last_observed_fine_visit_mean": 2.359375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.546875,
+          "structural_visits_mean": 3.03125,
+          "structural_frequency_mean": 0.0118408203125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 248.484375,
+          "last_observed_fine_visit_mean": 1.046875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 341.921875,
+          "structural_frequency_mean": 0.3339080810546875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.330596923828125,
+          "longest_structural_miss_run_mean": 52.953125,
+          "last_observed_fine_visit_mean": 4.0
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.625,
+          "structural_visits_mean": 34.921875,
+          "structural_frequency_mean": 0.0341033935546875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.01898193359375,
+          "longest_structural_miss_run_mean": 613.15625,
+          "last_observed_fine_visit_mean": 2.359375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.546875,
+          "structural_visits_mean": 3.03125,
+          "structural_frequency_mean": 0.002960205078125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1016.484375,
+          "last_observed_fine_visit_mean": 1.046875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 1369.53125,
+          "structural_frequency_mean": 0.33435821533203125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33542633056640625,
+          "longest_structural_miss_run_mean": 71.4375,
+          "last_observed_fine_visit_mean": 4.0
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.625,
+          "structural_visits_mean": 65.078125,
+          "structural_frequency_mean": 0.015888214111328125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0084991455078125,
+          "longest_structural_miss_run_mean": 2686.25,
+          "last_observed_fine_visit_mean": 2.359375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.546875,
+          "structural_visits_mean": 3.03125,
+          "structural_frequency_mean": 0.00074005126953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4088.484375,
+          "last_observed_fine_visit_mean": 1.046875
+        }
+      ]
+    },
+    {
+      "replicate": 5,
+      "seed": 20271115,
+      "primary_effect": 0.32767486572265625,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.25,
+          "structural_visits_mean": 86.109375,
+          "structural_frequency_mean": 0.33636474609375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33251953125,
+          "longest_structural_miss_run_mean": 29.46875,
+          "last_observed_fine_visit_mean": 4.890625
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.765625,
+          "structural_visits_mean": 16.390625,
+          "structural_frequency_mean": 0.06402587890625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.03076171875,
+          "longest_structural_miss_run_mean": 172.046875,
+          "last_observed_fine_visit_mean": 2.96875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.78125,
+          "structural_visits_mean": 3.703125,
+          "structural_frequency_mean": 0.01446533203125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 247.203125,
+          "last_observed_fine_visit_mean": 1.96875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.25,
+          "structural_visits_mean": 334.515625,
+          "structural_frequency_mean": 0.3266754150390625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.322998046875,
+          "longest_structural_miss_run_mean": 51.84375,
+          "last_observed_fine_visit_mean": 4.890625
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.765625,
+          "structural_visits_mean": 38.3125,
+          "structural_frequency_mean": 0.03741455078125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.027008056640625,
+          "longest_structural_miss_run_mean": 612.28125,
+          "last_observed_fine_visit_mean": 2.96875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.78125,
+          "structural_visits_mean": 3.703125,
+          "structural_frequency_mean": 0.0036163330078125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1015.203125,
+          "last_observed_fine_visit_mean": 1.96875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.25,
+          "structural_visits_mean": 1358.28125,
+          "structural_frequency_mean": 0.33161163330078125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33370208740234375,
+          "longest_structural_miss_run_mean": 72.4375,
+          "last_observed_fine_visit_mean": 4.890625
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.765625,
+          "structural_visits_mean": 61.828125,
+          "structural_frequency_mean": 0.015094757080078125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0060272216796875,
+          "longest_structural_miss_run_mean": 2788.265625,
+          "last_observed_fine_visit_mean": 2.96875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.78125,
+          "structural_visits_mean": 3.703125,
+          "structural_frequency_mean": 0.000904083251953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4087.203125,
+          "last_observed_fine_visit_mean": 1.96875
+        }
+      ]
+    },
+    {
+      "replicate": 6,
+      "seed": 20271116,
+      "primary_effect": 0.32505035400390625,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.078125,
+          "structural_visits_mean": 86.625,
+          "structural_frequency_mean": 0.33837890625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.333251953125,
+          "longest_structural_miss_run_mean": 28.4375,
+          "last_observed_fine_visit_mean": 4.859375
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.734375,
+          "structural_visits_mean": 16.21875,
+          "structural_frequency_mean": 0.0633544921875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.032470703125,
+          "longest_structural_miss_run_mean": 159.28125,
+          "last_observed_fine_visit_mean": 3.015625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.59375,
+          "structural_visits_mean": 3.359375,
+          "structural_frequency_mean": 0.01312255859375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 247.609375,
+          "last_observed_fine_visit_mean": 1.90625
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.078125,
+          "structural_visits_mean": 336.578125,
+          "structural_frequency_mean": 0.3286895751953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.32623291015625,
+          "longest_structural_miss_run_mean": 48.515625,
+          "last_observed_fine_visit_mean": 4.859375
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.734375,
+          "structural_visits_mean": 35.734375,
+          "structural_frequency_mean": 0.0348968505859375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.02313232421875,
+          "longest_structural_miss_run_mean": 660.125,
+          "last_observed_fine_visit_mean": 3.015625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.59375,
+          "structural_visits_mean": 3.359375,
+          "structural_frequency_mean": 0.0032806396484375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1015.609375,
+          "last_observed_fine_visit_mean": 1.90625
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.078125,
+          "structural_visits_mean": 1362.578125,
+          "structural_frequency_mean": 0.3326606750488281,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3345489501953125,
+          "longest_structural_miss_run_mean": 66.296875,
+          "last_observed_fine_visit_mean": 4.859375
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.734375,
+          "structural_visits_mean": 79.578125,
+          "structural_frequency_mean": 0.019428253173828125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.00949859619140625,
+          "longest_structural_miss_run_mean": 2372.15625,
+          "last_observed_fine_visit_mean": 3.015625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.59375,
+          "structural_visits_mean": 3.359375,
+          "structural_frequency_mean": 0.000820159912109375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4087.609375,
+          "last_observed_fine_visit_mean": 1.90625
+        }
+      ]
+    },
+    {
+      "replicate": 7,
+      "seed": 20271117,
+      "primary_effect": 0.3237152099609375,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.25,
+          "structural_visits_mean": 84.53125,
+          "structural_frequency_mean": 0.3302001953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3336181640625,
+          "longest_structural_miss_run_mean": 30.828125,
+          "last_observed_fine_visit_mean": 3.609375
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 1.046875,
+          "structural_visits_mean": 17.453125,
+          "structural_frequency_mean": 0.06817626953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0478515625,
+          "longest_structural_miss_run_mean": 156.3125,
+          "last_observed_fine_visit_mean": 3.328125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.671875,
+          "structural_visits_mean": 3.6875,
+          "structural_frequency_mean": 0.014404296875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 247.390625,
+          "last_observed_fine_visit_mean": 1.375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.25,
+          "structural_visits_mean": 340.328125,
+          "structural_frequency_mean": 0.3323516845703125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.340301513671875,
+          "longest_structural_miss_run_mean": 50.53125,
+          "last_observed_fine_visit_mean": 3.609375
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 1.046875,
+          "structural_visits_mean": 36.390625,
+          "structural_frequency_mean": 0.0355377197265625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.021697998046875,
+          "longest_structural_miss_run_mean": 634.296875,
+          "last_observed_fine_visit_mean": 3.328125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.671875,
+          "structural_visits_mean": 3.6875,
+          "structural_frequency_mean": 0.00360107421875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1015.390625,
+          "last_observed_fine_visit_mean": 1.375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.25,
+          "structural_visits_mean": 1364.75,
+          "structural_frequency_mean": 0.33319091796875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33396148681640625,
+          "longest_structural_miss_run_mean": 72.703125,
+          "last_observed_fine_visit_mean": 3.609375
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 1.046875,
+          "structural_visits_mean": 69.5625,
+          "structural_frequency_mean": 0.0169830322265625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.01024627685546875,
+          "longest_structural_miss_run_mean": 2533.28125,
+          "last_observed_fine_visit_mean": 3.328125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.671875,
+          "structural_visits_mean": 3.6875,
+          "structural_frequency_mean": 0.0009002685546875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4087.390625,
+          "last_observed_fine_visit_mean": 1.375
+        }
+      ]
+    },
+    {
+      "replicate": 8,
+      "seed": 20271118,
+      "primary_effect": 0.3170013427734375,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.21875,
+          "structural_visits_mean": 87.78125,
+          "structural_frequency_mean": 0.3428955078125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3450927734375,
+          "longest_structural_miss_run_mean": 32.234375,
+          "last_observed_fine_visit_mean": 4.0625
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.8125,
+          "structural_visits_mean": 18.75,
+          "structural_frequency_mean": 0.0732421875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0489501953125,
+          "longest_structural_miss_run_mean": 155.921875,
+          "last_observed_fine_visit_mean": 1.828125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.484375,
+          "structural_visits_mean": 3.234375,
+          "structural_frequency_mean": 0.01263427734375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 247.734375,
+          "last_observed_fine_visit_mean": 0.859375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.21875,
+          "structural_visits_mean": 345.015625,
+          "structural_frequency_mean": 0.3369293212890625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.337066650390625,
+          "longest_structural_miss_run_mean": 49.34375,
+          "last_observed_fine_visit_mean": 4.0625
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.8125,
+          "structural_visits_mean": 40.078125,
+          "structural_frequency_mean": 0.0391387939453125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.02410888671875,
+          "longest_structural_miss_run_mean": 616.046875,
+          "last_observed_fine_visit_mean": 1.828125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.484375,
+          "structural_visits_mean": 3.234375,
+          "structural_frequency_mean": 0.0031585693359375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1015.734375,
+          "last_observed_fine_visit_mean": 0.859375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.21875,
+          "structural_visits_mean": 1359.03125,
+          "structural_frequency_mean": 0.33179473876953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.328094482421875,
+          "longest_structural_miss_run_mean": 68.234375,
+          "last_observed_fine_visit_mean": 4.0625
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.8125,
+          "structural_visits_mean": 78.453125,
+          "structural_frequency_mean": 0.019153594970703125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0110931396484375,
+          "longest_structural_miss_run_mean": 2363.046875,
+          "last_observed_fine_visit_mean": 1.828125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.484375,
+          "structural_visits_mean": 3.234375,
+          "structural_frequency_mean": 0.000789642333984375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4087.734375,
+          "last_observed_fine_visit_mean": 0.859375
+        }
+      ]
+    },
+    {
+      "replicate": 9,
+      "seed": 20271119,
+      "primary_effect": 0.32110595703125,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.3125,
+          "structural_visits_mean": 85.546875,
+          "structural_frequency_mean": 0.33416748046875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3223876953125,
+          "longest_structural_miss_run_mean": 32.0,
+          "last_observed_fine_visit_mean": 3.375
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.8125,
+          "structural_visits_mean": 16.09375,
+          "structural_frequency_mean": 0.0628662109375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0474853515625,
+          "longest_structural_miss_run_mean": 160.296875,
+          "last_observed_fine_visit_mean": 1.796875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.65625,
+          "structural_visits_mean": 3.171875,
+          "structural_frequency_mean": 0.01239013671875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 248.203125,
+          "last_observed_fine_visit_mean": 1.359375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.3125,
+          "structural_visits_mean": 339.46875,
+          "structural_frequency_mean": 0.331512451171875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33319091796875,
+          "longest_structural_miss_run_mean": 49.25,
+          "last_observed_fine_visit_mean": 3.375
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.8125,
+          "structural_visits_mean": 34.125,
+          "structural_frequency_mean": 0.0333251953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.020965576171875,
+          "longest_structural_miss_run_mean": 644.734375,
+          "last_observed_fine_visit_mean": 1.796875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.65625,
+          "structural_visits_mean": 3.171875,
+          "structural_frequency_mean": 0.0030975341796875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1016.203125,
+          "last_observed_fine_visit_mean": 1.359375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.3125,
+          "structural_visits_mean": 1361.484375,
+          "structural_frequency_mean": 0.3323936462402344,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33260345458984375,
+          "longest_structural_miss_run_mean": 69.953125,
+          "last_observed_fine_visit_mean": 3.375
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.8125,
+          "structural_visits_mean": 71.21875,
+          "structural_frequency_mean": 0.01738739013671875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.01149749755859375,
+          "longest_structural_miss_run_mean": 2574.125,
+          "last_observed_fine_visit_mean": 1.796875
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.65625,
+          "structural_visits_mean": 3.171875,
+          "structural_frequency_mean": 0.000774383544921875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4088.203125,
+          "last_observed_fine_visit_mean": 1.359375
+        }
+      ]
+    },
+    {
+      "replicate": 10,
+      "seed": 20271120,
+      "primary_effect": 0.31871795654296875,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.171875,
+          "structural_visits_mean": 85.3125,
+          "structural_frequency_mean": 0.333251953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3284912109375,
+          "longest_structural_miss_run_mean": 33.890625,
+          "last_observed_fine_visit_mean": 4.78125
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.875,
+          "structural_visits_mean": 18.6875,
+          "structural_frequency_mean": 0.072998046875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0389404296875,
+          "longest_structural_miss_run_mean": 158.6875,
+          "last_observed_fine_visit_mean": 2.4375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.625,
+          "structural_visits_mean": 3.15625,
+          "structural_frequency_mean": 0.0123291015625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 247.734375,
+          "last_observed_fine_visit_mean": 1.0
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.171875,
+          "structural_visits_mean": 345.296875,
+          "structural_frequency_mean": 0.3372039794921875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.339630126953125,
+          "longest_structural_miss_run_mean": 51.234375,
+          "last_observed_fine_visit_mean": 4.78125
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.875,
+          "structural_visits_mean": 35.75,
+          "structural_frequency_mean": 0.034912109375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.019561767578125,
+          "longest_structural_miss_run_mean": 657.140625,
+          "last_observed_fine_visit_mean": 2.4375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.625,
+          "structural_visits_mean": 3.15625,
+          "structural_frequency_mean": 0.003082275390625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1015.734375,
+          "last_observed_fine_visit_mean": 1.0
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.171875,
+          "structural_visits_mean": 1353.625,
+          "structural_frequency_mean": 0.330474853515625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.32849884033203125,
+          "longest_structural_miss_run_mean": 77.71875,
+          "last_observed_fine_visit_mean": 4.78125
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.875,
+          "structural_visits_mean": 70.359375,
+          "structural_frequency_mean": 0.017177581787109375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0097808837890625,
+          "longest_structural_miss_run_mean": 2582.71875,
+          "last_observed_fine_visit_mean": 2.4375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.625,
+          "structural_visits_mean": 3.15625,
+          "structural_frequency_mean": 0.00077056884765625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4087.734375,
+          "last_observed_fine_visit_mean": 1.0
+        }
+      ]
+    },
+    {
+      "replicate": 11,
+      "seed": 20271121,
+      "primary_effect": 0.32549285888671875,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.34375,
+          "structural_visits_mean": 86.9375,
+          "structural_frequency_mean": 0.339599609375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.346435546875,
+          "longest_structural_miss_run_mean": 30.65625,
+          "last_observed_fine_visit_mean": 4.828125
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 18.28125,
+          "structural_frequency_mean": 0.0714111328125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.039794921875,
+          "longest_structural_miss_run_mean": 162.625,
+          "last_observed_fine_visit_mean": 4.140625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.671875,
+          "structural_visits_mean": 3.125,
+          "structural_frequency_mean": 0.01220703125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 248.578125,
+          "last_observed_fine_visit_mean": 1.4375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.34375,
+          "structural_visits_mean": 344.34375,
+          "structural_frequency_mean": 0.336273193359375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.335540771484375,
+          "longest_structural_miss_run_mean": 48.65625,
+          "last_observed_fine_visit_mean": 4.828125
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 39.0,
+          "structural_frequency_mean": 0.0380859375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.027587890625,
+          "longest_structural_miss_run_mean": 605.921875,
+          "last_observed_fine_visit_mean": 4.140625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.671875,
+          "structural_visits_mean": 3.125,
+          "structural_frequency_mean": 0.0030517578125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1016.578125,
+          "last_observed_fine_visit_mean": 1.4375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.34375,
+          "structural_visits_mean": 1371.3125,
+          "structural_frequency_mean": 0.3347930908203125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33587646484375,
+          "longest_structural_miss_run_mean": 72.234375,
+          "last_observed_fine_visit_mean": 4.828125
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 76.59375,
+          "structural_frequency_mean": 0.01869964599609375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.01038360595703125,
+          "longest_structural_miss_run_mean": 2486.875,
+          "last_observed_fine_visit_mean": 4.140625
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.671875,
+          "structural_visits_mean": 3.125,
+          "structural_frequency_mean": 0.000762939453125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4088.578125,
+          "last_observed_fine_visit_mean": 1.4375
+        }
+      ]
+    },
+    {
+      "replicate": 12,
+      "seed": 20271122,
+      "primary_effect": 0.32387542724609375,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.578125,
+          "structural_visits_mean": 87.453125,
+          "structural_frequency_mean": 0.34161376953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.333984375,
+          "longest_structural_miss_run_mean": 30.84375,
+          "last_observed_fine_visit_mean": 6.328125
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 13.65625,
+          "structural_frequency_mean": 0.0533447265625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.030517578125,
+          "longest_structural_miss_run_mean": 169.09375,
+          "last_observed_fine_visit_mean": 2.453125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.609375,
+          "structural_visits_mean": 3.453125,
+          "structural_frequency_mean": 0.01348876953125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 246.890625,
+          "last_observed_fine_visit_mean": 1.421875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.578125,
+          "structural_visits_mean": 341.296875,
+          "structural_frequency_mean": 0.3332977294921875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33453369140625,
+          "longest_structural_miss_run_mean": 52.65625,
+          "last_observed_fine_visit_mean": 6.328125
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 29.296875,
+          "structural_frequency_mean": 0.0286102294921875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.02130126953125,
+          "longest_structural_miss_run_mean": 686.8125,
+          "last_observed_fine_visit_mean": 2.453125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.609375,
+          "structural_visits_mean": 3.453125,
+          "structural_frequency_mean": 0.0033721923828125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1014.890625,
+          "last_observed_fine_visit_mean": 1.421875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.578125,
+          "structural_visits_mean": 1363.25,
+          "structural_frequency_mean": 0.33282470703125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33257293701171875,
+          "longest_structural_miss_run_mean": 75.046875,
+          "last_observed_fine_visit_mean": 6.328125
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 64.875,
+          "structural_frequency_mean": 0.015838623046875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.008697509765625,
+          "longest_structural_miss_run_mean": 2498.078125,
+          "last_observed_fine_visit_mean": 2.453125
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.609375,
+          "structural_visits_mean": 3.453125,
+          "structural_frequency_mean": 0.000843048095703125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4086.890625,
+          "last_observed_fine_visit_mean": 1.421875
+        }
+      ]
+    },
+    {
+      "replicate": 13,
+      "seed": 20271123,
+      "primary_effect": 0.32425689697265625,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.28125,
+          "structural_visits_mean": 84.8125,
+          "structural_frequency_mean": 0.331298828125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3187255859375,
+          "longest_structural_miss_run_mean": 31.125,
+          "last_observed_fine_visit_mean": 4.4375
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.921875,
+          "structural_visits_mean": 15.03125,
+          "structural_frequency_mean": 0.0587158203125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0360107421875,
+          "longest_structural_miss_run_mean": 165.828125,
+          "last_observed_fine_visit_mean": 2.375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 3.234375,
+          "structural_frequency_mean": 0.01263427734375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 248.78125,
+          "last_observed_fine_visit_mean": 1.484375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.28125,
+          "structural_visits_mean": 340.46875,
+          "structural_frequency_mean": 0.332489013671875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.332489013671875,
+          "longest_structural_miss_run_mean": 49.484375,
+          "last_observed_fine_visit_mean": 4.4375
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.921875,
+          "structural_visits_mean": 30.9375,
+          "structural_frequency_mean": 0.03021240234375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0166015625,
+          "longest_structural_miss_run_mean": 657.171875,
+          "last_observed_fine_visit_mean": 2.375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 3.234375,
+          "structural_frequency_mean": 0.0031585693359375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1016.78125,
+          "last_observed_fine_visit_mean": 1.484375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.28125,
+          "structural_visits_mean": 1371.1875,
+          "structural_frequency_mean": 0.3347625732421875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33512115478515625,
+          "longest_structural_miss_run_mean": 68.125,
+          "last_observed_fine_visit_mean": 4.4375
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.921875,
+          "structural_visits_mean": 71.640625,
+          "structural_frequency_mean": 0.017490386962890625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0108642578125,
+          "longest_structural_miss_run_mean": 2543.046875,
+          "last_observed_fine_visit_mean": 2.375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 3.234375,
+          "structural_frequency_mean": 0.000789642333984375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4088.78125,
+          "last_observed_fine_visit_mean": 1.484375
+        }
+      ]
+    },
+    {
+      "replicate": 14,
+      "seed": 20271124,
+      "primary_effect": 0.3213043212890625,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 85.984375,
+          "structural_frequency_mean": 0.33587646484375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.33056640625,
+          "longest_structural_miss_run_mean": 30.9375,
+          "last_observed_fine_visit_mean": 4.0
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.59375,
+          "structural_visits_mean": 16.203125,
+          "structural_frequency_mean": 0.06329345703125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0379638671875,
+          "longest_structural_miss_run_mean": 161.90625,
+          "last_observed_fine_visit_mean": 2.609375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.359375,
+          "structural_visits_mean": 2.328125,
+          "structural_frequency_mean": 0.00909423828125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 250.5625,
+          "last_observed_fine_visit_mean": 0.546875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 342.65625,
+          "structural_frequency_mean": 0.334625244140625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.331512451171875,
+          "longest_structural_miss_run_mean": 50.359375,
+          "last_observed_fine_visit_mean": 4.0
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.59375,
+          "structural_visits_mean": 33.6875,
+          "structural_frequency_mean": 0.03289794921875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.02227783203125,
+          "longest_structural_miss_run_mean": 625.9375,
+          "last_observed_fine_visit_mean": 2.609375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.359375,
+          "structural_visits_mean": 2.328125,
+          "structural_frequency_mean": 0.0022735595703125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1018.5625,
+          "last_observed_fine_visit_mean": 0.546875
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.015625,
+          "structural_visits_mean": 1363.71875,
+          "structural_frequency_mean": 0.33293914794921875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3316192626953125,
+          "longest_structural_miss_run_mean": 71.859375,
+          "last_observed_fine_visit_mean": 4.0
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.59375,
+          "structural_visits_mean": 73.046875,
+          "structural_frequency_mean": 0.017833709716796875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.01031494140625,
+          "longest_structural_miss_run_mean": 2360.5625,
+          "last_observed_fine_visit_mean": 2.609375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.359375,
+          "structural_visits_mean": 2.328125,
+          "structural_frequency_mean": 0.000568389892578125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4090.5625,
+          "last_observed_fine_visit_mean": 0.546875
+        }
+      ]
+    },
+    {
+      "replicate": 15,
+      "seed": 20271125,
+      "primary_effect": 0.322662353515625,
+      "arms": [
+        {
+          "mode": "restoring",
+          "horizon": 256,
+          "fine_visits_mean": 1.390625,
+          "structural_visits_mean": 84.953125,
+          "structural_frequency_mean": 0.33184814453125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3363037109375,
+          "longest_structural_miss_run_mean": 33.125,
+          "last_observed_fine_visit_mean": 5.359375
+        },
+        {
+          "mode": "free",
+          "horizon": 256,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 16.046875,
+          "structural_frequency_mean": 0.06268310546875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.03271484375,
+          "longest_structural_miss_run_mean": 165.59375,
+          "last_observed_fine_visit_mean": 3.234375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 256,
+          "fine_visits_mean": 0.46875,
+          "structural_visits_mean": 2.65625,
+          "structural_frequency_mean": 0.0103759765625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 250.828125,
+          "last_observed_fine_visit_mean": 0.734375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 1024,
+          "fine_visits_mean": 1.390625,
+          "structural_visits_mean": 342.71875,
+          "structural_frequency_mean": 0.334686279296875,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3338623046875,
+          "longest_structural_miss_run_mean": 49.8125,
+          "last_observed_fine_visit_mean": 5.359375
+        },
+        {
+          "mode": "free",
+          "horizon": 1024,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 36.703125,
+          "structural_frequency_mean": 0.0358428955078125,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.02130126953125,
+          "longest_structural_miss_run_mean": 619.921875,
+          "last_observed_fine_visit_mean": 3.234375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 1024,
+          "fine_visits_mean": 0.46875,
+          "structural_visits_mean": 2.65625,
+          "structural_frequency_mean": 0.002593994140625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 1018.828125,
+          "last_observed_fine_visit_mean": 0.734375
+        },
+        {
+          "mode": "restoring",
+          "horizon": 4096,
+          "fine_visits_mean": 1.390625,
+          "structural_visits_mean": 1367.9375,
+          "structural_frequency_mean": 0.3339691162109375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.3316497802734375,
+          "longest_structural_miss_run_mean": 68.34375,
+          "last_observed_fine_visit_mean": 5.359375
+        },
+        {
+          "mode": "free",
+          "horizon": 4096,
+          "fine_visits_mean": 0.796875,
+          "structural_visits_mean": 72.09375,
+          "structural_frequency_mean": 0.01760101318359375,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0089874267578125,
+          "longest_structural_miss_run_mean": 2602.734375,
+          "last_observed_fine_visit_mean": 3.234375
+        },
+        {
+          "mode": "visible_drift",
+          "horizon": 4096,
+          "fine_visits_mean": 0.46875,
+          "structural_visits_mean": 2.65625,
+          "structural_frequency_mean": 0.00064849853515625,
+          "fine_tail_visits_mean": 0.0,
+          "structural_tail_frequency_mean": 0.0,
+          "longest_structural_miss_run_mean": 4090.828125,
+          "last_observed_fine_visit_mean": 0.734375
+        }
+      ]
+    }
+  ]
+}

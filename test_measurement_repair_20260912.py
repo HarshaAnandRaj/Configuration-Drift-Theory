@@ -1,4 +1,5 @@
 import unittest
+import importlib.util
 import numpy as np
 from gamma_probe import phase_surrogate, gamma_hat
 import alive_reward_demo as A
@@ -33,6 +34,8 @@ class RepairTests(unittest.TestCase):
                 a=x.copy();b=x.copy();a[i,j]+=1e-6;b[i,j]-=1e-6
                 self.assertAlmostEqual(analytic[i,j],(objective(a)-objective(b))/2e-6,places=6)
 
+    @unittest.skipUnless(importlib.util.find_spec('torch') is not None,
+                         'optional PyTorch dependency unavailable; autograd cross-check not run')
     def test_toy_two_updates_match_independent_torch_autograd(self):
         import torch
         old=(A.H,A.T,A.EPOCHS)

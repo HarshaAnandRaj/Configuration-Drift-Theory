@@ -1,0 +1,32 @@
+{
+  "started_at": "2026-11-09T18:17:30.257717+00:00",
+  "smoke_only": false,
+  "plan_commit": "9e9f307ef55376b0cb0d079d11feeef562092eac",
+  "master_seed": 20261110,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "source_sha256": {
+    "experiments/cdt_application_campaign.py": "b208f9ac07ac520701f77009b388ca40faabea869e0c7938fa534560054c4d8d",
+    "experiments/cdt_application_preregistration_20261109.md": "81c3ef25517094012ae5c137769a477ebda1663e9f9c0613c68338bee6da8bb1",
+    "examples/cdt_use_case_demo.py": "fea2e873c8ca66795723370fbe84c738d0997d500dead24794cf32adb24163e2",
+    "alive_reward_demo.py": "54b6f0eb7fcbd1a782ed07a131a9e3182f6361ee7f01069b2920f37915f313dd",
+    "gamma_probe.py": "9f9882a5c5765735c6e7c0495f5860f8f20fcfeec007e7bff4ebd4652a1d0d3e",
+    "experiments/cdt_simulation_campaign.py": "7d95f0578f88c90d683affda24f103487a666c9cceebc863e94be929b34a83a5"
+  },
+  "suites": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12"
+  ],
+  "torch_available": false,
+  "finished_at": "2026-11-09T18:18:41.282268+00:00"
+}

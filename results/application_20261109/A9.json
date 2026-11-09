@@ -1,0 +1,15 @@
+{
+  "suite": "A9",
+  "smoke_only": false,
+  "elapsed_seconds": 0.0015687000000070839,
+  "records": [
+    {
+      "replicate": 0,
+      "seed": 20351110,
+      "exact_path_TV": "1214409497/34359738368",
+      "exact_sum_bound": "63/1024",
+      "bound_holds": true,
+      "enumerated_paths": 64
+    }
+  ]
+}

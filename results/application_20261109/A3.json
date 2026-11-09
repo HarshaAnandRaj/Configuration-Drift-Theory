@@ -1,0 +1,439 @@
+{
+  "suite": "A3",
+  "smoke_only": false,
+  "elapsed_seconds": 0.14917652699978134,
+  "records": [
+    {
+      "replicate": 0,
+      "seed": 20291110,
+      "primary_effect": 10.289322771198927,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 5.68942529616985e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 5.713503253055167e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 5.707558090916265e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.140625
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 10.289322771198927,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 1,
+      "seed": 20291111,
+      "primary_effect": 7.552410120242335,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 3.708334820640319e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 1.4682029012327432e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 1.4807783048747599e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.0546875
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 7.552410120242335,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 2,
+      "seed": 20291112,
+      "primary_effect": 6.240025179169894,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 5.719475745374855e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 7.171932669628258e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 7.241950978198379e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.09375
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 6.240025179169894,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 3,
+      "seed": 20291113,
+      "primary_effect": 10.959597301962441,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 1.417923197767966e-15,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 6.369833012076385e-26,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 6.456242954916612e-26,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.078125
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 10.959597301962441,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 4,
+      "seed": 20291114,
+      "primary_effect": 6.067682129881697,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 4.571159719608502e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 2.3646938171095116e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 2.379100994803128e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.046875
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 6.067682129881697,
+          "structural_cadence_hit_fraction": 0.0078125,
+          "full_cadence_hit_fraction": 0.0078125
+        }
+      ]
+    },
+    {
+      "replicate": 5,
+      "seed": 20291115,
+      "primary_effect": 9.811137833613754,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 1.9703325939045418e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 2.839477059866089e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 2.9458796010060826e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.0390625
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 9.811137833613754,
+          "structural_cadence_hit_fraction": 0.0078125,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 6,
+      "seed": 20291116,
+      "primary_effect": 10.01949382419382,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 5.335225606360084e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 3.082656394265118e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 3.1519421505049827e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.1015625
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 10.01949382419382,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 7,
+      "seed": 20291117,
+      "primary_effect": 7.17736463792104,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 5.356310289889855e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 3.1828278452371465e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 3.1748961373227592e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.078125
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 7.17736463792104,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 8,
+      "seed": 20291118,
+      "primary_effect": 9.269330584918015,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 2.395712332802101e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 2.7250257246696112e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 2.780290929267586e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.0703125
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 9.269330584918015,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 9,
+      "seed": 20291119,
+      "primary_effect": 7.1155039631529675,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 7.34682105490805e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 8.503478767300868e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 8.648940920643214e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.078125
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 7.1155039631529675,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 10,
+      "seed": 20291120,
+      "primary_effect": 6.592988137008743,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 5.089450082939442e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 1.5821029964196898e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 1.5695353226807147e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.125
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 6.592988137008743,
+          "structural_cadence_hit_fraction": 0.015625,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 11,
+      "seed": 20291121,
+      "primary_effect": 5.35895938658136,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 5.269843771530927e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 9.084468981971023e-28,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 1.0014152896186384e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.0859375
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 5.35895938658136,
+          "structural_cadence_hit_fraction": 0.0078125,
+          "full_cadence_hit_fraction": 0.0078125
+        }
+      ]
+    },
+    {
+      "replicate": 12,
+      "seed": 20291122,
+      "primary_effect": 8.778172357437429,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 5.595941980259242e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 1.7275522854075302e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 1.8275789647369238e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.0703125
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 8.778172357437429,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 13,
+      "seed": 20291123,
+      "primary_effect": 5.36735266325001,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 5.345220008713648e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 2.1319489643099398e-26,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 2.1044272859923648e-26,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.078125
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 5.36735266325001,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 14,
+      "seed": 20291124,
+      "primary_effect": 8.557308536351096,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 4.022586501791832e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 2.9079363993689882e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 2.944891139454244e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.140625
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 8.557308536351096,
+          "structural_cadence_hit_fraction": 0.0078125,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "replicate": 15,
+      "seed": 20291125,
+      "primary_effect": 12.533036699981645,
+      "functional_pass": true,
+      "decoder_nullspace_residual": 4.869304974929249e-16,
+      "arms": [
+        {
+          "arm": "baseline",
+          "waveform_mse": 4.125126783467906e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 1.0
+        },
+        {
+          "arm": "hidden_noise",
+          "waveform_mse": 4.3142778530587516e-27,
+          "structural_cadence_hit_fraction": 1.0,
+          "full_cadence_hit_fraction": 0.0625
+        },
+        {
+          "arm": "visible_noise",
+          "waveform_mse": 12.533036699981645,
+          "structural_cadence_hit_fraction": 0.0,
+          "full_cadence_hit_fraction": 0.0
+        }
+      ]
+    }
+  ]
+}

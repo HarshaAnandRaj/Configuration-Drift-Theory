@@ -9,6 +9,14 @@ The useful question is: **which changes in full state can be tolerated while
 the structure needed for a task keeps returning reliably?** Recurrence alone
 cannot decide whether that structure is meaningful or whether a task succeeds.
 
+**Experiment status:** the proposed model tests have now been run. See the
+[completion ledger](experiment_completion_20261109.md),
+[twelve-suite results](../results/application_20261109/evidence_ledger.md), and
+[remaining-phenomena follow-up](../results/phenomena_followup_20261109/evidence_ledger.md).
+One memory replicate failed the registered functional checks. Neither supplied
+drawing returned to its first-stroke anchor at the registered structural radius.
+Real-world application benefits and the asymptotic mechanism remain unproved.
+
 ## 1. Phenomena that can be defined precisely
 
 Let $X$ be the full process, $Y=\pi(X)$ a fixed structural representation,
@@ -77,6 +85,9 @@ return time of three steps is not a three-step deadline guarantee.
 
 These are experiment designs. No real-world benefit in this table is claimed
 as established by the repository's current simulations.
+Their controlled-model outcomes and concrete deployment blockers are recorded
+in the linked completion ledger; these designs are retained to make the
+tested hypotheses and their limits explicit.
 
 | Use case | Full state and proposed structure | Decision the analysis could support | Independent outcome |
 |---|---|---|---|

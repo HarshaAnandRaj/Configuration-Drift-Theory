@@ -1,0 +1,1015 @@
+{
+  "suite": "A12",
+  "smoke_only": false,
+  "elapsed_seconds": 23.770265852000193,
+  "records": [
+    {
+      "replicate": 0,
+      "seed": 20381110,
+      "arms": [
+        {
+          "lambda": 0,
+          "learned_gates": true,
+          "training_mse": 0.0033895547909468756,
+          "heldout_driven_mse": 0.0035662323910619527,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.162888761427318,
+          "gates": [
+            0.5580989986941447,
+            0.5478679463130279,
+            0.46527893601707837,
+            0.5911473020265579,
+            0.4837789189169854,
+            0.5133079325891625,
+            0.5239831767587569,
+            0.4794255501116044
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.01,
+          "learned_gates": true,
+          "training_mse": 0.0034243427056413873,
+          "heldout_driven_mse": 0.0035713390825817272,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.163474053588272,
+          "gates": [
+            0.5581687741045499,
+            0.5479376487063443,
+            0.4653696123381279,
+            0.5912351800681003,
+            0.483785892262327,
+            0.5133671383987733,
+            0.5241627156850233,
+            0.47944709202502594
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": true,
+          "training_mse": 0.003470716555501707,
+          "heldout_driven_mse": 0.003578362627707043,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.16597707450012,
+          "gates": [
+            0.5584455717413067,
+            0.5482172599385385,
+            0.4657666440822197,
+            0.5915336766347685,
+            0.483928763862053,
+            0.5136415035029572,
+            0.5248085395870367,
+            0.4796351151512395
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.2,
+          "learned_gates": true,
+          "training_mse": 0.00321342436538409,
+          "heldout_driven_mse": 0.003906824299587948,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.1754760596852485,
+          "gates": [
+            0.5590541017251556,
+            0.5488060536719543,
+            0.4673469558046478,
+            0.5915520571694766,
+            0.48625805370771524,
+            0.5148573589243541,
+            0.525829921170085,
+            0.4817715575118598
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0,
+          "learned_gates": false,
+          "training_mse": 0.00374741263680716,
+          "heldout_driven_mse": 0.004156478096900131,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": false,
+          "training_mse": 0.00393557652038353,
+          "heldout_driven_mse": 0.004195369312760738,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        }
+      ]
+    },
+    {
+      "replicate": 1,
+      "seed": 20381111,
+      "arms": [
+        {
+          "lambda": 0,
+          "learned_gates": true,
+          "training_mse": 0.002798984219335389,
+          "heldout_driven_mse": 0.005616531431424164,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.311068403612066,
+          "gates": [
+            0.5726290949398375,
+            0.545811517344982,
+            0.5647488092248969,
+            0.5798783179966024,
+            0.5715104575128399,
+            0.5144898127331662,
+            0.5365603057129406,
+            0.4254400881468004
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.01,
+          "learned_gates": true,
+          "training_mse": 0.0028330249468131175,
+          "heldout_driven_mse": 0.005580524158882677,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.311259187741521,
+          "gates": [
+            0.5726160371258401,
+            0.5458332508858857,
+            0.5647104306072728,
+            0.5798563827903523,
+            0.5714845509475902,
+            0.5147436469425998,
+            0.5365980949031595,
+            0.4254167935388208
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": true,
+          "training_mse": 0.0030062359754149345,
+          "heldout_driven_mse": 0.005406966761087308,
+          "free_run_new_cell_fraction": 0.01,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.312487935971928,
+          "gates": [
+            0.5725776348747906,
+            0.5459212617446617,
+            0.5645973549272073,
+            0.5798236847371628,
+            0.5713928104724509,
+            0.5159491269849221,
+            0.5368658938077555,
+            0.42536016842297797
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.2,
+          "learned_gates": true,
+          "training_mse": 0.0037236708733040954,
+          "heldout_driven_mse": 0.005191594028189121,
+          "free_run_new_cell_fraction": 0.01,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.328835871301669,
+          "gates": [
+            0.5735081785384981,
+            0.546970093867269,
+            0.5647680732698563,
+            0.5804141489950781,
+            0.5714523103093414,
+            0.5247897862661861,
+            0.5406617553328593,
+            0.4262715247225809
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0,
+          "learned_gates": false,
+          "training_mse": 0.002652096380406494,
+          "heldout_driven_mse": 0.00587920370802774,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": false,
+          "training_mse": 0.0027759669841839157,
+          "heldout_driven_mse": 0.0059149500965400385,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        }
+      ]
+    },
+    {
+      "replicate": 2,
+      "seed": 20381112,
+      "arms": [
+        {
+          "lambda": 0,
+          "learned_gates": true,
+          "training_mse": 0.0029568813670830863,
+          "heldout_driven_mse": 0.003176096136864998,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.225691895605484,
+          "gates": [
+            0.44462772721456567,
+            0.5619419567602355,
+            0.5843995703882663,
+            0.5738917185947308,
+            0.5590130172496145,
+            0.5752566134691752,
+            0.48393667837840537,
+            0.44262461355049093
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.01,
+          "learned_gates": true,
+          "training_mse": 0.0029441940795000127,
+          "heldout_driven_mse": 0.003174104909353846,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.228010190799934,
+          "gates": [
+            0.4452801227688272,
+            0.5620984573876204,
+            0.584839337548643,
+            0.5740619946175674,
+            0.5592917142668631,
+            0.5753988212478313,
+            0.48428278234768035,
+            0.44275696061490166
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": true,
+          "training_mse": 0.002915572003738601,
+          "heldout_driven_mse": 0.0031708659054252406,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.239036719239115,
+          "gates": [
+            0.44846989238657037,
+            0.562844673896733,
+            0.5868104596999358,
+            0.5748374043802326,
+            0.5605381975041974,
+            0.5760614811191398,
+            0.48594673817114775,
+            0.44352787208115796
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.2,
+          "learned_gates": true,
+          "training_mse": 0.003838023953643945,
+          "heldout_driven_mse": 0.003471020538612512,
+          "free_run_new_cell_fraction": 0.013333333333333334,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.316968758835605,
+          "gates": [
+            0.47340639990130345,
+            0.5683448235715338,
+            0.5980870587014938,
+            0.5796758584277499,
+            0.5681508263170817,
+            0.5804650118539261,
+            0.49636187611233085,
+            0.4524769039501857
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0,
+          "learned_gates": false,
+          "training_mse": 0.0030116660539036464,
+          "heldout_driven_mse": 0.003818840300671605,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": false,
+          "training_mse": 0.0029998478755698583,
+          "heldout_driven_mse": 0.003872826237863431,
+          "free_run_new_cell_fraction": 0.01,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        }
+      ]
+    },
+    {
+      "replicate": 3,
+      "seed": 20381113,
+      "arms": [
+        {
+          "lambda": 0,
+          "learned_gates": true,
+          "training_mse": 0.004088135950368146,
+          "heldout_driven_mse": 0.002555998399211665,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.324805781666295,
+          "gates": [
+            0.5511390122708232,
+            0.5665662766112912,
+            0.5443893160064862,
+            0.5718293566535897,
+            0.5725572239619756,
+            0.40109098041795277,
+            0.558589981423782,
+            0.5586436343203937
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.01,
+          "learned_gates": true,
+          "training_mse": 0.0040894716096648055,
+          "heldout_driven_mse": 0.002566279494345397,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.324386220182348,
+          "gates": [
+            0.550974410874533,
+            0.5664592750307895,
+            0.5442394388173405,
+            0.5716817318985673,
+            0.572412250401165,
+            0.4015831330267946,
+            0.5585413628290297,
+            0.5584946173041292
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": true,
+          "training_mse": 0.0040930824858580045,
+          "heldout_driven_mse": 0.0026099015819807734,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.322835122015641,
+          "gates": [
+            0.5503056912206744,
+            0.5660250998173237,
+            0.5436342828678574,
+            0.5710819149810306,
+            0.5718220397285545,
+            0.40374357565480357,
+            0.5583349128655437,
+            0.5578876048798525
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.2,
+          "learned_gates": true,
+          "training_mse": 0.004058813314465187,
+          "heldout_driven_mse": 0.002808470046021127,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.3222351961719605,
+          "gates": [
+            0.5476390856093578,
+            0.5642834786847367,
+            0.5412699219368232,
+            0.5686267253725924,
+            0.5694382956232055,
+            0.41823738559221846,
+            0.5573533448981298,
+            0.5553869584548969
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0,
+          "learned_gates": false,
+          "training_mse": 0.004111975406613919,
+          "heldout_driven_mse": 0.00240332092148788,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": false,
+          "training_mse": 0.004115806812068676,
+          "heldout_driven_mse": 0.0024586519322999413,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        }
+      ]
+    },
+    {
+      "replicate": 4,
+      "seed": 20381114,
+      "arms": [
+        {
+          "lambda": 0,
+          "learned_gates": true,
+          "training_mse": 0.0025839046788120826,
+          "heldout_driven_mse": 0.0036122232505324792,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 6.0,
+          "gate_sum": 4.38151232931244,
+          "gates": [
+            0.48586072307536743,
+            0.5846526691979236,
+            0.5761821784555997,
+            0.4641695318469913,
+            0.5712014506996214,
+            0.5656292605783816,
+            0.5526052808932174,
+            0.5812112345653381
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.01,
+          "learned_gates": true,
+          "training_mse": 0.0025891293086253205,
+          "heldout_driven_mse": 0.0036826697344809617,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 6.0,
+          "gate_sum": 4.383938477200434,
+          "gates": [
+            0.4868107812102954,
+            0.5847701623512492,
+            0.5762983968426774,
+            0.4650365759774198,
+            0.5714294741668733,
+            0.5658588993625067,
+            0.5524047874226341,
+            0.5813293998667787
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": true,
+          "training_mse": 0.002645402180007729,
+          "heldout_driven_mse": 0.004067154410377426,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 6.0,
+          "gate_sum": 4.396880990441145,
+          "gates": [
+            0.49145335425078424,
+            0.5854376264099941,
+            0.576934777841225,
+            0.4696466498713889,
+            0.5727002687605975,
+            0.5670676317731701,
+            0.5516700215198928,
+            0.5819706600140926
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.2,
+          "learned_gates": true,
+          "training_mse": 0.022432158396498075,
+          "heldout_driven_mse": 0.014203911752740647,
+          "free_run_new_cell_fraction": 0.11333333333333333,
+          "open_gate_count": 8.0,
+          "gate_sum": 4.530832546902904,
+          "gates": [
+            0.5232305543088448,
+            0.5964732812127372,
+            0.5872017777649929,
+            0.5065025863884371,
+            0.5887195241526957,
+            0.582907243063653,
+            0.5540756769883062,
+            0.5917219030232365
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0,
+          "learned_gates": false,
+          "training_mse": 0.0031256693453793082,
+          "heldout_driven_mse": 0.004235492166302722,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": false,
+          "training_mse": 0.0032018461118718295,
+          "heldout_driven_mse": 0.004616539840686758,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        }
+      ]
+    },
+    {
+      "replicate": 5,
+      "seed": 20381115,
+      "arms": [
+        {
+          "lambda": 0,
+          "learned_gates": true,
+          "training_mse": 0.003181054602072023,
+          "heldout_driven_mse": 0.0021708172144478343,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.441658610366019,
+          "gates": [
+            0.46246053096541273,
+            0.5678809207745134,
+            0.5760126401022495,
+            0.5623870939059425,
+            0.5824796408939253,
+            0.564513117750667,
+            0.5728191935688655,
+            0.5531054724044429
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.01,
+          "learned_gates": true,
+          "training_mse": 0.003187882905754126,
+          "heldout_driven_mse": 0.002184958337529403,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.442541162413136,
+          "gates": [
+            0.4629242927016299,
+            0.5679643337244978,
+            0.5760662713245893,
+            0.5625161576422102,
+            0.5825391097344826,
+            0.564507221205911,
+            0.5728123292929056,
+            0.5532114467869096
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": true,
+          "training_mse": 0.0032191286386292184,
+          "heldout_driven_mse": 0.0022462262467343908,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.446294473893238,
+          "gates": [
+            0.4648602379971592,
+            0.5683223062060708,
+            0.5763001103512176,
+            0.5630624774565716,
+            0.5828026830704588,
+            0.5644936027743556,
+            0.5727920773823367,
+            0.553660978655068
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.2,
+          "learned_gates": true,
+          "training_mse": 0.0034133574370116358,
+          "heldout_driven_mse": 0.0025925702553481586,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.46537584285546,
+          "gates": [
+            0.47376693256082236,
+            0.5702133592455271,
+            0.5775062530487266,
+            0.5657846463034347,
+            0.5845010792385342,
+            0.5646719167078303,
+            0.5729706686519864,
+            0.5559609870985975
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0,
+          "learned_gates": false,
+          "training_mse": 0.0040119364746096535,
+          "heldout_driven_mse": 0.002685481289670949,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": false,
+          "training_mse": 0.0040528200770730905,
+          "heldout_driven_mse": 0.0027574250666032515,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        }
+      ]
+    },
+    {
+      "replicate": 6,
+      "seed": 20381116,
+      "arms": [
+        {
+          "lambda": 0,
+          "learned_gates": true,
+          "training_mse": 0.00315644193511941,
+          "heldout_driven_mse": 0.003288004109794515,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 6.0,
+          "gate_sum": 4.230827120731218,
+          "gates": [
+            0.5327115701033024,
+            0.5556731778651005,
+            0.5573457728780282,
+            0.5631642443319633,
+            0.5848870627633078,
+            0.44397634508455924,
+            0.42346798618729475,
+            0.5696009615176616
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.01,
+          "learned_gates": true,
+          "training_mse": 0.0031667526977248715,
+          "heldout_driven_mse": 0.003310811396947297,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 6.0,
+          "gate_sum": 4.230586409996844,
+          "gates": [
+            0.5326788820586839,
+            0.5555887806260388,
+            0.5572063735623146,
+            0.5630249643038383,
+            0.5848081009204262,
+            0.4441925507510938,
+            0.42351003882003835,
+            0.5695767189544106
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": true,
+          "training_mse": 0.0032109929802491993,
+          "heldout_driven_mse": 0.0033765355485286266,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 6.0,
+          "gate_sum": 4.230839815697328,
+          "gates": [
+            0.5325800975445777,
+            0.5552828136819912,
+            0.5567494064799843,
+            0.5625446650904303,
+            0.5845368697603845,
+            0.4456603952965854,
+            0.42393199419798855,
+            0.569553573645386
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.2,
+          "learned_gates": true,
+          "training_mse": 0.003630745319481536,
+          "heldout_driven_mse": 0.0036512691277698645,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 6.0,
+          "gate_sum": 4.241691590230162,
+          "gates": [
+            0.5361853904295671,
+            0.5554284459499406,
+            0.5560864837075364,
+            0.5616011008661524,
+            0.5853734088163852,
+            0.4495799339240097,
+            0.426512050793632,
+            0.5709247757429381
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0,
+          "learned_gates": false,
+          "training_mse": 0.003805080531757018,
+          "heldout_driven_mse": 0.004154005480876911,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": false,
+          "training_mse": 0.0039060945070284784,
+          "heldout_driven_mse": 0.004327343309734164,
+          "free_run_new_cell_fraction": 0.0033333333333333335,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        }
+      ]
+    },
+    {
+      "replicate": 7,
+      "seed": 20381117,
+      "arms": [
+        {
+          "lambda": 0,
+          "learned_gates": true,
+          "training_mse": 0.001989622424951259,
+          "heldout_driven_mse": 0.002982677926233244,
+          "free_run_new_cell_fraction": 0.01,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.250359966589339,
+          "gates": [
+            0.5710429713542554,
+            0.5690514818269186,
+            0.4772941187855463,
+            0.546470632042292,
+            0.4891725979469051,
+            0.5786036950264767,
+            0.4980893524742391,
+            0.5206351171327059
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.01,
+          "learned_gates": true,
+          "training_mse": 0.0019805817910919575,
+          "heldout_driven_mse": 0.002981656285509574,
+          "free_run_new_cell_fraction": 0.01,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.252590571466594,
+          "gates": [
+            0.5710088427580549,
+            0.5690921840434467,
+            0.4786791250471362,
+            0.5465556246500816,
+            0.48979050960093284,
+            0.5785942258951422,
+            0.4981308229430704,
+            0.520739236528729
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": true,
+          "training_mse": 0.001938506652476389,
+          "heldout_driven_mse": 0.0033467505558406434,
+          "free_run_new_cell_fraction": 0.006666666666666667,
+          "open_gate_count": 5.0,
+          "gate_sum": 4.264755370298779,
+          "gates": [
+            0.5705718818006815,
+            0.5689897875363905,
+            0.4893348068528865,
+            0.5467525560165307,
+            0.4921627934307064,
+            0.5780686784890167,
+            0.49772941616928157,
+            0.5211454500032863
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.2,
+          "learned_gates": true,
+          "training_mse": 0.0025619886300362357,
+          "heldout_driven_mse": 0.004324266892012739,
+          "free_run_new_cell_fraction": 0.013333333333333334,
+          "open_gate_count": 7.0,
+          "gate_sum": 4.355050936832862,
+          "gates": [
+            0.5650122729315596,
+            0.5677072511398243,
+            0.5875539979967812,
+            0.5470056312384,
+            0.500787742023926,
+            0.574290032283451,
+            0.4911193480598736,
+            0.5215746611590465
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0,
+          "learned_gates": false,
+          "training_mse": 0.0025756536159637325,
+          "heldout_driven_mse": 0.003918460545465641,
+          "free_run_new_cell_fraction": 0.01,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        },
+        {
+          "lambda": 0.05,
+          "learned_gates": false,
+          "training_mse": 0.0027853441491276026,
+          "heldout_driven_mse": 0.0037555290243948326,
+          "free_run_new_cell_fraction": 0.01,
+          "open_gate_count": 0.0,
+          "gate_sum": 4.0,
+          "gates": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "scope": "driven identity task; free-run novelty is not autonomous task recovery"
+        }
+      ]
+    }
+  ]
+}
