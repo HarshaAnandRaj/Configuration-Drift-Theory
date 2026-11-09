@@ -1,771 +1,534 @@
-# The Configuration-Drift Theorem
+# Configuration Drift: recurrence under a structural projection
 
-**Canonical mathematical statement, limits, and use protocol**  
-**Author:** Harsha Anand Raj Pammi  
-**Mathematical reconstruction:** 2026-09-04  
-**Registered simulation audit:** 2026-09-05
+**Author of the CDT hypothesis:** Harsha Anand Raj Pammi
 
-This file is the authoritative theorem layer for the Configuration-Drift Theory
-(CDT). The longer `configuration_drift_theory.md` remains the research notebook
-and empirical history. Whenever the two disagree, use this file.
+**Mathematical revision:** 2026-11-09
 
-The durable insight in CDT is real, but narrower than the earlier formula
+**Status:** classical recurrence results assembled into a precise CDT framework;
+no claim of a new general recurrence law.
 
-```text
-Alive iff (d_s <= 2) and (gamma > 0).
-```
+This is the canonical mathematical layer. The
+[theory notebook](configuration_drift_theory.md) and
+[full report](configuration_drift_full_report.md) retain the research history.
+The [revision notes](docs/theorem_revision_20261109.md) explain what changed.
 
-That formula is not a theorem. The mathematically valid core is a separation
-between recurrence in a full configuration space and recurrence after a
-predeclared coarse-graining. The separation is controlled by Green kernels and
-capacities. Spectral dimensions give a convenient corollary only when suitable
-heat-kernel estimates hold.
+The question is: **can a process eventually leave every fixed fine target,
+while continuing to return to a declared structural class?** Yes. On countable
+state spaces, a transient Markov chain with a recurrent Markov projection gives
+an exact answer. Neither dimension nor the sign of a repulsion parameter alone
+answers this question.
 
----
+The proposed explanation—realizing a configuration changes its future
+accessibility—is a separate mechanism hypothesis. Recurrence separation alone
+does not establish that explanation, life, useful memory, or task success.
 
-## 1. Three observables that must not be conflated
+## 1. Specify the observable first
 
-Let \((X_n)_{n\geq 0}\) be a stochastic process in a metric state space
-\((E,d_E)\). These are different questions.
+For a process $X_n$ with full state space $E$, choose a measurable
+structural map $\pi:E\to F$ before examining recurrence outcomes. Write
+$Y_n=\pi(X_n)$. For fixed targets $A\subset E$, $B\subset F$, define
 
-1. **Anchored recurrence:** does \(X_n\) return to a fixed target around a fixed
-   configuration \(x\)?
-2. **Historical self-intersection:** is \(X_n\) close to *some* sufficiently old
-   state \(X_j\), \(j<n-\tau\)?
-3. **Projected or structural recurrence:** does a predeclared feature
-   \(Y_n=\pi(X_n)\) return to a target in a lower-resolution space \(F\)?
+$$
+ V_A(T)=\sum_{n=0}^T\mathbf1_{\{X_n\in A\}},\qquad
+ W_B(T)=\sum_{n=0}^T\mathbf1_{\{Y_n\in B\}}.
+$$
 
-Pólya's theorem and the usual Green-kernel test answer (1). They do not, by
-themselves, answer (2) or (3). A mathematically sound CDT claim must say which
-observable it uses.
+The structural target in full space is $C=\pi^{-1}(B)$, so
+$W_B(T)=V_C(T)$. Use $A\subseteq C$ when the coarse target is intended
+to contain the fine one. The split studied here is
 
-For a measurable target \(A\subseteq E\), define the visit count and Green
-potential
+$$
+ \mathbb P_x\{V_A(\infty)<\infty,\ W_B(\infty)=\infty\}=1. \tag{S}
+$$
 
-\[
-N_A(T)=\sum_{n=1}^{T}\mathbf 1_{\{X_n\in A\}},\qquad
-G_X(x,A)=\mathbb E_xN_A(\infty)
-          =\sum_{n\geq1}P_x(X_n\in A).
-\]
+This is **anchored recurrence separation**. It says that eventually there are
+no more returns to $A$. It does not say that the trajectory stops repeating
+states elsewhere.
 
-Continuous-time versions replace the sum by occupation time
-\(\int_0^T\mathbf 1_A(X_t)\,dt\), with the usual qualification that occupation,
-hitting, and number of entrances need not be identical for thin sets.
+| Observable | Event or quantity | Question |
+|---|---|---|
+| Anchored fine | $X_n\in A$ | return to a fixed configuration target |
+| Anchored structural | $Y_n\in B$ | return to a fixed structural class |
+| Historical | $\min_{j\le n-\tau}d(X_n,X_j)\le r$ | return near any sufficiently old state |
+| Discovery | number of occupied registered cells | growth of the observed range |
 
-Let \(\pi:E\to F\) be a feature map chosen before examining the recurrence
-outcome. For \(x\in E\), define
+These cannot replace one another. In particular, a return probability tending
+to zero, a vanishing fraction of visits, and finitely many visits are different
+statements. A one-dimensional symmetric walk has return probabilities tending
+to zero and nevertheless returns infinitely often.
 
-\[
-A_\varepsilon(x)=B_E(x,\varepsilon),\qquad
-C_R(x)=\pi^{-1}\!\left(B_F(\pi x,R)\right).
-\]
+## 2. An exact theorem on countable state spaces
 
-`A_epsilon` is a full-configuration target. `C_R` is a structural or "rhyme"
-target. The essential point is that `C_R` is a cylinder/preimage under a
-coarse-graining, not merely a larger ball in the same geometry.
+### Assumptions
 
----
+1. $X$ is a discrete-time, time-homogeneous, irreducible Markov chain on a
+   countable space $E$, with stochastic transition matrix $P$.
+2. $\pi:E\to F$ is onto a countable space and is **strongly lumpable**:
+   for all $y,z\in F$,
+   $$
+    \sum_{w:\pi(w)=z}P(x,w)=Q(y,z)\quad
+    \text{for every }x\text{ with }\pi(x)=y. \tag{L}
+   $$
+   Thus $Y=\pi(X)$ is a Markov chain with matrix $Q$, for every full
+   initial state. Irreducibility of $P$ implies irreducibility of $Q$.
+3. $A\subset E$ and $B\subset F$ are nonempty **finite** sets, with
+   $A\subseteq\pi^{-1}(B)$.
 
-## 2. The core theorem
+No stationarity, reversibility, coordinate independence, or aperiodicity is
+required. A feature process is not automatically Markov: (L) must be proved.
 
-### Theorem 1 (Configuration-Drift / projected-recurrence separation)
+Define Green functions including the visit at time zero:
 
-Let \(X\) be a conservative process on \(E\), and define
-\(Y_n=\pi(X_n)\) on \(F\). The projected process need not itself be Markov. Fix
-\(x\in E\), \(\varepsilon>0\), and \(R>0\).
-Assume:
+$$
+ G_P(u,v)=\sum_{n=0}^\infty P^n(u,v),\qquad
+ G_Q(y,z)=\sum_{n=0}^\infty Q^n(y,z).
+$$
 
-1. **Full-state transience:**
-   \[
-   G_X(x,A_\varepsilon(x))<\infty.
-   \]
-2. **Structural recurrence:**
-   \[
-   P_x\!\left(Y_n\in B_F(\pi x,R)\ \text{infinitely often}\right)=1.
-   \]
+### Theorem 1 (transient full chain, recurrent structural chain)
 
-Then, with probability one,
+Under assumptions 1–3, the following are equivalent:
 
-\[
-N_{A_\varepsilon(x)}(\infty)<\infty,
-\qquad
-N_{C_R(x)}(\infty)=\infty.
-\]
+1. For some $a\in E$, $b\in F$,
+   $$
+    G_P(a,a)<\infty,\qquad G_Q(b,b)=\infty. \tag{G}
+   $$
+2. Separation (S) holds for **every** starting state $x\in E$.
+3. Separation (S) holds for **at least one** starting state $x\in E$.
 
-Thus full configurations eventually cease to recur while their declared
-structural class recurs indefinitely.
-
-If recurrence of \(Y\) is established using a transition kernel on \(F\), one
-must additionally prove that the projection is Markov/lumpable or otherwise
-derive a closed law for \(Y\). The theorem itself only needs the displayed
-pathwise recurrence probability under the full initial state \(x\).
-
-We call this conclusion **CDT persistence relative to**
-\((X,\pi,x,\varepsilon,R)\). The adjective is scale- and representation-relative;
-it is not a synonym for biological life or task success.
+Equivalently, (S) holds exactly when $P$ is transient and $Q$ is
+recurrent. In (G), “some” can be replaced by “every.”
 
 #### Proof
 
-The first assumption gives
+Let $T_a^+=\inf\{n\ge1:X_n=a\}$ and
+$f_a=\mathbb P_a(T_a^+<\infty)$. By the strong Markov property, each
+return renews the same experiment. Thus
+
+$$
+ \mathbb P_a\{V_{\{a\}}(\infty)\ge k\}=f_a^{k-1},\qquad
+ G_P(a,a)=\sum_{k\ge1}f_a^{k-1}.
+$$
+
+If $f_a<1$, the visit count is finite almost surely and
+$G_P(a,a)=(1-f_a)^{-1}$. If $f_a=1$, it is infinite almost surely.
+Irreducibility makes recurrence or transience common to all states. In the
+recurrent case every state is hit and then revisited infinitely often from
+every start. In the transient case the strong Markov property at the first
+hit gives finitely many visits to any target state from every start. These are
+the standard irreducible-chain recurrence alternatives.
+
+Under (G), every state in $A$ has finitely many visits. Finiteness of $A$
+gives $V_A(\infty)<\infty$. Applying the recurrent alternative to $Q$,
+any state in nonempty $B$ is visited infinitely often. This proves (1)
+implies (2), and (2) implies (3).
+
+Conversely, under (3), $P$ cannot be recurrent, since then every state of
+$A$ would have infinitely many visits. Nor can $Q$ be transient, since
+then its finite set $B$ would have finitely many visits. The recurrence
+alternatives give (G). QED.
+
+### Consequence: every structural fiber must be infinite
 
-\[
-\mathbb E_x N_{A_\varepsilon(x)}(\infty)<\infty.
-\]
+Under Theorem 1, **every** fiber $\pi^{-1}(\{b\})$ is infinite. Otherwise
+recurrence of $b$ would force infinitely many visits to a finite set of a
+transient chain, a contradiction.
+
+This explains what coarse-graining does here: it groups infinitely many
+escaping full configurations into one recurring structural state. In a locally
+finite lattice, two fixed bounded balls are finite targets and cannot have
+different recurrence classes for an irreducible chain. Enlarging a fixed radius
+cannot create (S).
+
+Finiteness matters. A transient chain may visit an infinite set infinitely
+often: a symmetric walk on $\mathbb Z^3$ visits the slab $x_1=0$
+infinitely often, but visits each finite set only finitely often. The slab is
+a projection fiber, not a bounded coarse ball in the same space.
+
+## 3. A complete model with an explicit return kernel
+
+Let $X_n\in\mathbb Z^D$. At each step every coordinate independently adds
+$-1,0,+1$ with probabilities $1/4,1/2,1/4$, independently over time.
+Let $\pi$ retain the first $m$ coordinates, $1\le m\le D$.
+Both chains are irreducible and aperiodic, and (L) holds.
+
+For one coordinate the exact return probability is
 
-A nonnegative extended-integer random variable with finite expectation is
-finite almost surely. Hence the full target is visited only finitely often.
-The second conclusion is exactly structural recurrence, because
-\(X_n\in C_R(x)\) iff \(Y_n\in B_F(\pi x,R)\). QED.
+$$
+ b_n=\frac{\binom{2n}{n}}{4^n}\sim\frac1{\sqrt{\pi n}}.
+$$
 
-### What the theorem says
+Indeed, a step is distributed as the sum of two independent Bernoulli$(1/2)$
+variables minus one. Independence gives
 
-CDT is valid when **the full process is transient but its structural quotient is
-recurrent**. This is the rigorous form of "the exact state does not come back,
-but the rhyme does."
+$$
+ P^n(0,0)=b_n^D,\qquad Q^n(0,0)=b_n^m.
+$$
 
-### What the theorem does not say
+The Green series diverges exactly when its dimension is at most two. For
+nonempty finite nested targets as in Theorem 1,
 
-The theorem does not claim that:
+$$
+ \boxed{\text{anchored separation}\quad\Longleftrightarrow\quad m\le2<D.}
+ \tag{P}
+$$
 
-- high ambient dimension alone identifies the relevant state space;
-- every positive self-repulsion parameter produces the split;
-- two fixed radii in one homogeneous geometry have different recurrence types;
-- recurrence or novelty is equivalent to biological life, consciousness,
-  usefulness, or correctness.
+For example, a three-dimensional walk has finitely many full returns to the
+origin and infinitely many returns to the cylinder $x_1=x_2=0$. There is
+no repulsion parameter. This is a classical product-walk construction, not a
+new recurrence law.
 
----
+## 4. Spectral dimension is a conditional shortcut
 
-## 3. Capacity form: exact targets can be polar
+For the chains in Theorem 1, suppose for all sufficiently large $n$,
 
-There is a second rigorous route to the split. For a recurrent irreducible Hunt
-process, let `Cap` be the process capacity.
+$$
+ P^n(a,a)\asymp n^{-d_X/2},\qquad
+ Q^n(b,b)\asymp n^{-d_Y/2}, \tag{H}
+$$
 
-### Theorem 2 (capacity-separated recurrence)
+where $\asymp$ denotes bounds by fixed positive multiples. Theorem 1 and
+the series test then give exactly $\boxed{d_Y\le2<d_X}$. For periodic
+chains, account for the return-time subsequence; (H) as written excludes
+zero-return times. Laziness avoids that issue in §3.
 
-Suppose \(X\) is recurrent and irreducible in the potential-theoretic sense.
-Let \(A\subset C\subset E\), where:
+With slowly varying factors, test the full series instead. In particular,
 
-- \(A\) is polar: \(\operatorname{Cap}(A)=0\);
-- \(C\) is a relatively compact recurrent target with
-  \(\operatorname{Cap}(C)>0\).
+$$
+ \sum_{n\ge3}\frac1{n(\log n)^q}
+ \begin{cases}=\infty,&q\le1,\\ <\infty,&q>1.\end{cases}
+$$
 
-Then \(A\) is almost surely never hit after time zero, while \(C\) is visited
-recurrently by the stated recurrent-target assumption. Positive capacity alone
-is not being used as a universal recurrence theorem. Therefore an exact/coarse
-split can exist even without
-self-repulsion.
+Both cases have spectral dimension two if dimension means only the limiting
+power exponent. There is no contradiction with (H): nonconstant logarithmic
+factors are not comparable to a constant. A rounded dimension estimate cannot
+settle a critical case.
 
-This is why "exact equality has probability zero" is not by itself evidence of
-configuration drift. In continuous spaces, a point can be polar for purely
-geometric reasons.
+For independent synchronous product chains, return kernels multiply and
+pure-power spectral dimensions add, provided the joint chain and kernels
+satisfy the hypotheses used. No addition rule is established without
+independence. The relation $d_s=2d_f/d_w$ requires a model identifying
+substrate volume growth and a compatible heat kernel. Correlation dimension
+of visited points and an MSD slope alone do not supply that model.
 
-### Euclidean Brownian example
+For diffusions, an on-diagonal transition **density** is not a return
+probability. Neighborhood estimates and an applicable recurrence theorem are
+needed before extending this argument to continuous spaces.
 
-- In one dimension, Brownian motion hits points and neighborhoods repeatedly.
-- In two dimensions, every fixed point is polar but every neighborhood is
-  recurrent: a genuine point-versus-neighborhood split.
-- In dimension three and above, bounded neighborhoods are transient, so the
-  coarse recurrence side fails.
+## 5. What survives without a Markov projection
 
-Planar Brownian motion can nevertheless have random self-intersection points.
-This does not contradict polarity: a point selected from the path is not the
-same object as a deterministic point fixed in advance. This distinction is one
-reason anchored recurrence and historical self-intersection must remain
-separate.
+For any process and fixed measurable targets, Tonelli's theorem gives
 
----
+$$
+ \mathbb E_x V_A(\infty)=\sum_{n\ge0}\mathbb P_x(X_n\in A).
+$$
 
-## 4. Spectral-dimension corollary
+### Lemma 2 (general sufficient condition and last-return bound)
 
-The Green kernel is primary. Spectral dimension is a derived shortcut.
+If this series is finite and
+$\mathbb P_x(Y_n\in B\text{ infinitely often})=1$, then (S) holds.
+For $N\ge1$, also
 
-Assume \(X\) is an irreducible symmetric diffusion or random walk on a
-metric-measure space whose volume and heat kernel satisfy two-sided scaling
+$$
+ \mathbb P_x\{\exists n\ge N:X_n\in A\}
+ \le\sum_{n\ge N}\mathbb P_x(X_n\in A). \tag{T}
+$$
 
-\[
-\mu(B(x,r))\asymp r^{d_f},\qquad
-p_t(x,x)\asymp t^{-d_f/d_w}=t^{-d_s/2},
-\qquad d_s=\frac{2d_f}{d_w}.
-\]
+#### Proof
 
-Under these assumptions,
+A nonnegative random variable with finite expectation is finite almost surely.
+Combine this with the assumed structural recurrence. The union bound gives
+(T). QED.
 
-\[
-\int_1^\infty p_t(x,x)\,dt=\infty
-\quad\Longleftrightarrow\quad
-d_f\le d_w
-\quad\Longleftrightarrow\quad
-d_s\le2.
-\]
+This was the principal theorem in the previous formulation. It is valid, but
+does not derive structural recurrence. For a non-Markov feature process, that
+recurrence needs a separate proof under the full starting state $x$. Strong
+lumpability is sufficient for Theorem 1, not necessary for all possible splits.
 
-The same statement holds with sums in discrete time. This is the precise scope
-of the familiar `d_s = 2` boundary.
+If $\mathbb P_x(X_n\in A)\le c n^{-a}$ for $n\ge1$, $a>1$, then
+for $N\ge2$, (T) yields
 
-### Corollary 1 (spectral CDT)
+$$
+ \mathbb P_x\{\text{a fine return at or after }N\}
+ \le\frac{c}{a-1}(N-1)^{1-a}.
+$$
 
-Suppose both \(X\) and its quotient \(Y=\pi(X)\) satisfy the stated two-sided
-heat-kernel assumptions. If
+This is a last-return upper bound, not a claimed exact distribution.
 
-\[
-d_s(Y)\le2<d_s(X),
-\]
+### Infinite expected visits need not mean recurrent visits
 
-then Theorem 1 applies: the structural quotient is recurrent and the full
-configuration is transient.
+Let $L$ be a finite nonnegative integer with
+$\mathbb P(L\ge n)=1/(n+1)$, $n\ge0$, and put
+$Z_n=\mathbf1_{\{n\le L\}}$. Every path eventually leaves $\{1\}$,
+but
 
-### Corollary 2 (independent product)
+$$
+ \sum_{n\ge0}\mathbb P(Z_n=1)=\sum_{n\ge0}\frac1{n+1}=\infty.
+$$
 
-If \(X=(Y,Z)\), the components are independent, and their on-diagonal kernels
-have pure-power exponents, then
+An infinite expectation can come from a heavy-tailed finite visit count.
+The renewal/irreducibility argument in Theorem 1 supplies the additional step
+absent here. Do not infer almost-sure recurrence from a divergent expected
+visit count in an arbitrary process.
 
-\[
-p_t^X((y,z),(y,z))=p_t^Y(y,y)p_t^Z(z,z),
-\qquad d_s(X)=d_s(Y)+d_s(Z).
-\]
-
-Hence
-
-\[
-d_s(Y)\le2<d_s(Y)+d_s(Z)
-\]
-
-is a sufficient CDT condition. Extra contributing coordinates destroy
-full-state recurrence while a low-dimensional structural projection can keep
-recurring. This is the sound version of the "many contributing elements"
-intuition.
-
-### Critical boundary
-
-At \(d_s=2\), the exponent alone can be insufficient. For example,
-
-\[
-p_t(x,x)\asymp \frac{1}{t(\log t)^q}
-\]
-
-is recurrent for \(q\le1\) and transient for \(q>1\). Therefore use the full
-Green integral at the boundary; never classify a critical case from a rounded
-spectral-dimension estimate alone.
-
-Two-sided heat-kernel estimates and their geometric hypotheses are developed,
-for example, by [Grigor'yan and Telcs](https://arxiv.org/abs/1205.5627) and by
-[Barlow, Coulhon, and Kumagai](https://doi.org/10.1002/cpa.20091).
-
----
-
-## 5. Two no-go results
-
-### Proposition 1 (fixed-radius no-go)
-
-In a homogeneous irreducible process with local heat-kernel comparability, two
-fixed balls \(B(x,\varepsilon)\subset B(x,R)\) around the same anchor have the
-same recurrence class. Changing a fixed radius changes a multiplicative volume
-factor, not convergence of the Green sum.
-
-Consequently, a proof cannot obtain
-
-\[
-G_\varepsilon(x)<\infty<G_R(x)
-\]
-
-merely by claiming a different spectral dimension at two fixed radii. A valid
-split needs at least one of:
-
-- a different target geometry or capacity;
-- a quotient/projection \(\pi\);
-- a scale that changes with time;
-- a genuinely multiscale process with separately proved kernels.
-
-### Proposition 2 (positive repulsion is not a universal criterion)
-
-The sign of a scalar `gamma` is neither necessary nor sufficient for Theorem 1.
-
-- It is not necessary: hidden-coordinate drift can make \(X\) transient while
-  \(\pi(X)\) remains recurrent even when `gamma = 0`.
-- It is not sufficient: self-interacting walks are history-dependent and their
-  recurrence class depends on the interaction, geometry, and state
-  augmentation. Self-repelling rules can even self-trap.
-
-The literature contains both recurrent and transient self-interacting walks
-([Peres, Popov, and Sousi](https://arxiv.org/abs/1203.3459)) and a specifically
-self-trapping self-repelling construction
-([Grassberger](https://arxiv.org/abs/1708.03270)). Diffusive limits for some
-true self-avoiding and self-repelling models require substantial additional
-conditions ([Horvath, Toth, and Veto](https://arxiv.org/abs/1009.0401)).
-
-For the continuous occupation-field model, the formal expression
-
-\[
-b_t(x)=-\gamma\nabla\int_0^t\delta(x-X_s)\,ds
-\]
-
-is generally singular. A rigorous model must mollify the delta kernel or define
-a local-time interaction where that object exists, and must include the
-occupation field in the state if a Markov formulation is required.
-
-The valid proof obligation for any self-repulsive CDT model is therefore:
-
-\[
-\sum_nP_x(X_n\in A_\varepsilon)<\infty
-\quad\text{and}\quad
-P_x(\pi(X_n)\in B_R\ \mathrm{i.o.})=1.
-\]
-
-`gamma > 0` may help establish these conditions in a specified model. It cannot
-replace them.
-
-### Minimal counterexamples to stronger readings
-
-These examples locate the logical boundary sharply.
-
-1. **Irrational rotation:** \(X_n=x_0+n\theta\pmod 1\), with irrational
-   \(\theta\), never repeats an exact state but returns arbitrarily close to its
-   start. It has one dimension, no randomness, and no realization-dependent
-   repulsion. The split therefore does not identify the proposed mechanism.
-2. **Continuous iid sampling:** iid uniform points in a bounded region almost
-   surely never equal one another at sampled times, while every positive-volume
-   cell is visited infinitely often. Again there is no drift or self-repulsion.
-3. **Finite irreducible chain:** every state recurs, yet the fraction of newly
-   discovered states eventually becomes zero. Recurrence and novelty are not
-   interchangeable.
-4. **Constant projection:** if \(\pi(x)\equiv c\), "rhyme" recurs forever for
-   every process. Structural recurrence is meaningful only when the projection
-   is nontrivial and independently justified.
-5. **Transient walk with backtracking:** a simple walk on \(\mathbb Z^3\) is
-   transient relative to a fixed origin but still makes historical exact
-   revisits, including infinitely many local backtracks. Anchored transience is
-   not historical non-repetition.
-
----
-
-## 6. Exact results for important model families
-
-### 6.1 Simple symmetric lattice walk
-
-For simple symmetric random walk on \(\mathbb Z^d\), the return kernel obeys
-\(p_{2n}(0,0)\asymp n^{-d/2}\). Hence the origin is recurrent for \(d\le2\)
-and transient for \(d\ge3\).
-
-The number of distinct sites has a different law. If \(R_T\) is the range,
-then, under the standard hypotheses,
-
-\[
-\frac{|R_T|}{T}\longrightarrow P_0(T_0^+=\infty).
-\]
-
-The limit is zero in the recurrent dimensions and positive in transient
-dimensions. Thus transience means a positive long-run discovery rate, not zero
-self-intersections. The classical range analysis begins with
-[Dvoretzky and Erdos](https://users.renyi.hu/~p_erdos/1951-14.pdf).
-
-### 6.2 Brownian motion with constant drift
-
-For \(dX_t=v\,dt+\sqrt{2D}\,dW_t\) on \(\mathbb R^d\),
-
-\[
-p_t(0,0)=(4\pi Dt)^{-d/2}
-          \exp\!\left(-\frac{\lVert v\rVert^2t}{4D}\right).
-\]
-
-Every nonzero constant drift makes the Green integral of a fixed bounded target
-finite. This is an exact theorem for this model, not a universal statement about
-all forms of "drift."
-
-Let \(P\) be a linear structural projection. The projected drift is \(Pv\).
-For a nondegenerate Gaussian projection, a sufficient exact/rhyme condition is
-
-\[
-v\ne0,\qquad Pv=0,\qquad \operatorname{rank}(P\Sigma P^\top)\le2.
-\]
-
-The full configuration escapes, while the low-dimensional structure does not
-inherit the directional drift and remains recurrent. If \(Pv\ne0\), the same
-exponential cutoff kills anchored coarse recurrence too.
-
-### 6.3 Symmetric alpha-stable Levy process
-
-For an isotropic symmetric \(\alpha\)-stable process in \(\mathbb R^d\),
-\(p_t(0,0)\asymp t^{-d/\alpha}\). Therefore
-
-\[
-\text{recurrent}\quad\Longleftrightarrow\quad d\le\alpha.
-\]
-
-Equivalently, its walk dimension is \(d_w=\alpha\), and the ordinary condition
-\(d_f\le d_w\) already gives \(d\le\alpha\). No extra multiplication by a
-second stability index is permitted. Formulas such as
-`d_f <= alpha*d_w/2` double-count anomalous scaling and are incorrect for the
-stable process itself.
-
-### 6.4 Fractional Brownian motion
-
-For \(d\)-dimensional fractional Brownian motion with Hurst exponent \(H\),
-the mean-square displacement exponent is \(2H\), so the formal walk dimension
-is \(d_w=1/H\). The threshold \(d\le1/H\) agrees with known recurrence/hitting
-scaling, with critical cases requiring polarity analysis. Fractional Brownian
-motion is not Markov unless \(H=1/2\), so a Markov heat-kernel proof cannot be
-silently reused. Also, `H < 1/2` is subdiffusive and `H > 1/2` is
-superdiffusive; reversing those labels is an error.
-
----
-
-## 7. Historical recurrence has a different threshold and normalization
-
-For a translation-invariant random walk with stationary independent increments,
-define the pair self-intersection count
-
-\[
-I_T(A)=\sum_{0\le i<j\le T}
-       \mathbf 1_{\{X_j-X_i\in A\}}.
-\]
-
-Then the following identity is exact:
-
-\[
-\mathbb E I_T(A)
-=\sum_{k=1}^{T}(T+1-k)P(X_k-X_0\in A).
-\]
-
-If \(P(X_k-X_0\in A)\asymp k^{-a}\), then
-
-\[
-\mathbb EI_T(A)=
-\begin{cases}
-\Theta(T^{2-a}), & a<1,\\
-\Theta(T\log T), & a=1,\\
-\Theta(T), & a>1,
-\end{cases}
-\]
-
-provided the small-lag terms are nonzero in the last case.
-
-Therefore:
-
-- transient walks can continue to make linearly many historical
-  self-intersections;
-- pair density \(I_T/T^2\) can vanish in every dimension;
-- a "recurrence rate tends to zero" statement is meaningless until its
-  denominator, exclusion lag, target scale, and order of limits are fixed.
-
-For Brownian paths, exact *double-point* thresholds also differ from fixed-point
-recurrence: Brownian motion has double points below dimension four and not at
-or above dimension four. See the Brownian-motion case summarized in
-[Dalang et al.](https://arxiv.org/abs/1009.0235). This is another direct
-counterexample to using the Pólya threshold as a universal self-intersection
-threshold.
-
----
-
-## 8. A correct conditional theorem for realization-dependent avoidance
-
-Historical avoidance can be proved without pretending it is an anchored Green
-kernel.
+## 6. Continuous space: drift hidden from the projection
 
 Let
 
-\[
-H_n^\varepsilon=
-\left\{\min_{0\le j\le n-\tau_n}d_E(X_n,X_j)\le\varepsilon_n\right\}.
-\]
+$$
+ X_t=x+vt+\sqrt{2D_0}\,W_t\quad\text{on }\mathbb R^d,\qquad D_0>0.
+$$
 
-### Theorem 3 (conditional anti-recurrence)
+Let $P:\mathbb R^d\to\mathbb R^k$ have rank $k\ge1$. Use a bounded
+open ball around $x$ as fine target and an open ball around $Px$ as
+structural target; choose radii to ensure nesting if needed. Here recurrence
+means visits at arbitrarily large times, and finite returns means eventual
+absence from the target, not a count of boundary crossings.
 
-If there is a deterministic summable sequence \((a_n)\) such that
+### Proposition 3 (Brownian classification)
 
-\[
-P(H_n^\varepsilon\mid\mathcal F_{n-1})\le a_n
-\quad\text{almost surely},
-\qquad
-\sum_na_n<\infty,
-\]
+Anchored separation holds exactly when
 
-then only finitely many historical fine recurrences occur almost surely.
+$$
+ \boxed{(v\ne0\ \text{or}\ d\ge3),\qquad Pv=0,\qquad k\le2.} \tag{B}
+$$
 
 #### Proof
 
-Taking expectations gives \(\sum_nP(H_n^\varepsilon)<\infty\). The first
-Borel-Cantelli lemma gives \(P(H_n^\varepsilon\ \mathrm{i.o.})=0\). QED.
+If $v\ne0$, the strong law $X_t/t\to v$ gives eventual escape from
+every bounded set. With zero drift, Brownian motion is recurrent for open
+balls in dimensions one and two, and eventually leaves each bounded set in
+dimensions three and above.
 
-To obtain a full CDT split, pair this theorem with a separately proved
-recurrence result for \(\pi(X_n)\). In a self-repulsive model, the actual job of
-the mechanism is to establish the summable conditional bound. A parameter sign
-alone is not a proof.
+The projection is Brownian motion with drift $Pv$ and covariance
+$2D_0PP^\top$, positive definite on $\mathbb R^k$. A linear change
+of coordinates reduces its zero-drift recurrence question to ordinary
+$k$-dimensional Brownian motion. It returns to open balls at arbitrarily
+large times exactly when $Pv=0$ and $k\le2$. Nonzero projected drift
+gives eventual escape by the same strong law. QED.
 
----
+In dimension two, $v=(0,c)$, $c\ne0$, and $P(x_1,x_2)=x_1$
+give separation even though neutral planar Brownian motion is recurrent.
+Drift in the first coordinate instead destroys structural recurrence.
+Location relative to the projection is decisive.
 
-## 9. Controller and heartbeat results: the strongest valid form
+### Points are different from neighborhoods
 
-Let an augmented autonomous system have state \((X_n,g_n)\), where \(g_n\) is
-the controller's stored energy or gain. Let \(A\subset E\) be an undesirable
-lock-in set.
+Planar Brownian motion started at a fixed point $x$ almost surely never
+returns to exactly $x$ at positive time, but returns to every neighborhood
+at arbitrarily large times. This is a polarity example, not transience of
+fine balls or evidence for realization-induced drift. At fixed positive
+radii both planar balls are recurrent.
 
-### Lemma 1 (invariant-death-set obstruction)
+No general Hunt-process capacity theorem is asserted here. Such an extension
+must specify the process, the capacity convention (for example, 1-capacity
+for a specified regular symmetric Dirichlet form), exceptional starting
+states, and target recurrence. An unqualified zero-order capacity may vanish
+on nonpolar sets in recurrent settings. “Positive capacity” alone is not a
+recurrence proof.
 
-If \(D=A\times\{0\}\) is forward invariant under the joint uncontrolled update,
-then no trajectory starting in \(D\) can escape \(D\) without an admissible
-input that breaks invariance.
+In continuous time distinguish occupation duration, hitting at arbitrarily
+late times, and numbers of entrances. Finite expected occupation does not
+alone prove finitely many entrances for an arbitrary process. Proposition 3
+uses the Brownian recurrence and escape results directly.
 
-This proves the closed-loop observation used by the endogenous-rescue
-simulation. It does **not** prove that all internal rescue fails. An internal
-subsystem can rescue whenever it has an admissible transition out of \(D\); an
-external input is necessary only after the no-escape assumption has been
-established.
+## 7. Historical avoidance requires its own theorem
 
-### Correct control criterion
+Let $X_n$ be adapted to $\mathcal F_n$. For deterministic
+$1\le\tau_n\le n$, $\varepsilon_n\ge0$, define
 
-For a target operating set \(K\), sustained operation is a viability problem.
-A feedback law can keep the state in \(K\) only from states in the viability
-kernel
+$$
+ H_n=\left\{\min_{0\le j\le n-\tau_n}
+                d_E(X_n,X_j)\le\varepsilon_n\right\},\qquad
+ q_n=\mathbb P(H_n\mid\mathcal F_{n-1}).
+$$
 
-\[
-\operatorname{Viab}(K)=
-\{x_0:\exists\text{ admissible policy with }X_n\in K\ \forall n\}.
-\]
+### Theorem 4 (conditional Borel–Cantelli criterion)
 
-Reach, rate, sensing, energy, and action constraints affect this kernel. They
-cannot in general be multiplied into a universal scalar equivalence involving
-`d_s` and `gamma`.
+Up to a null event,
 
-Likewise, "kick exactly at the boundary" is optimal only for a specified loss,
-dynamics, observation model, and admissible-control set. A simulation can
-support that policy for its model; it cannot establish a universal control law.
+$$
+ \boxed{\sum_n\mathbf1_{H_n}<\infty
+        \quad\Longleftrightarrow\quad\sum_n q_n<\infty.} \tag{CB}
+$$
 
----
+No independence is required. A deterministic summable bound $q_n\le a_n$
+is sufficient; more generally, pathwise finiteness of the conditional sum is
+enough.
 
-## 10. Memory and coarse-graining: what follows mathematically
+#### Proof
 
-Let \(\pi:E\to F\) be a representation or consolidation map.
+This is conditional Borel–Cantelli. Write
+$S_N=\sum_{n\le N}\mathbf1_{H_n}$, $A_N=\sum_{n\le N}q_n$.
+The martingale $M_N=S_N-A_N$ has conditional increment variance at most
+$q_n$. On $\{A_\infty<\infty\}$, stopping the compensator at integer
+levels bounds the expected stopped count; union over levels gives finite
+$S_\infty$. On $\{A_\infty=\infty\}$, the martingale strong law for
+bounded increments gives $M_N/A_N\to0$, hence $S_N\to\infty$. QED.
 
-1. If \(\pi\) is Lipschitz, Hausdorff dimension cannot increase:
-   \[
-   \dim_H\pi(E)\le\dim_HE.
-   \]
-2. If \(\pi\) maps into a finite prototype bank, its image has Hausdorff
-   dimension zero. Under an irreducible stationary query process, prototypes
-   with positive stationary mass recur.
-3. Neither fact implies useful recall, low prediction loss, semantic fidelity,
-   or causal benefit. Those require held-out and interventional evaluation.
-4. Pruning is not automatically "dimension reduction" in the statistical
-   estimate: selective deletion can decrease, preserve, or increase an
-   estimated local slope. The map or pruning rule needs its own proof or test.
+A historical fine/structural split also requires a separate proof that the
+structural events occur infinitely often. Theorem 1 concerns fixed targets
+and does not supply that historical claim.
 
-Thus CDT justifies a precise engineering hypothesis: a representation can make
-a recurrent structural quotient out of a transient full state. It does not
-guarantee that any particular clustering, HCM, or retrieval policy succeeds.
+For stationary independent increments, the pair-count identity is
 
----
+$$
+ I_T(A)=\sum_{0\le i<j\le T}\mathbf1_{\{X_j-X_i\in A\}},\qquad
+ \mathbb E I_T(A)=\sum_{r=1}^T(T+1-r)\mathbb P(X_r-X_0\in A).
+$$
 
-## 11. Exhaustive failure envelope
+If the lag probability is comparable to $r^{-a}$, $a>0$, the expectation
+has order $T^{2-a}$ for $a<1$, $T\log T$ for $a=1$, and $T$
+for $a>1$, assuming a positive finite-lag return probability. A transient
+walk can keep making linearly many historical revisits. For a simple walk
+on $\mathbb Z^3$, independent disjoint two-step backtracking trials already
+give infinitely many exact historical repeats.
 
-A CDT conclusion is not licensed when any required item below is unresolved.
+## 8. The mechanism hypothesis remains open
 
-| Boundary | Failure mode | Required response |
-|---|---|---|
-| Observable | anchored, historical, and projected recurrence are mixed | define one before analysis |
-| State | hidden memory makes the process non-Markov | augment the state or use a non-Markov theorem |
-| Target | "exact" is an unresolvable point in continuous data | use capacity or a declared resolution |
-| Projection | rhyme map chosen after seeing results | preregister or validate out of sample |
-| Metric | distances have no functional meaning | supply invariance/semantics or do not claim rhyme |
-| Heat kernel | no two-sided scaling or irreducibility | use the Green sum directly |
-| Criticality | estimated `d_s` is near 2 | test logarithmic corrections; return undecidable |
-| Dimension | trajectory-cloud correlation dimension substituted for substrate volume dimension | estimate the correct object or withhold verdict |
-| MSD | drift, confinement, aging, anisotropy, or infinite variance contaminates the slope | do not identify `d_w=2/beta` without a scaling audit |
-| Self-interaction | `gamma` changes the process law | prove the perturbed kernel/conditional bound |
-| Finite space | every irreducible state recurs and novelty is exhausted | use cover time/capacity, not infinite-space CDT |
-| Nonstationarity | kernel or manifold changes on the measurement timescale | use local/time-inhomogeneous analysis |
-| Determinism | periodic or quasiperiodic dynamics lack the assumed kernel | use dynamical-systems recurrence instead |
-| Resolution | `T -> infinity` and `epsilon -> 0` are interchanged | state the order or joint scaling explicitly |
-| Function | novelty is treated as usefulness | add an external performance/survival criterion |
-| Causality | correlation is treated as realization-induced repulsion | intervene on the proposed mechanism |
+For destination-local-time repulsion on $\mathbb Z^D$, a typical rule is
 
-Two especially important consequences follow.
+$$
+ \mathbb P(X_{n+1}=z\mid\mathcal F_n)
+ =\frac{e^{-\gamma L_n(z)}}{\sum_{w\sim X_n}e^{-\gamma L_n(w)}},
+ \qquad z\sim X_n,
+$$
 
-**Correlation dimension caveat.** The correlation dimension of sampled visited
-points is generally a property of the occupation/range distribution, not
-automatically the Ahlfors volume exponent \(d_f\) controlling the substrate heat
-kernel. For Brownian paths the range dimension can saturate even as ambient
-dimension grows. A point-cloud estimator cannot be inserted into
-\(d_s=2d_f/d_w\) without an identification argument.
+where $L_n(z)$ counts visits through time $n$. Position alone is
+generally not Markov. The augmented state $(X_n,L_n)$ is Markov, but its
+growing record changes the recurrence question: $\sum_z L_n(z)=n+1$, so
+that augmented state never repeats, even at $\gamma=0$. This proves
+nothing about avoidance in position.
 
-**Finite-data caveat.** No finite trajectory proves infinite-time recurrence.
-Finite data can reject a specified model, estimate finite-horizon Green sums,
-and compare registered alternatives. It cannot turn an asymptotic theorem into
-an observed fact.
+Appending a clock likewise destroys exact-state recurrence of any process.
+The full state must be causally justified, and novelty created solely by a
+timestamp or cumulative record must be disclosed.
 
----
+The open proof obligations for the self-repelling model are:
 
-## 12. Ready-to-use protocol
+1. Fix position versus augmented/functional state, targets, scales, and lags.
+2. Derive summable position-target return bounds for anchored avoidance, or
+   prove (CB) for historical avoidance. Do not apply Theorem 1 to position
+   as if it were an irreducible Markov chain.
+3. Prove structural recurrence under the perturbed law. A coordinate projection
+   need not have a closed Markov law.
+4. Intervene on the proposed interaction with fixed representation, noise,
+   and evaluation protocol to distinguish causation from separation alone.
 
-### 12.1 Claim template
+The sign $\gamma>0$ establishes none of these by itself. Separation without
+repulsion is proved in §§3 and 6. Constant projections make structural
+recurrence automatic. Iid continuous samples and irrational rotations can
+separate exact equality from neighborhood recurrence without the proposed
+mechanism. They are controls, not evidence for realization-induced repulsion.
 
-Fill every field before using CDT.
+## 9. Function, control, and memory are additional claims
+
+In a finite irreducible chain every state recurs; in a finite irreducible
+structural chain recurrence is automatic. Neither fact distinguishes a useful
+representation from a meaningless label. Justify the projection independently
+and measure task performance separately.
+
+An invariant failure set $D=A\times\{0\}$ for a controller state $(X,g)$
+cannot be escaped under dynamics preserving it. That does not prove all
+internal rescue impossible: an admissible internal transition may break
+invariance. Sustained control requires operating sets, dynamics, constraints,
+and a viability argument. Optimal intervention timing also requires a loss.
+
+A Lipschitz map cannot increase Hausdorff dimension, but this geometric fact
+does not prove improved prediction or recall. Finite prototype banks can recur
+while losing task information. Evaluate memory, adaptive dimension, and rescue
+with independent functional outcomes and held-out interventions. There is no
+theorem here of the form `Alive iff (d_s <= 2) and (gamma > 0)`.
+
+## 10. Empirical protocol
+
+Register the following before examining outcomes:
 
 ```text
-Full state:          X_t =
-State space/metric:  (E, d_E) =
-Structural map:      pi:E->F =
-Fine target:         A_epsilon =
-Coarse target:       C_R = pi^{-1}(B_F(...))
-Observable:          anchored | historical | projected
-Exclusion lag:       tau =
-Asymptotic order:    fixed epsilon then T->infinity | joint scaling =
-Full-state proof:    Green sum / capacity / conditional BC / other =
-Coarse proof:        quotient Green sum / recurrence theorem / other =
-Mechanism test:      intervention and null =
-Finite-data status:  supported | contradicted | undecidable
-Functional metric:   independent task/survival quantity =
+Full state and why its components matter:
+State space, metric, and observation times:
+Structural map pi and independent justification:
+Fine target A; structural target B; whether A is contained in pi^{-1}(B):
+Observable: anchored | historical | discovery
+Resolution, exclusion lag, and order of limits:
+Markov state, irreducibility, lumpability, and kernel assumptions:
+Mathematical claim and proof of each required assumption:
+Finite horizon, independent restarts, and uncertainty procedure:
+Mechanism intervention and matched null:
+Independent functional outcome:
 ```
 
-### 12.2 Decision rule
+For $M$ independent restarts from $x$, estimate anchored quantities by
 
-Use the following hierarchy.
+$$
+ \widehat p_n(A)=\frac1M\sum_{j=1}^M\mathbf1_{\{X_n^{(j)}\in A\}},\qquad
+ \widehat G_T(A)=\sum_{n=1}^T\widehat p_n(A).
+$$
 
-1. Compute or bound the full Green quantity. If it is not finite, Theorem 1 is
-   not established.
-2. Compute or bound the quotient Green quantity. If it is not divergent (with
-   recurrence hypotheses), persistent rhyme is not established.
-3. If exact targets are thin, perform a capacity/polarity analysis.
-4. Use `d_s` only after verifying the heat-kernel model. At `d_s ~= 2`, return
-   **undecidable** unless slowly varying corrections are controlled.
-5. For self-repulsion, test the perturbed process, not the neutral substrate.
-6. For historical recurrence, use Theorem 3 or an intersection theorem, not
-   Pólya's fixed-origin result.
-7. Report functionality separately from CDT recurrence.
+The empirical convention excludes time zero; the theoretical Green function
+includes it. This finite constant never changes convergence. Bootstrap paths,
+preserving fine/structural pairing for paired contrasts. A single long path
+is not a collection of independent restarts.
 
-### 12.3 Empirical estimands
+For a path $X_0,\ldots,X_T$, the rate implemented by `historical_flags` is
 
-For a single trajectory, report at least
+$$
+ \widehat h_T(r,\tau)=\frac1{T-\tau+1}\sum_{n=\tau}^T
+ \mathbf1\left\{\min_{0\le j\le n-\tau}d(X_n,X_j)\le r\right\},
+ \qquad1\le\tau\le T.
+$$
 
-\[
-H_T(r,\tau)=\frac{1}{T-\tau}
-\sum_{n=\tau+1}^{T}
-\mathbf1\!\left\{\min_{j\le n-\tau}d(X_n,X_j)\le r\right\},
-\]
+Report full and projected rates separately, together with cell discovery.
+Fix scales and lag; specify fixed-resolution or joint-scaling limits.
+[cdt_empirical_audit.py](cdt_empirical_audit.py) computes finite diagnostics:
 
-and the same quantity after the predeclared projection \(\pi\). Also report the
-number of occupied `epsilon`-cells and its growth with \(T\). These are
-historical finite-horizon diagnostics, not Green-kernel proofs.
-
-For anchored recurrence, use many independent restarts and estimate
-
-\[
-\widehat p_n(A)=\frac1M\sum_{m=1}^M
-\mathbf1_{\{X_n^{(m)}\in A\}},
-\qquad
-\widehat G_N(A)=\sum_{n=1}^N\widehat p_n(A).
-\]
-
-Plot \(\widehat G_N\) over increasing horizons; compare pure power, power-plus-log,
-and exponential-cutoff models. Use block/bootstrap intervals appropriate to the
-sampling design, and keep `epsilon`, `R`, `tau`, and `pi` fixed from the
-registered analysis.
-
-The repository utility `cdt_empirical_audit.py` implements these separated
-finite-horizon diagnostics for `.npy` and `.csv` trajectories:
-
-```powershell
-python cdt_empirical_audit.py paths.npy `
-  --epsilon 0.05 --radius 0.5 --lag 10 --projection 0,1
+```bash
+python cdt_empirical_audit.py paths.npy --epsilon 0.05 --radius 0.5 --lag 10 --projection 0,1
 ```
 
-It returns JSON and intentionally makes no asymptotic alive/dead verdict.
+The utility uses Euclidean coordinate selection and enforces
+`radius > epsilon`; this is an implementation convention, not a hypothesis
+of Theorem 1. General projections can use different units in the two spaces.
 
-### 12.4 Allowed conclusions
+Finite trajectories do not decide asymptotic recurrence without a justified
+model. Compare power, power-with-log, and cutoff alternatives. A zero-event
+tail is an estimator floor, not an arbitrarily steep exponent. With zero
+affected paths among $M$ independent restarts, the one-sided 95% binomial
+upper bound $1-0.05^{1/M}$ concerns the probability of **at least one**
+tail-window return. It does not bound the mean count of clustered returns.
 
-- **Theorem:** assumptions are stated and the Green/capacity proof is complete.
-- **Model theorem:** proved for one specified stochastic/control model.
-- **Simulation support:** finite experiments match a registered prediction.
-- **Empirical association:** observed without a causal intervention.
-- **Interpretation/metaphor:** useful framing, not a mathematical result.
+## 11. Evidence and remaining work
 
-Do not replace one label with another.
+The [registered ledger](results/cdt_simulation_evidence_ledger.md) records the
+2026-09-05 experiments. Data and preregistrations are unchanged. References to
+“Theorem 1” in that historical ledger mean the earlier sufficient-condition
+formulation, now Lemma 2.
 
----
+| Claim | Standing |
+|---|---|
+| Countable transient/recurrent projection criterion | Theorem 1: necessary and sufficient under its assumptions |
+| Lazy-coordinate phase boundary | exact model result (P), not inferred from simulation |
+| Brownian hidden drift | exact model result (B); registered discrete experiments are finite-horizon controls for their own model |
+| Destination-local-time repulsion through tested $\gamma=10$ | finite-horizon evidence; asymptotic position avoidance and structural recurrence remain unproved |
+| General diffusion/capacity extension | needs a separately specified process, targets, and recurrence theorem |
+| Life/death, memory benefit, rescue optimality | independent functional/control claims, not established here |
 
-## 13. Registered simulation frontier
+Three high-dimensional registered fits were event-floor failures, not
+confirmations. The later [measurement repair](measurement_repair_20260912.md)
+also limits the old phase-null, capacity-probe, and novelty-reward claims;
+none is used as proof here.
 
-The 2026-09-05 campaign tested the theorem and its proposed mechanisms without
-using the analytic answers to retune thresholds. Full details and path-level
-outputs are in `results/cdt_simulation_evidence_ledger.md`.
+The unresolved CDT problem is a model-specific proof that realization-dependent
+interaction causes fine avoidance while preserving meaningful structural
+recurrence. Classical constructions prove the split is possible. They do not
+establish that proposed causal mechanism.
 
-### What survived
+### Mathematical background
 
-1. **Product/projection phase map.** For coordinate walks on
-   \(\mathbb Z^D\), every identifiable registered slope agreed with the exact
-   projection threshold. Three of 21 fits were unidentifiable because fine
-   returns in dimensions five and six reached the zero-event floor; they are not
-   counted as confirmations or contradictions.
-2. **Hidden-drift construction.** In a corrected two-dimensional causal
-   control, hidden drift made full return tails decay while the one-coordinate
-   projected slope remained \(0.492\)--\(0.505\), statistically tracking the
-   neutral recurrent projection. The same drift applied inside the projection
-   suppressed both. Thus the location of drift relative to \(\pi\), not merely
-   nonzero drift, is the operative condition.
-3. **Finite capacity and counterexamples.** Finite tori approached stationary
-   return rates while novelty exhausted. Irrational rotation and continuous iid
-   sampling produced exact/coarse separation without self-repulsion. These
-   controls confirm the stated failure envelope.
-
-### What became stronger but remains unproved
-
-In the destination-local-time walk, the one-coordinate anchored tail slope
-remained positive through \(\gamma=10\) in both tested dimensions, while full
-historical recurrence fell and discovery rose. This is a wider finite-horizon
-mechanism window than the original campaign expected. It is still only
-simulation support: full anchored returns were too rare for stable slope
-estimation, and no asymptotic theorem for the perturbed walk was supplied.
-
-### Operational correction
-
-A zero-event tail is an **estimator floor**, not evidence of an arbitrarily
-large negative exponent. When expected returns are rare, report an upper bound
-or increase independent path count; do not fit a log slope to zeros. Likewise,
-historical recurrence may remain near one while anchored returns change
-materially. Neither observable can substitute for the other.
-
----
-
-## 14. Status of the earlier headline claims
-
-| Earlier claim | Status | Correct replacement |
-|---|---|---|
-| Pólya boundary `D=2` | valid for the specified lattice walk / Brownian neighborhoods | Green-kernel criterion |
-| `d_s<=2` iff recurrence | conditional | valid under two-sided heat-kernel and irreducibility assumptions; inspect logs at equality |
-| `nu<=d_w` from any trajectory cloud | invalid generally | identify substrate `d_f` and walk exponent separately |
-| any nonzero constant Gaussian drift kills anchored recurrence | valid for that model | use the exponential heat-kernel cutoff |
-| any realization perturbation `gamma>0` kills exact recurrence | false generally | tested local-time repulsion is promising through `gamma=10`, but still requires a perturbed Green bound or Theorem 3 |
-| fixed `epsilon` transient but fixed `R` recurrent in one homogeneous space | false without extra multiscale structure | use a projection, capacity gap, or time-varying scale |
-| `Alive iff (d_s<=2) and (gamma>0)` | not a theorem | define `CDT-persistent` by Theorem 1; measure function separately |
-| alpha-stable threshold `nu<=alpha*d_w/2` | incorrect for the stable process | `d<=alpha`, equivalently `d_f<=d_w` with `d_w=alpha` |
-| self-repulsion raises `d_w` and therefore raises `d_s` | algebraically inconsistent | `d_s=2d_f/d_w`; increasing `d_w` lowers `d_s` |
-| Brownian Pólya threshold governs all self-intersections | false | use the pair-count identity or a multiple-point theorem |
-| heartbeat boundary trigger is uniquely optimal | model-specific simulation result | state the control objective and prove viability/optimality |
-| external rescue is universally necessary | false generally | valid only when the internal death set is proved invariant |
-| coarse memory must improve prediction | not mathematical | test by causal ablation on held-out behavior |
-| fourteen domains prove one universal law | overclaim | separate direct measurements, model simulations, analogies, and undecidable cases |
-
----
-
-## 15. Final theorem in one line
-
-The defensible, reusable Configuration-Drift Theorem is
-
-\[
-\boxed{
-G_X(x,A_\varepsilon)<\infty
-\quad\text{and}\quad
-\pi(X)\text{ recurrent on }B_F(\pi x,R)
-\quad\Longrightarrow\quad
-\text{finite returns to the registered fine target, but persistent structural returns.}
-}
-\]
-
-Under verified two-sided power-law heat kernels, a convenient sufficient
-condition is
-
-\[
-\boxed{d_s(\pi(X))\le2<d_s(X).}
-\]
-
-This version is mathematically sound, falsifiable, and ready for use. It keeps
-CDT's central insight while exposing exactly what must be proved in every new
-system.
+The arguments use standard results: irreducible-chain recurrence and the
+strong Markov property (Norris, *Markov Chains*); conditional Borel–Cantelli
+and martingale laws of large numbers (Williams, *Probability with Martingales*);
+Brownian recurrence and polarity (Mörters and Peres, *Brownian Motion*).
+For heat-kernel geometry beyond the chains here see
+[Grigor'yan and Telcs](https://arxiv.org/abs/1205.5627). General capacity claims
+need a specified framework, such as Fukushima, Oshima, and Takeda,
+*Dirichlet Forms and Symmetric Markov Processes*.

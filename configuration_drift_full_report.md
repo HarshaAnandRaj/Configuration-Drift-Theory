@@ -1,5 +1,10 @@
 # Configuration-Drift Hypothesis — Report (corrected framing)
 
+> **Canonical revision (2026-11-09).** The linked theorem now distinguishes an
+> exact transient/recurrent Markov-projection criterion from the unproved
+> self-repulsion mechanism. This report's numerical evidence is unchanged;
+> use the canonical file for current mathematical claims.
+
 > **Mathematical status (2026-09-04).** This is an empirical/research-history
 > report. Its theorem-level interpretations are superseded by
 > [`configuration_drift_theorem.md`](configuration_drift_theorem.md). In

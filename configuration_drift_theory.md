@@ -1,5 +1,11 @@
 # Configuration-Drift Hypothesis — Theory (Exhaustive)
 
+> **Canonical revision (2026-11-09).** The linked theorem now gives an exact
+> countable-chain criterion, explicit product and Brownian models, and separate
+> historical-avoidance conditions. Realization-dependent self-repulsion remains
+> a model-specific open proof problem. The historical claims below are retained
+> as a notebook, not promoted to theorem status.
+
 > **Mathematical status (2026-09-04).** The canonical theorem is now
 > [`configuration_drift_theorem.md`](configuration_drift_theorem.md). It
 > supersedes the universal claims in §§5.5–5.10, open questions 8–9, and

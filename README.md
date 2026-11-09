@@ -1,27 +1,42 @@
 # Configuration Drift Theory
 
 Start with [`configuration_drift_theorem.md`](configuration_drift_theorem.md).
-It contains the canonical theorem, proofs, counterexamples, failure envelope,
-and the claim protocol for applying CDT to a new system.
+It contains the canonical theorem, proofs, counterexamples, and the protocol
+for applying CDT to a specified system. The
+[2026-11-09 revision notes](docs/theorem_revision_20261109.md) explain the
+mathematical changes and the remaining open mechanism question.
 
-The core result is a two-level recurrence separation:
+For an irreducible countable-state Markov chain with a strongly lumpable
+structural projection, returns to a nonempty finite full-state target are
+almost surely finite while returns to a nonempty finite structural target
+are almost surely infinite **if and only if**
 
-\[
-G_X(x,A_\varepsilon)<\infty
-\quad\text{while}\quad
-\pi(X)\text{ is recurrent on a declared structural target}.
-\]
+$$
+G_P(a,a)<\infty
+\quad\text{and}\quad
+G_Q(b,b)=\infty.
+$$
 
-Under verified two-sided power-law heat-kernel assumptions, the convenient
-sufficient condition is
+Here `P` and `Q` are the full and projected transition matrices. Every
+structural fiber must then contain infinitely many full states. Two fixed
+finite targets in the same irreducible chain cannot give this split.
 
-\[
+Under two-sided pure-power return-kernel bounds, the criterion becomes
+
+$$
 d_s(\pi(X))\le 2<d_s(X).
-\]
+$$
+
+The theorem also gives an explicit lazy product walk with separation exactly
+when `m <= 2 < D`, and a separate Brownian classification for drift hidden
+from a projection. These use classical recurrence results. They do not prove
+that realization-dependent self-repulsion causes the split; that remains a
+model-specific open problem for the tested local-time walk.
 
 Files:
 
 - `configuration_drift_theorem.md` — authoritative mathematics and use rules.
+- `docs/theorem_revision_20261109.md` — change rationale and validation record.
 - `configuration_drift_theory.md` — research notebook and historical theory.
 - `configuration_drift_full_report.md` — empirical/rebuild report.
 - `cdt_empirical_audit.py` — finite-horizon trajectory diagnostics that keep
@@ -34,17 +49,16 @@ Files:
 
 Run the checks:
 
-```powershell
+```bash
 python -m unittest -v test_cdt_empirical_audit.py test_cdt_simulation_campaign.py test_cdt_registered_results.py
-python -m py_compile cdt_empirical_audit.py experiments\cdt_simulation_campaign.py
+python -m py_compile cdt_empirical_audit.py experiments/cdt_simulation_campaign.py
 ```
 
 Audit a trajectory (choose the scales, lag, and projection before examining the
 result):
 
-```powershell
-python cdt_empirical_audit.py paths.npy `
-  --epsilon 0.05 --radius 0.5 --lag 10 --projection 0,1
+```bash
+python cdt_empirical_audit.py paths.npy --epsilon 0.05 --radius 0.5 --lag 10 --projection 0,1
 ```
 
 Finite output is evidence about a registered model and horizon; it is not proof
