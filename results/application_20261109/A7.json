@@ -1,0 +1,631 @@
+{
+  "suite": "A7",
+  "smoke_only": false,
+  "elapsed_seconds": 0.3569602259999556,
+  "records": [
+    {
+      "replicate": 0,
+      "seed": 20331110,
+      "primary_effect": 0.8489583333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46570559969015213,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.484375,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.15104166666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.171875,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 1,
+      "seed": 20331111,
+      "primary_effect": 0.8333333333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.4656470680103734,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.3958333333333333,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.17708333333333334,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 2,
+      "seed": 20331112,
+      "primary_effect": 0.8125,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.4656388571107222,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.24479166666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.46875,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.1875,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.16145833333333334,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 3,
+      "seed": 20331113,
+      "primary_effect": 0.828125,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.4656165126339013,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.171875,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.4791666666666667,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.171875,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.16145833333333334,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 4,
+      "seed": 20331114,
+      "primary_effect": 0.8333333333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46563386446650945,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.515625,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.15625,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 5,
+      "seed": 20331115,
+      "primary_effect": 0.8333333333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46566522100417945,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.171875,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.4895833333333333,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.13541666666666666,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 6,
+      "seed": 20331116,
+      "primary_effect": 0.8385416666666666,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46565684247756894,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.13020833333333334,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.5208333333333334,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.16145833333333334,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.15625,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 7,
+      "seed": 20331117,
+      "primary_effect": 0.8333333333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46562824742231934,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.5104166666666666,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.19791666666666666,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 8,
+      "seed": 20331118,
+      "primary_effect": 0.8333333333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46558342143158366,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.5104166666666666,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.19791666666666666,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 9,
+      "seed": 20331119,
+      "primary_effect": 0.8177083333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46567052764451694,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.15104166666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.5,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.18229166666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.15625,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 10,
+      "seed": 20331120,
+      "primary_effect": 0.84375,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46567304133085924,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.515625,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.15625,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.13020833333333334,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 11,
+      "seed": 20331121,
+      "primary_effect": 0.8333333333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.4656165455102507,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.171875,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.4791666666666667,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.13541666666666666,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 12,
+      "seed": 20331122,
+      "primary_effect": 0.7760416666666666,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.4656268262270486,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.19791666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.5052083333333334,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.22395833333333334,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.21875,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 13,
+      "seed": 20331123,
+      "primary_effect": 0.8229166666666666,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.4656324325474525,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.4635416666666667,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.17708333333333334,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.16145833333333334,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 14,
+      "seed": 20331124,
+      "primary_effect": 0.8333333333333334,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.46559382624990003,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16145833333333334,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.4739583333333333,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.11979166666666667,
+          "dimensions": 9
+        }
+      ]
+    },
+    {
+      "replicate": 15,
+      "seed": 20331125,
+      "primary_effect": 0.828125,
+      "functional_pass": true,
+      "calibration_descriptor_rms": 0.4656451629688326,
+      "arms": [
+        {
+          "arm": "raw",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 128
+        },
+        {
+          "arm": "structure",
+          "accuracy": 1.0,
+          "dimensions": 9
+        },
+        {
+          "arm": "shape_only",
+          "accuracy": 0.5625,
+          "dimensions": 8
+        },
+        {
+          "arm": "random9",
+          "accuracy": 0.171875,
+          "dimensions": 9
+        },
+        {
+          "arm": "constant",
+          "accuracy": 0.16666666666666666,
+          "dimensions": 1
+        },
+        {
+          "arm": "structure_point_order_permuted",
+          "accuracy": 0.19791666666666666,
+          "dimensions": 9
+        }
+      ]
+    }
+  ]
+}

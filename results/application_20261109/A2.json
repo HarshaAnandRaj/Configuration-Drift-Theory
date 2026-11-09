@@ -1,0 +1,1431 @@
+{
+  "suite": "A2",
+  "smoke_only": false,
+  "elapsed_seconds": 20.22928244700006,
+  "records": [
+    {
+      "replicate": 0,
+      "seed": 20281110,
+      "primary_effect": 15.49951171875,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0859375,
+          "structural_tail_mean": 3.751953125,
+          "full_affected_paths": 101,
+          "structural_affected_paths": 971
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.05322265625,
+          "structural_tail_mean": 3.751953125,
+          "full_affected_paths": 68,
+          "structural_affected_paths": 971
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04296875,
+          "structural_tail_mean": 1.98388671875,
+          "full_affected_paths": 58,
+          "structural_affected_paths": 581
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0859375,
+          "structural_tail_mean": 7.63720703125,
+          "full_affected_paths": 101,
+          "structural_affected_paths": 1017
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01025390625,
+          "structural_tail_mean": 7.63720703125,
+          "full_affected_paths": 12,
+          "structural_affected_paths": 1017
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0048828125,
+          "structural_tail_mean": 0.65966796875,
+          "full_affected_paths": 7,
+          "structural_affected_paths": 124
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.09521484375,
+          "structural_tail_mean": 15.49951171875,
+          "full_affected_paths": 108,
+          "structural_affected_paths": 1051
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.49951171875,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1051
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.0,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 0
+        }
+      ]
+    },
+    {
+      "replicate": 1,
+      "seed": 20281111,
+      "primary_effect": 15.56982421875,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.07470703125,
+          "structural_tail_mean": 3.5107421875,
+          "full_affected_paths": 108,
+          "structural_affected_paths": 969
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04736328125,
+          "structural_tail_mean": 3.5107421875,
+          "full_affected_paths": 65,
+          "structural_affected_paths": 969
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.05517578125,
+          "structural_tail_mean": 2.203125,
+          "full_affected_paths": 69,
+          "structural_affected_paths": 634
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.08154296875,
+          "structural_tail_mean": 7.5029296875,
+          "full_affected_paths": 92,
+          "structural_affected_paths": 984
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01513671875,
+          "structural_tail_mean": 7.5029296875,
+          "full_affected_paths": 18,
+          "structural_affected_paths": 984
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01123046875,
+          "structural_tail_mean": 0.8779296875,
+          "full_affected_paths": 15,
+          "structural_affected_paths": 165
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.09326171875,
+          "structural_tail_mean": 15.57177734375,
+          "full_affected_paths": 91,
+          "structural_affected_paths": 1038
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.57177734375,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1038
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.001953125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1
+        }
+      ]
+    },
+    {
+      "replicate": 2,
+      "seed": 20281112,
+      "primary_effect": 15.37744140625,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.08935546875,
+          "structural_tail_mean": 3.7783203125,
+          "full_affected_paths": 115,
+          "structural_affected_paths": 975
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.05322265625,
+          "structural_tail_mean": 3.7783203125,
+          "full_affected_paths": 73,
+          "structural_affected_paths": 975
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0439453125,
+          "structural_tail_mean": 2.240234375,
+          "full_affected_paths": 59,
+          "structural_affected_paths": 583
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.08642578125,
+          "structural_tail_mean": 7.25830078125,
+          "full_affected_paths": 99,
+          "structural_affected_paths": 994
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.00634765625,
+          "structural_tail_mean": 7.25830078125,
+          "full_affected_paths": 9,
+          "structural_affected_paths": 994
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0068359375,
+          "structural_tail_mean": 0.83984375,
+          "full_affected_paths": 10,
+          "structural_affected_paths": 161
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.09521484375,
+          "structural_tail_mean": 15.3779296875,
+          "full_affected_paths": 102,
+          "structural_affected_paths": 1010
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.3779296875,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1010
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.00048828125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1
+        }
+      ]
+    },
+    {
+      "replicate": 3,
+      "seed": 20281113,
+      "primary_effect": 14.279296875,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.083984375,
+          "structural_tail_mean": 3.7861328125,
+          "full_affected_paths": 112,
+          "structural_affected_paths": 992
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0458984375,
+          "structural_tail_mean": 3.7861328125,
+          "full_affected_paths": 63,
+          "structural_affected_paths": 992
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04736328125,
+          "structural_tail_mean": 1.96484375,
+          "full_affected_paths": 65,
+          "structural_affected_paths": 556
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.07763671875,
+          "structural_tail_mean": 7.3408203125,
+          "full_affected_paths": 90,
+          "structural_affected_paths": 989
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0068359375,
+          "structural_tail_mean": 7.3408203125,
+          "full_affected_paths": 10,
+          "structural_affected_paths": 989
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.005859375,
+          "structural_tail_mean": 0.71630859375,
+          "full_affected_paths": 9,
+          "structural_affected_paths": 126
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.08154296875,
+          "structural_tail_mean": 14.279296875,
+          "full_affected_paths": 88,
+          "structural_affected_paths": 1034
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 14.279296875,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1034
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.0,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 0
+        }
+      ]
+    },
+    {
+      "replicate": 4,
+      "seed": 20281114,
+      "primary_effect": 15.0087890625,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.09375,
+          "structural_tail_mean": 3.7744140625,
+          "full_affected_paths": 115,
+          "structural_affected_paths": 992
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.05908203125,
+          "structural_tail_mean": 3.7744140625,
+          "full_affected_paths": 75,
+          "structural_affected_paths": 992
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04150390625,
+          "structural_tail_mean": 2.00390625,
+          "full_affected_paths": 63,
+          "structural_affected_paths": 552
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0927734375,
+          "structural_tail_mean": 7.51220703125,
+          "full_affected_paths": 103,
+          "structural_affected_paths": 1040
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01171875,
+          "structural_tail_mean": 7.51220703125,
+          "full_affected_paths": 17,
+          "structural_affected_paths": 1040
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.00634765625,
+          "structural_tail_mean": 0.693359375,
+          "full_affected_paths": 7,
+          "structural_affected_paths": 126
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.08642578125,
+          "structural_tail_mean": 15.0126953125,
+          "full_affected_paths": 96,
+          "structural_affected_paths": 1039
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.0126953125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1039
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.00390625,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1
+        }
+      ]
+    },
+    {
+      "replicate": 5,
+      "seed": 20281115,
+      "primary_effect": 15.3642578125,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0888671875,
+          "structural_tail_mean": 3.75341796875,
+          "full_affected_paths": 122,
+          "structural_affected_paths": 1001
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.056640625,
+          "structural_tail_mean": 3.75341796875,
+          "full_affected_paths": 84,
+          "structural_affected_paths": 1001
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04931640625,
+          "structural_tail_mean": 2.150390625,
+          "full_affected_paths": 65,
+          "structural_affected_paths": 588
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.09228515625,
+          "structural_tail_mean": 7.404296875,
+          "full_affected_paths": 102,
+          "structural_affected_paths": 1031
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01171875,
+          "structural_tail_mean": 7.404296875,
+          "full_affected_paths": 13,
+          "structural_affected_paths": 1031
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.00732421875,
+          "structural_tail_mean": 0.84033203125,
+          "full_affected_paths": 10,
+          "structural_affected_paths": 154
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.07666015625,
+          "structural_tail_mean": 15.3662109375,
+          "full_affected_paths": 85,
+          "structural_affected_paths": 1005
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.3662109375,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1005
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.001953125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1
+        }
+      ]
+    },
+    {
+      "replicate": 6,
+      "seed": 20281116,
+      "primary_effect": 15.1416015625,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.095703125,
+          "structural_tail_mean": 3.92919921875,
+          "full_affected_paths": 119,
+          "structural_affected_paths": 1020
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04833984375,
+          "structural_tail_mean": 3.92919921875,
+          "full_affected_paths": 66,
+          "structural_affected_paths": 1020
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0478515625,
+          "structural_tail_mean": 2.01953125,
+          "full_affected_paths": 60,
+          "structural_affected_paths": 548
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.08642578125,
+          "structural_tail_mean": 7.61865234375,
+          "full_affected_paths": 117,
+          "structural_affected_paths": 1021
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0087890625,
+          "structural_tail_mean": 7.61865234375,
+          "full_affected_paths": 11,
+          "structural_affected_paths": 1021
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0078125,
+          "structural_tail_mean": 0.7861328125,
+          "full_affected_paths": 9,
+          "structural_affected_paths": 137
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.10205078125,
+          "structural_tail_mean": 15.1611328125,
+          "full_affected_paths": 106,
+          "structural_affected_paths": 1030
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.1611328125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1030
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.01953125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1
+        }
+      ]
+    },
+    {
+      "replicate": 7,
+      "seed": 20281117,
+      "primary_effect": 15.32080078125,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.08203125,
+          "structural_tail_mean": 3.80859375,
+          "full_affected_paths": 116,
+          "structural_affected_paths": 998
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04296875,
+          "structural_tail_mean": 3.80859375,
+          "full_affected_paths": 59,
+          "structural_affected_paths": 998
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.05859375,
+          "structural_tail_mean": 2.119140625,
+          "full_affected_paths": 76,
+          "structural_affected_paths": 588
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0830078125,
+          "structural_tail_mean": 7.427734375,
+          "full_affected_paths": 103,
+          "structural_affected_paths": 992
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01416015625,
+          "structural_tail_mean": 7.427734375,
+          "full_affected_paths": 22,
+          "structural_affected_paths": 992
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.00830078125,
+          "structural_tail_mean": 0.763671875,
+          "full_affected_paths": 11,
+          "structural_affected_paths": 133
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0693359375,
+          "structural_tail_mean": 15.32080078125,
+          "full_affected_paths": 80,
+          "structural_affected_paths": 1007
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.32080078125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1007
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.0,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 0
+        }
+      ]
+    },
+    {
+      "replicate": 8,
+      "seed": 20281118,
+      "primary_effect": 14.5771484375,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.07861328125,
+          "structural_tail_mean": 3.8076171875,
+          "full_affected_paths": 101,
+          "structural_affected_paths": 1022
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04443359375,
+          "structural_tail_mean": 3.8076171875,
+          "full_affected_paths": 61,
+          "structural_affected_paths": 1022
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0419921875,
+          "structural_tail_mean": 2.03466796875,
+          "full_affected_paths": 55,
+          "structural_affected_paths": 592
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.1005859375,
+          "structural_tail_mean": 7.216796875,
+          "full_affected_paths": 115,
+          "structural_affected_paths": 983
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0078125,
+          "structural_tail_mean": 7.216796875,
+          "full_affected_paths": 8,
+          "structural_affected_paths": 983
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0087890625,
+          "structural_tail_mean": 0.703125,
+          "full_affected_paths": 13,
+          "structural_affected_paths": 125
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.09765625,
+          "structural_tail_mean": 14.59716796875,
+          "full_affected_paths": 112,
+          "structural_affected_paths": 996
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 14.59716796875,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 996
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.02001953125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 3
+        }
+      ]
+    },
+    {
+      "replicate": 9,
+      "seed": 20281119,
+      "primary_effect": 14.921875,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.080078125,
+          "structural_tail_mean": 3.7021484375,
+          "full_affected_paths": 101,
+          "structural_affected_paths": 997
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.06103515625,
+          "structural_tail_mean": 3.7021484375,
+          "full_affected_paths": 72,
+          "structural_affected_paths": 997
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0458984375,
+          "structural_tail_mean": 2.0634765625,
+          "full_affected_paths": 58,
+          "structural_affected_paths": 593
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.08740234375,
+          "structural_tail_mean": 7.18994140625,
+          "full_affected_paths": 103,
+          "structural_affected_paths": 998
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01123046875,
+          "structural_tail_mean": 7.18994140625,
+          "full_affected_paths": 11,
+          "structural_affected_paths": 998
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0078125,
+          "structural_tail_mean": 0.78271484375,
+          "full_affected_paths": 8,
+          "structural_affected_paths": 143
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.095703125,
+          "structural_tail_mean": 14.93798828125,
+          "full_affected_paths": 104,
+          "structural_affected_paths": 1013
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 14.93798828125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1013
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.01611328125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1
+        }
+      ]
+    },
+    {
+      "replicate": 10,
+      "seed": 20281120,
+      "primary_effect": 15.11962890625,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.07373046875,
+          "structural_tail_mean": 3.7138671875,
+          "full_affected_paths": 99,
+          "structural_affected_paths": 980
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.046875,
+          "structural_tail_mean": 3.7138671875,
+          "full_affected_paths": 73,
+          "structural_affected_paths": 980
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04345703125,
+          "structural_tail_mean": 1.93603515625,
+          "full_affected_paths": 54,
+          "structural_affected_paths": 549
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.07568359375,
+          "structural_tail_mean": 7.41455078125,
+          "full_affected_paths": 92,
+          "structural_affected_paths": 983
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01123046875,
+          "structural_tail_mean": 7.41455078125,
+          "full_affected_paths": 8,
+          "structural_affected_paths": 983
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0107421875,
+          "structural_tail_mean": 0.73095703125,
+          "full_affected_paths": 14,
+          "structural_affected_paths": 134
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.06396484375,
+          "structural_tail_mean": 15.11962890625,
+          "full_affected_paths": 70,
+          "structural_affected_paths": 998
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.11962890625,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 998
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.0,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 0
+        }
+      ]
+    },
+    {
+      "replicate": 11,
+      "seed": 20281121,
+      "primary_effect": 14.8916015625,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.09375,
+          "structural_tail_mean": 3.80419921875,
+          "full_affected_paths": 127,
+          "structural_affected_paths": 1008
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.05029296875,
+          "structural_tail_mean": 3.80419921875,
+          "full_affected_paths": 67,
+          "structural_affected_paths": 1008
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.05908203125,
+          "structural_tail_mean": 2.2470703125,
+          "full_affected_paths": 73,
+          "structural_affected_paths": 588
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.087890625,
+          "structural_tail_mean": 7.55029296875,
+          "full_affected_paths": 104,
+          "structural_affected_paths": 994
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01318359375,
+          "structural_tail_mean": 7.55029296875,
+          "full_affected_paths": 16,
+          "structural_affected_paths": 994
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0087890625,
+          "structural_tail_mean": 0.6005859375,
+          "full_affected_paths": 11,
+          "structural_affected_paths": 127
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0869140625,
+          "structural_tail_mean": 14.91845703125,
+          "full_affected_paths": 91,
+          "structural_affected_paths": 1009
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 14.91845703125,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1009
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.02685546875,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 2
+        }
+      ]
+    },
+    {
+      "replicate": 12,
+      "seed": 20281122,
+      "primary_effect": 15.3251953125,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.083984375,
+          "structural_tail_mean": 3.81640625,
+          "full_affected_paths": 117,
+          "structural_affected_paths": 1027
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.05029296875,
+          "structural_tail_mean": 3.81640625,
+          "full_affected_paths": 69,
+          "structural_affected_paths": 1027
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.03662109375,
+          "structural_tail_mean": 1.9853515625,
+          "full_affected_paths": 52,
+          "structural_affected_paths": 595
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.07861328125,
+          "structural_tail_mean": 7.376953125,
+          "full_affected_paths": 99,
+          "structural_affected_paths": 989
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.00390625,
+          "structural_tail_mean": 7.376953125,
+          "full_affected_paths": 7,
+          "structural_affected_paths": 989
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0107421875,
+          "structural_tail_mean": 0.65380859375,
+          "full_affected_paths": 10,
+          "structural_affected_paths": 125
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.07177734375,
+          "structural_tail_mean": 15.32666015625,
+          "full_affected_paths": 80,
+          "structural_affected_paths": 1025
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.32666015625,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1025
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.00146484375,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1
+        }
+      ]
+    },
+    {
+      "replicate": 13,
+      "seed": 20281123,
+      "primary_effect": 14.779296875,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.08056640625,
+          "structural_tail_mean": 3.859375,
+          "full_affected_paths": 114,
+          "structural_affected_paths": 1010
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.04736328125,
+          "structural_tail_mean": 3.859375,
+          "full_affected_paths": 58,
+          "structural_affected_paths": 1010
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0498046875,
+          "structural_tail_mean": 2.0224609375,
+          "full_affected_paths": 64,
+          "structural_affected_paths": 571
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.09765625,
+          "structural_tail_mean": 7.76513671875,
+          "full_affected_paths": 104,
+          "structural_affected_paths": 1014
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.00439453125,
+          "structural_tail_mean": 7.76513671875,
+          "full_affected_paths": 7,
+          "structural_affected_paths": 1014
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0068359375,
+          "structural_tail_mean": 0.53564453125,
+          "full_affected_paths": 8,
+          "structural_affected_paths": 112
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.08203125,
+          "structural_tail_mean": 14.779296875,
+          "full_affected_paths": 89,
+          "structural_affected_paths": 1014
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 14.779296875,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1014
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.0,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 0
+        }
+      ]
+    },
+    {
+      "replicate": 14,
+      "seed": 20281124,
+      "primary_effect": 15.56201171875,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.08935546875,
+          "structural_tail_mean": 3.7685546875,
+          "full_affected_paths": 117,
+          "structural_affected_paths": 1001
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0576171875,
+          "structural_tail_mean": 3.7685546875,
+          "full_affected_paths": 72,
+          "structural_affected_paths": 1001
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0458984375,
+          "structural_tail_mean": 1.9814453125,
+          "full_affected_paths": 62,
+          "structural_affected_paths": 595
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0732421875,
+          "structural_tail_mean": 7.814453125,
+          "full_affected_paths": 94,
+          "structural_affected_paths": 1016
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.005859375,
+          "structural_tail_mean": 7.814453125,
+          "full_affected_paths": 8,
+          "structural_affected_paths": 1016
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0107421875,
+          "structural_tail_mean": 0.75341796875,
+          "full_affected_paths": 12,
+          "structural_affected_paths": 152
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.095703125,
+          "structural_tail_mean": 15.57275390625,
+          "full_affected_paths": 96,
+          "structural_affected_paths": 1045
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.57275390625,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1045
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.0107421875,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1
+        }
+      ]
+    },
+    {
+      "replicate": 15,
+      "seed": 20281125,
+      "primary_effect": 15.4765625,
+      "cutoff_steps": 312.5,
+      "arms": [
+        {
+          "arm": "neutral",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.08984375,
+          "structural_tail_mean": 3.71240234375,
+          "full_affected_paths": 122,
+          "structural_affected_paths": 1008
+        },
+        {
+          "arm": "hidden",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0419921875,
+          "structural_tail_mean": 3.71240234375,
+          "full_affected_paths": 56,
+          "structural_affected_paths": 1008
+        },
+        {
+          "arm": "visible",
+          "horizon": 256,
+          "paths": 2048,
+          "full_tail_mean": 0.0390625,
+          "structural_tail_mean": 2.1865234375,
+          "full_affected_paths": 50,
+          "structural_affected_paths": 615
+        },
+        {
+          "arm": "neutral",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0634765625,
+          "structural_tail_mean": 6.90380859375,
+          "full_affected_paths": 79,
+          "structural_affected_paths": 997
+        },
+        {
+          "arm": "hidden",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.0107421875,
+          "structural_tail_mean": 6.90380859375,
+          "full_affected_paths": 15,
+          "structural_affected_paths": 997
+        },
+        {
+          "arm": "visible",
+          "horizon": 1024,
+          "paths": 2048,
+          "full_tail_mean": 0.01025390625,
+          "structural_tail_mean": 0.7890625,
+          "full_affected_paths": 11,
+          "structural_affected_paths": 135
+        },
+        {
+          "arm": "neutral",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.080078125,
+          "structural_tail_mean": 15.4765625,
+          "full_affected_paths": 96,
+          "structural_affected_paths": 1019
+        },
+        {
+          "arm": "hidden",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 15.4765625,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 1019
+        },
+        {
+          "arm": "visible",
+          "horizon": 4096,
+          "paths": 2048,
+          "full_tail_mean": 0.0,
+          "structural_tail_mean": 0.0,
+          "full_affected_paths": 0,
+          "structural_affected_paths": 0
+        }
+      ]
+    }
+  ]
+}
