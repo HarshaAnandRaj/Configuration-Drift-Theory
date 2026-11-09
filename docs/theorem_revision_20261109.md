@@ -98,3 +98,40 @@ python -m unittest -v test_cdt_empirical_audit.py test_cdt_simulation_campaign.p
 python -m py_compile cdt_empirical_audit.py experiments/cdt_simulation_campaign.py
 git diff --check
 ```
+
+## Application-focused extension
+
+The follow-up revision adds an occupation-rate corollary: finite fine visits
+with a positive structural visit fraction require a transient full chain and
+a **positive recurrent** structural chain. The earlier free-walk projections
+are null recurrent and have zero limiting structural frequency. An explicit
+restoring birth–death chain paired with hidden drift gives structural frequency
+`1/3` and mean return time three, without asserting a learned controller or
+self-repulsion mechanism.
+
+An exact last-exit identity shows that even finite last returns can have an
+infinite mean time. A Gaussian calculation quantifies a projected-drift cutoff.
+Proposition 5 adds finite-window total-variation error bounds for approximate
+structural laws and recurrence preservation under summable conditional errors;
+small constant errors are not enough. The application protocol now specifies
+required visit counts, return gaps, failure budgets, and functional outcomes.
+
+The [application guide](use_cases_and_phenomena.md) defines phenomena and five
+proposed engineering/behavioral use cases. The new example compares positive
+recurrent, null recurrent, and transient projections with the same hidden
+drift. Its simulation is illustrative and separate from the frozen registered
+campaign. It neither changes that campaign's evidence nor establishes any
+real-world application benefit.
+
+Follow-up validation: the 19 existing tests passed again; the example compiled
+and ran at its documented default horizon/seed. Exact rational checks verified
+the restoring invariant distribution, central-edge detailed balance,
+normalization, and mean return time. Exact enumeration checked a six-step
+path-space total-variation bound. Shortest-window count denominators and
+revised-document links, math delimiters, and whitespace also passed. The guide's
+sample table records the illustrative default run separately from registered
+evidence.
+
+An independent scalar reconstruction also matched the vectorized example's
+counts, tail windows, longest miss runs, and last observed visits at horizons
+1, 2, 17, 256, and 257. The example records the NumPy version with its seed.

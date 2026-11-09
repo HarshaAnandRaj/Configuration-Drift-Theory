@@ -11,6 +11,8 @@ This is the canonical mathematical layer. The
 [theory notebook](configuration_drift_theory.md) and
 [full report](configuration_drift_full_report.md) retain the research history.
 The [revision notes](docs/theorem_revision_20261109.md) explain what changed.
+The [use cases and phenomena](docs/use_cases_and_phenomena.md) distinguish
+proved model behavior from proposed applications and give testable protocols.
 
 The question is: **can a process eventually leave every fixed fine target,
 while continuing to return to a declared structural class?** Yes. On countable
@@ -127,6 +129,33 @@ $A$ would have infinitely many visits. Nor can $Q$ be transient, since
 then its finite set $B$ would have finitely many visits. The recurrence
 alternatives give (G). QED.
 
+### Corollary 1a (positive return frequency)
+
+Under assumptions 1–3, strengthen (S) by requiring
+
+$$
+ \frac{W_B(T)}{T+1}\longrightarrow\rho_B>0\quad\text{almost surely}.
+ \tag{R}
+$$
+
+Finite fine visits together with (R) hold exactly when $P$ is transient and
+$Q$ is **positive recurrent**. In that case $Q$ has a stationary probability
+distribution $\nu$, and $\rho_B=\nu(B)$. If $Q$ is null recurrent instead,
+then $W_B(T)\to\infty$ but $W_B(T)/(T+1)\to0$ for every finite $B$.
+
+#### Proof
+
+For an irreducible countable chain, the occupation-time ergodic theorem gives
+the limit $\nu(b)$ at each state in the positive recurrent case, and zero
+in the null recurrent or transient case. Summing over finite $B$ gives the
+claims; Theorem 1 supplies the fine-state condition. Periodicity does not
+affect these time averages. QED.
+
+For a single structural state $b$, the mean return time when started at $b$
+is $1/\nu(b)$ in the positive recurrent case and infinite in the null recurrent
+case. Positive recurrence gives a positive rate, not a maximum return gap or
+a deadline guarantee. Those require additional return-time tail bounds.
+
 ### Consequence: every structural fiber must be infinite
 
 Under Theorem 1, **every** fiber $\pi^{-1}(\{b\})$ is infinite. Otherwise
@@ -176,6 +205,41 @@ For example, a three-dimensional walk has finitely many full returns to the
 origin and infinitely many returns to the cylinder $x_1=x_2=0$. There is
 no repulsion parameter. This is a classical product-walk construction, not a
 new recurrence law.
+
+The recurrent projections in this product example ($m=1,2$) are **null
+recurrent**. They demonstrate infinitely many structural returns with zero
+limiting frequency. They do not demonstrate a rhythm maintained at a positive
+rate.
+
+### A model with a positive structural return rate
+
+Let $Y_n\in\mathbb Z$ be a lazy birth–death chain. For $y\ne0$, move one
+unit toward zero with probability $p$, one unit away with probability $q$,
+and stay with probability $1-p-q$. At zero, move to each of $-1,+1$ with
+probability $q$ and otherwise stay. Assume $0<q<p$ and $p+q<1$.
+
+Writing $r=q/p<1$, detailed balance on every neighboring pair gives
+
+$$
+ \nu(y)=\frac{1-r}{1+r}\,r^{|y|}.
+$$
+
+The geometric sum normalizes this distribution, so $Y$ is irreducible and
+positive recurrent. Independently let $Z$ have iid increments $+1,-1,0$
+with probabilities $3/8,1/8,1/2$. The full chain $X=(Y,Z)$ is irreducible,
+and $Z_n/n\to1/4$ almost surely, making $X$ transient. Projection onto $Y$
+satisfies (L). For $A=\{(0,0)\}$ and $B=\{0\}$,
+
+$$
+ V_A(\infty)<\infty,\qquad
+ \frac{W_{\{0\}}(T)}{T+1}\longrightarrow\frac{p-q}{p+q}>0
+ \quad\text{almost surely}.
+$$
+
+At $p=1/2,q=1/4$, the rate is $1/3$ and the mean return time to zero is
+three steps. This gives changing full configurations with recurring stabilized
+structure. The restoring force is specified in the model; it has not been
+derived from self-repulsion or learned dimensional adaptation.
 
 ## 4. Spectral dimension is a conditional shortcut
 
@@ -254,6 +318,28 @@ $$
 
 This is a last-return upper bound, not a claimed exact distribution.
 
+### An exact last-exit law for a transient state
+
+For a transient Markov chain started at $a$, let
+$L_a=\sup\{n\ge0:X_n=a\}$. The Markov property at deterministic time $n$
+and the renewal identity in Theorem 1 give
+
+$$
+ \mathbb P_a(L_a=n)=\frac{P^n(a,a)}{G_P(a,a)},\qquad
+ \mathbb P_a(L_a\ge N)=\frac{\sum_{n\ge N}P^n(a,a)}{G_P(a,a)}.
+ \tag{E}
+$$
+
+Indeed, a last visit at $n$ means being at $a$ then never returning, whose
+conditional probability is $1-f_a=1/G_P(a,a)$. Since $L_a$ is finite
+almost surely, these probabilities sum to one.
+
+Consequently $\mathbb E_a L_a<\infty$ exactly when
+$\sum_n nP^n(a,a)<\infty$. In the lazy product walk, dimensions three and
+four have a finite last return almost surely but an **infinite mean** last
+return time; only $D>4$ gives a finite mean. Thus transience alone does not
+specify a short observation window in which fine returns will disappear.
+
 ### Infinite expected visits need not mean recurrent visits
 
 Let $L$ be a finite nonnegative integer with
@@ -310,6 +396,28 @@ In dimension two, $v=(0,c)$, $c\ne0$, and $P(x_1,x_2)=x_1$
 give separation even though neutral planar Brownian motion is recurrent.
 Drift in the first coordinate instead destroys structural recurrence.
 Location relative to the projection is decisive.
+
+### Small projected drift gives a long crossover
+
+Write $\mu=Pv$ and $C=2D_0PP^\top$. The projected displacement density at
+zero is exactly
+
+$$
+ p_t^Y(0)=\frac{\exp[-t\mu^\top C^{-1}\mu/2]}
+                  {(2\pi t)^{k/2}\sqrt{\det C}}.
+$$
+
+For $\mu\ne0$, define the exponential cutoff scale
+$t_{\rm leak}=2/(\mu^\top C^{-1}\mu)$. At times much smaller than this,
+the exponential factor is close to one; at much larger times it suppresses
+returns. A fixed bounded ball has the same exponential decay rate: integrate
+the Gaussian density over the ball, whose spatial correction is bounded by
+positive constants for large $t$. This does not identify its entire finite-time
+return probability from the density at a point.
+
+A small leakage of nuisance drift into the projection can therefore look
+recurrent over a short run and still be transient. The cutoff is specific to
+this Gaussian model, not a universal forgetting timescale.
 
 ### Points are different from neighborhoods
 
@@ -441,6 +549,84 @@ theorem here of the form `Alive iff (d_s <= 2) and (gamma > 0)`.
 
 ## 10. Empirical protocol
 
+### A finite-horizon contract
+
+An application should specify how much recurrence it needs, over what window,
+and with what task performance. For $1\le t_0\le T$, let $V_A[t_0,T]$ and
+$W_B[t_0,T]$ count fine and structural visits in that window. Choose a required
+count $r\ge1$ and error budgets before observing data. A finite analogue of
+separation is
+
+$$
+ \mathbb P_x\{V_A[t_0,T]=0\}\ge1-\alpha_f,\qquad
+ \mathbb P_x\{W_B[t_0,T]\ge r\}\ge1-\alpha_c.
+ \tag{F}
+$$
+
+Both events then hold with probability at least $1-\alpha_f-\alpha_c$ by
+the union bound; independence is unnecessary. Condition (T) bounds the first
+failure probability if the model supplies return probabilities. If some fine
+returns are acceptable, register a nonzero count threshold instead.
+
+If return deadlines matter, also bound the longest consecutive run of times
+in $[t_0,T]$ outside $B$, including runs at both window edges. Register a
+maximum permitted gap $L$ and a failure probability for exceeding it. A high
+overall count can otherwise conceal a long service interruption.
+
+This is an application contract, not an asymptotic theorem or an automatic
+definition of useful behavior. Validate its path-level probabilities using
+independent restarts and uncertainty intervals, and require a separate task
+metric. Recurrence of a constant label must not pass the functional test.
+
+### Proposition 5 (robustness to an approximate structural law)
+
+Let $Y_n$ take values in a countable $F$ and be adapted to $\mathcal F_n$.
+Let $Q$ be a reference Markov kernel. Suppose deterministic bounds $\delta_n$
+satisfy, almost surely,
+
+$$
+ \left\|\mathcal L(Y_{n+1}\mid\mathcal F_n)-Q(Y_n,\cdot)\right\|_{\rm TV}
+ \le\delta_n,\qquad n\ge0,
+$$
+
+where total variation is the supremum of differences over measurable events.
+Compare the conditional law of $Y_N,\ldots,Y_T$ with a $Q$-chain started
+at the same $Y_N$. For any event $D$ depending on this window, their conditional
+probabilities differ by at most
+
+$$
+ \min\left(1,\sum_{n=N}^{T-1}\delta_n\right). \tag{TV}
+$$
+
+If $Q$ is irreducible recurrent and $\sum_n\delta_n<\infty$, then $Y$
+visits every state of $F$ infinitely often almost surely, even if $Y$ is
+not Markov. If $Q$ is positive recurrent with stationary distribution $\nu$,
+then also $W_B(T)/(T+1)\to\nu(B)$ almost surely for every finite $B$.
+
+#### Proof
+
+Use a maximal coupling at each step while the paths agree, conditioning on
+the full history of $Y$. The chance of a first mismatch at step $n+1$ is
+at most $\delta_n$. The union bound proves (TV). For an infinite tail, the
+same construction bounds any mismatch by $\sum_{n\ge N}\delta_n$.
+A recurrent reference chain visits each state infinitely often. Failure of
+this event for $Y$ therefore has probability at most that tail sum. Let
+$N\to\infty$ and take the countable intersection over target states. Apply
+the same argument to the reference occupation-time limit in the positive
+recurrent case; a finite prefix does not change that limit. QED.
+
+Positive-rate or deadline claims require the corresponding properties of $Q$;
+recurrence alone does not supply them. A small constant error is insufficient
+asymptotically: perturb a symmetric lazy walk
+on $\mathbb Z$ from probabilities $(1/4,1/2,1/4)$ to
+$(1/4-\eta,1/2,1/4+\eta)$, $0<\eta<1/4$. Each transition row is only
+$\eta$ away in total variation, but nonzero drift makes the perturbed walk
+transient. On finite windows (TV) remains useful when its sum is small.
+Fitted one-step agreement on a dataset does not establish the uniform
+conditional bound required here.
+
+### Registration and estimators
+
 Register the following before examining outcomes:
 
 ```text
@@ -455,6 +641,7 @@ Mathematical claim and proof of each required assumption:
 Finite horizon, independent restarts, and uncertainty procedure:
 Mechanism intervention and matched null:
 Independent functional outcome:
+Required structural count/rate, maximum gap, and finite-window error budgets:
 ```
 
 For $M$ independent restarts from $x$, estimate anchored quantities by
@@ -507,6 +694,8 @@ formulation, now Lemma 2.
 |---|---|
 | Countable transient/recurrent projection criterion | Theorem 1: necessary and sufficient under its assumptions |
 | Lazy-coordinate phase boundary | exact model result (P), not inferred from simulation |
+| Positive structural return rate | Corollary 1a and the restoring birth–death model; null recurrence alone gives zero frequency |
+| Approximate projected dynamics | Proposition 5 under conditional total-variation bounds; small constant error does not guarantee recurrence |
 | Brownian hidden drift | exact model result (B); registered discrete experiments are finite-horizon controls for their own model |
 | Destination-local-time repulsion through tested $\gamma=10$ | finite-horizon evidence; asymptotic position avoidance and structural recurrence remain unproved |
 | General diffusion/capacity extension | needs a separately specified process, targets, and recurrence theorem |
@@ -516,6 +705,10 @@ Three high-dimensional registered fits were event-floor failures, not
 confirmations. The later [measurement repair](measurement_repair_20260912.md)
 also limits the old phase-null, capacity-probe, and novelty-reward claims;
 none is used as proof here.
+
+The [application guide](docs/use_cases_and_phenomena.md) gives definitions of
+observable phenomena, finite-horizon contracts, and proposed experiments.
+Those application hypotheses are not added to the registered evidence ledger.
 
 The unresolved CDT problem is a model-specific proof that realization-dependent
 interaction causes fine avoidance while preserving meaningful structural
